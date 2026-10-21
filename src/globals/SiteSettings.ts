@@ -93,7 +93,7 @@ export const SiteSettings: GlobalConfig = {
                   name: 'whatsappNumber',
                   type: 'text',
                   required: true,
-                  defaultValue: '971556528018',
+                  defaultValue: '971558493932',
                   validate: digitsOnly,
                   admin: {
                     width: '50%',
@@ -103,7 +103,7 @@ export const SiteSettings: GlobalConfig = {
                 {
                   name: 'phoneDisplay',
                   type: 'text',
-                  defaultValue: '+971 55 652 8018',
+                  defaultValue: '+971 55 849 3932',
                   admin: { width: '50%', description: 'How the phone number is shown on the site.' },
                 },
               ],
@@ -121,7 +121,7 @@ export const SiteSettings: GlobalConfig = {
                   name: 'phoneNumber',
                   type: 'text',
                   validate: digitsOnly,
-                  defaultValue: '971556528018',
+                  defaultValue: '971558493932',
                   admin: { width: '50%', description: 'For click-to-call. Digits only.' },
                 },
                 {
@@ -290,13 +290,13 @@ export const SiteSettings: GlobalConfig = {
               name: 'mobileBarEnabled',
               type: 'checkbox',
               defaultValue: true,
-              label: 'Show sticky WhatsApp bar on phones',
+              label: 'Show the WhatsApp quote button in the bottom bar on phones',
             },
             {
               name: 'mobileBarLabel',
               type: 'text',
               localized: true,
-              defaultValue: 'Get a quote on WhatsApp',
+              defaultValue: 'Get a quote',
             },
           ],
         },

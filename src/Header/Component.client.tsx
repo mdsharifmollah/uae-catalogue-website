@@ -7,28 +7,37 @@ import React, { useCallback, useEffect, useId, useRef, useState } from 'react'
 import type { Header, Media as MediaType } from '@/payload-types'
 
 import { CMSLink, resolveHref } from '@/components/Link'
-import { CloseIcon, MenuIcon, WhatsAppIcon } from '@/components/site/icons'
+import { CloseIcon, MenuIcon, PhoneIcon, WhatsAppIcon } from '@/components/site/icons'
 import { Wordmark } from '@/components/site/Wordmark'
 import { WhatsAppAnchor } from '@/components/site/WhatsAppAnchor'
+import { useSiteSettings } from '@/providers/SiteSettings'
 import { cn } from '@/utilities/ui'
+import { telHref } from '@/utilities/whatsapp'
 
 interface HeaderClientProps {
   data: Header
   name: string
   logo?: MediaType | number | null
   logoLight?: MediaType | number | null
+  /** Label for the phone quote button in the docked bar; null hides it. */
+  quoteLabel?: string | null
 }
 
 /**
- * Sticky glass header. Hides while scrolling down, reappears as soon as the
- * visitor scrolls up, and stays fully visible at the top of the page.
+ * Glass header. At the top of the page it sits at the top; once the visitor
+ * scrolls it docks as a floating bar at the bottom of the screen (and slides
+ * back up at the top). On phones the docked bar also carries the WhatsApp
+ * quote and call buttons.
  */
-export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo }) => {
+export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, quoteLabel }) => {
   const pathname = usePathname()
-  const [hidden, setHidden] = useState(false)
+  const { phoneNumber } = useSiteSettings()
   const [scrolled, setScrolled] = useState(false)
+  const [docked, setDocked] = useState(false)
+  // Only animate real top <-> bottom moves, not the initial render.
+  const [moved, setMoved] = useState(false)
   const [open, setOpen] = useState(false)
-  const lastY = useRef(0)
+  const dockedRef = useRef(false)
   const menuId = useId()
   const toggleRef = useRef<HTMLButtonElement>(null)
   const panelRef = useRef<HTMLDivElement>(null)
@@ -43,15 +52,20 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo }) 
       ticking = true
       requestAnimationFrame(() => {
         const y = window.scrollY
-        const delta = y - lastY.current
         setScrolled(y > 24)
-        if (y < 120) setHidden(false)
-        else if (delta > 6) setHidden(true)
-        else if (delta < -6) setHidden(false)
-        lastY.current = y
+        // A little hysteresis so it doesn't flicker around the threshold.
+        const next = dockedRef.current ? y > 80 : y > 160
+        if (next !== dockedRef.current) {
+          dockedRef.current = next
+          setDocked(next)
+          setMoved(true)
+        }
         ticking = false
       })
     }
+    // Start in place (no slide-in) when the page loads already scrolled.
+    dockedRef.current = window.scrollY > 160
+    setDocked(dockedRef.current)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -91,25 +105,37 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo }) 
       </a>
       <header
         className={cn(
-          'fixed inset-x-0 top-0 z-50 transition-transform duration-500 ease-[var(--ease-out-expo)] motion-reduce:transition-none',
-          hidden && !open ? '-translate-y-[calc(100%+3rem)]' : 'translate-y-0',
+          'fixed inset-x-0 z-50 flex',
+          docked ? 'bottom-0 flex-col-reverse' : 'top-0 flex-col',
+          moved && (docked ? 'header-dock-in' : 'header-top-in'),
         )}
       >
-        <div className="shell pt-3 md:pt-4">
+        <div className={cn('shell', docked ? 'pb-[max(0.75rem,env(safe-area-inset-bottom))]' : 'pt-3 md:pt-4')}>
           <div
             className={cn(
               'flex items-center justify-between gap-4 rounded-full px-3 py-2 max-[359px]:gap-2 max-[359px]:px-2 md:px-4 transition-[background-color,box-shadow,backdrop-filter] duration-500',
-              scrolled || open ? 'glass-strong' : 'bg-transparent',
+              scrolled || open || docked ? 'glass-strong' : 'bg-transparent',
+              docked && quoteLabel && 'max-md:gap-2 max-md:p-2',
             )}
             style={{ color: 'var(--page-fg)' }}
           >
             <Link
               href="/"
-              className="flex min-h-12 items-center rounded-full px-3 max-[359px]:px-1.5"
+              className={cn(
+                'flex min-h-12 items-center rounded-full px-3 max-[359px]:px-1.5',
+                docked && quoteLabel && 'max-md:hidden',
+              )}
               aria-label={`${name} — home`}
             >
               <Wordmark name={name} logo={logo} />
             </Link>
+
+            {docked && quoteLabel && (
+              <WhatsAppAnchor className="btn btn-primary btn-sm min-w-0 flex-1 !whitespace-nowrap !px-4 max-[359px]:!gap-1.5 max-[359px]:!px-2.5 md:hidden">
+                <WhatsAppIcon />
+                <span className="truncate">{quoteLabel}</span>
+              </WhatsAppAnchor>
+            )}
 
             <nav aria-label="Main" className="hidden xl:block">
               <ul className="glass flex items-center gap-1 rounded-full p-1.5">
@@ -141,12 +167,25 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo }) 
                   <CMSLink key={i} {...link} size="sm" icon={false} />
                 ))}
               </div>
-              <WhatsAppAnchor
-                className="btn btn-primary btn-sm !px-0 w-[3.25rem] md:hidden"
-                aria-label="Chat with us on WhatsApp"
-              >
-                <WhatsAppIcon />
-              </WhatsAppAnchor>
+              {docked && quoteLabel ? (
+                phoneNumber && (
+                  <a
+                    href={telHref(phoneNumber)}
+                    className="btn btn-glass btn-sm !px-0 w-[3.25rem] md:hidden"
+                    aria-label="Call us"
+                    data-track="phone_click"
+                  >
+                    <PhoneIcon />
+                  </a>
+                )
+              ) : (
+                <WhatsAppAnchor
+                  className="btn btn-primary btn-sm !px-0 w-[3.25rem] md:hidden"
+                  aria-label="Chat with us on WhatsApp"
+                >
+                  <WhatsAppIcon />
+                </WhatsAppAnchor>
+              )}
               <button
                 ref={toggleRef}
                 type="button"
@@ -171,8 +210,11 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo }) 
           hidden={!open}
           className="xl:hidden"
         >
-          <div className="shell pt-3">
-            <div className="glass-strong rounded-[var(--radius-panel)] p-4" style={{ color: 'var(--page-fg)' }}>
+          <div className={cn('shell', docked ? 'pb-3' : 'pt-3')}>
+            <div
+              className="glass-strong max-h-[calc(100svh-7rem)] overflow-y-auto rounded-[var(--radius-panel)] p-4"
+              style={{ color: 'var(--page-fg)' }}
+            >
               <ul className="flex flex-col">
                 {navItems.map(({ link }, i) => (
                   <li key={i} className="border-b border-[color:var(--page-line)] last:border-0">

@@ -1,6 +1,7 @@
 import * as migration_20261020_144557_initial from './20261020_144557_initial';
 import * as migration_20261020_145021_media_blob_storage from './20261020_145021_media_blob_storage';
 import * as migration_20261021_090000_company_details from './20261021_090000_company_details';
+import * as migration_20261021_120000_whatsapp_number from './20261021_120000_whatsapp_number';
 
 export const migrations = [
   {
@@ -17,5 +18,10 @@ export const migrations = [
     up: migration_20261021_090000_company_details.up,
     down: migration_20261021_090000_company_details.down,
     name: '20261021_090000_company_details'
+  },
+  {
+    up: migration_20261021_120000_whatsapp_number.up,
+    down: migration_20261021_120000_whatsapp_number.down,
+    name: '20261021_120000_whatsapp_number'
   },
 ];

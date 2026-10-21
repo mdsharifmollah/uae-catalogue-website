@@ -11,7 +11,6 @@ import { BackgroundEngine } from '@/components/motion/BackgroundEngine'
 import { RevealOrchestrator } from '@/components/motion/RevealOrchestrator'
 import { SmoothScroll } from '@/components/motion/SmoothScroll'
 import { JsonLd } from '@/components/seo/JsonLd'
-import { MobileWhatsAppBar } from '@/components/site/MobileWhatsAppBar'
 import { Footer } from '@/Footer/Component'
 import { Header } from '@/Header/Component'
 import { Providers } from '@/providers'
@@ -82,9 +81,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             {children}
           </main>
           <Footer />
-          {settings.mobileBarEnabled !== false && (
-            <MobileWhatsAppBar label={settings.mobileBarLabel || 'Get a quote on WhatsApp'} />
-          )}
         </Providers>
         <Analytics gtmId={settings.gtmId} ga4Id={settings.ga4Id} />
       </body>

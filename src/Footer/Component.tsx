@@ -2,6 +2,7 @@ import React from 'react'
 
 import { CMSLink } from '@/components/Link'
 import { AccentText } from '@/components/site/AccentText'
+import { BackToTop } from '@/components/site/BackToTop'
 import { ClockIcon, MailIcon, PhoneIcon, PinIcon, WhatsAppIcon } from '@/components/site/icons'
 import { Section } from '@/components/site/Section'
 import { WhatsAppAnchor } from '@/components/site/WhatsAppAnchor'
@@ -9,6 +10,7 @@ import { Wordmark } from '@/components/site/Wordmark'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import { getSiteSettings } from '@/utilities/getSiteSettings'
 import { telHref } from '@/utilities/whatsapp'
+import { cn } from '@/utilities/ui'
 
 const formatDays = (days: string[]) => {
   if (days.length > 2) return `${days[0].slice(0, 3)} – ${days[days.length - 1].slice(0, 3)}`
@@ -108,7 +110,13 @@ export async function Footer() {
           ))}
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t py-8 text-[1rem] text-muted md:flex-row md:items-center md:justify-between">
+        {/* Bottom margin keeps this row clear of the docked nav bar at the end of the page. */}
+        <div
+          className={cn(
+            'mt-16 flex flex-col gap-4 border-t py-8 text-[1rem] text-muted md:flex-row md:items-center md:justify-between',
+            footer.showWordmark !== false ? 'max-md:mb-16' : 'mb-24',
+          )}
+        >
           <p>
             © {year} {settings.companyName}. All rights reserved.
           </p>
@@ -121,6 +129,7 @@ export async function Footer() {
             {footer.legalLinks?.map(({ link }, i) => (
               <CMSLink key={i} {...link} appearance="inline" className="hover:text-accent" />
             ))}
+            <BackToTop className="text-[color:var(--fg)]" />
           </div>
         </div>
       </div>

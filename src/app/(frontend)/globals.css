@@ -750,6 +750,30 @@ html.motion-ok [data-reveal][data-revealed] {
   animation: hero-rise 1.1s var(--ease-out-expo) both;
 }
 
+/* Header moving between the top of the page and the bottom dock. */
+@keyframes header-dock-in {
+  from {
+    transform: translateY(calc(100% + 1.5rem));
+  }
+}
+@keyframes header-top-in {
+  from {
+    transform: translateY(calc(-100% - 1.5rem));
+  }
+}
+.header-dock-in {
+  animation: header-dock-in 0.7s var(--ease-out-expo) both;
+}
+.header-top-in {
+  animation: header-top-in 0.7s var(--ease-out-expo) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .header-dock-in,
+  .header-top-in {
+    animation: none;
+  }
+}
+
 @keyframes fan-in {
   from {
     transform: translateY(45%);

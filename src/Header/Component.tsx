@@ -13,6 +13,7 @@ export async function Header() {
       name={settings.shortName}
       logo={settings.logoOnDark}
       logoLight={settings.logoOnLight}
+      quoteLabel={settings.mobileBarEnabled !== false ? settings.mobileBarLabel || 'Get a quote' : null}
     />
   )
 }

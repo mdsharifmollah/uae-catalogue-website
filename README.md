@@ -46,7 +46,7 @@ Headings: wrap one word in `*asterisks*` to show it in the italic accent font.
 ## Before launch — must be replaced (starter content is placeholder)
 
 - Logo and exact address (Site Settings). Company name, WhatsApp/phone and email are set
-  (UAE Catalogue Manufacture · +971 55 652 8018 · saifuliths92@gmail.com).
+  (UAE Catalogue Manufacture · +971 55 849 3932 · saifuliths92@gmail.com).
 - **All portfolio projects and photos** — the starter ones are stock images (Unsplash License) for layout only
 - Confirm every product format, spec and process step matches what the business actually offers
 - Privacy policy page
