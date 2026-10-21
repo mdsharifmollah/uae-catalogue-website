@@ -68,14 +68,18 @@ export interface Config {
   blocks: {};
   collections: {
     pages: Page;
+    products: Product;
+    industries: Industry;
+    projects: Project;
     posts: Post;
+    faqs: FAQ;
+    testimonials: Testimonial;
     media: Media;
     categories: Category;
     users: User;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
-    search: Search;
     'payload-kv': PayloadKv;
     'payload-jobs': PayloadJob;
     'payload-folders': FolderInterface;
@@ -90,14 +94,18 @@ export interface Config {
   };
   collectionsSelect: {
     pages: PagesSelect<false> | PagesSelect<true>;
+    products: ProductsSelect<false> | ProductsSelect<true>;
+    industries: IndustriesSelect<false> | IndustriesSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    faqs: FaqsSelect<false> | FaqsSelect<true>;
+    testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
-    search: SearchSelect<false> | SearchSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-folders': PayloadFoldersSelect<false> | PayloadFoldersSelect<true>;
@@ -106,18 +114,20 @@ export interface Config {
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: string;
+    defaultIDType: number;
   };
-  fallbackLocale: null;
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | 'en' | 'en'[];
   globals: {
+    'site-settings': SiteSetting;
     header: Header;
     footer: Footer;
   };
   globalsSelect: {
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
   };
-  locale: null;
+  locale: 'en';
   widgets: {
     collections: CollectionsWidget;
   };
@@ -152,62 +162,112 @@ export interface UserAuthOperations {
   };
 }
 /**
+ * Pages built from sections. The page with slug "home" is the homepage; "products", "industries", "work" and "guides" add an intro to those listing pages.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pages".
  */
 export interface Page {
-  id: string;
+  id: number;
   title: string;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
-    richText?: {
-      root: {
-        type: string;
-        children: {
-          type: any;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
+    type: 'none' | 'catalog' | 'page' | 'minimal';
+    /**
+     * Background tone behind the hero.
+     */
+    tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+    eyebrow?: string | null;
+    /**
+     * This is the page H1 — include your main keyword. Wrap one word in *asterisks* to show it in the elegant italic accent font, e.g. "Crafted *in* the UAE".
+     */
+    heading?: string | null;
+    subheading?: string | null;
     links?:
       | {
           link: {
-            type?: ('reference' | 'custom') | null;
+            type?: ('reference' | 'custom' | 'whatsapp') | null;
             newTab?: boolean | null;
             reference?:
               | ({
                   relationTo: 'pages';
-                  value: string | Page;
+                  value: number | Page;
                 } | null)
               | ({
                   relationTo: 'posts';
-                  value: string | Post;
+                  value: number | Post;
+                } | null)
+              | ({
+                  relationTo: 'products';
+                  value: number | Product;
+                } | null)
+              | ({
+                  relationTo: 'industries';
+                  value: number | Industry;
+                } | null)
+              | ({
+                  relationTo: 'projects';
+                  value: number | Project;
                 } | null);
             url?: string | null;
+            /**
+             * Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.
+             */
+            whatsappMessage?: string | null;
             label: string;
             /**
              * Choose how the link should be rendered.
              */
-            appearance?: ('default' | 'outline') | null;
+            appearance?: ('primary' | 'glass' | 'outline' | 'link') | null;
           };
           id?: string | null;
         }[]
       | null;
-    media?: (string | null) | Media;
+    /**
+     * Short reassurance points under the buttons.
+     */
+    trustItems?:
+      | {
+          text: string;
+          id?: string | null;
+        }[]
+      | null;
+    /**
+     * Catalogue hero: fabric close-up used as the animated WebGL texture (also the instant-loading fallback). Page hero: side image.
+     */
+    media?: (number | null) | Media;
+    /**
+     * Up to 5 products shown as fanned catalogue cards. Leave empty to use the first five.
+     */
+    fanProducts?: (number | Product)[] | null;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
+  /**
+   * Add, remove and drag sections to reorder them.
+   */
+  layout?:
+    | (
+        | FormatGridBlock
+        | ProcessStoryBlock
+        | WorkGalleryBlock
+        | IndustriesCarouselBlock
+        | CapabilitiesBlock
+        | MediaTextBlock
+        | StatsBandBlock
+        | TestimonialsBlock
+        | LogosBlock
+        | FAQBlock
+        | CallToActionBlock
+        | ContentBlock
+        | MediaBlock
+        | ArchiveBlock
+        | FormBlock
+      )[]
+    | null;
   meta?: {
     title?: string | null;
     /**
      * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
      */
-    image?: (string | null) | Media;
+    image?: (number | null) | Media;
     description?: string | null;
   };
   publishedAt?: string | null;
@@ -221,13 +281,19 @@ export interface Page {
   _status?: ('draft' | 'published') | null;
 }
 /**
+ * Helpful articles that answer buyer questions — the main way to win extra Google traffic.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "posts".
  */
 export interface Post {
-  id: string;
+  id: number;
   title: string;
-  heroImage?: (string | null) | Media;
+  /**
+   * Short summary for cards and Google (about 150 characters).
+   */
+  excerpt?: string | null;
+  heroImage?: (number | null) | Media;
   content: {
     root: {
       type: string;
@@ -243,18 +309,22 @@ export interface Post {
     };
     [k: string]: unknown;
   };
-  relatedPosts?: (string | Post)[] | null;
-  categories?: (string | Category)[] | null;
+  relatedPosts?: (number | Post)[] | null;
+  /**
+   * Product pages to link to at the end of this guide.
+   */
+  relatedProducts?: (number | Product)[] | null;
+  categories?: (number | Category)[] | null;
   meta?: {
     title?: string | null;
     /**
      * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
      */
-    image?: (string | null) | Media;
+    image?: (number | null) | Media;
     description?: string | null;
   };
   publishedAt?: string | null;
-  authors?: (string | User)[] | null;
+  authors?: (number | User)[] | null;
   populatedAuthors?:
     | {
         id?: string | null;
@@ -271,12 +341,14 @@ export interface Post {
   _status?: ('draft' | 'published') | null;
 }
 /**
+ * All images. Always write alt text — describe what is in the photo (e.g. "Numbered fabric shade card with 39 linen swatches"). It helps Google Images and accessibility.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
-  id: string;
-  alt?: string | null;
+  id: number;
+  alt: string;
   caption?: {
     root: {
       type: string;
@@ -292,7 +364,8 @@ export interface Media {
     };
     [k: string]: unknown;
   } | null;
-  folder?: (string | null) | FolderInterface;
+  _objectKey?: string | null;
+  folder?: (number | null) | FolderInterface;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -368,18 +441,18 @@ export interface Media {
  * via the `definition` "payload-folders".
  */
 export interface FolderInterface {
-  id: string;
+  id: number;
   name: string;
-  folder?: (string | null) | FolderInterface;
+  folder?: (number | null) | FolderInterface;
   documentsAndFolders?: {
     docs?: (
       | {
           relationTo?: 'payload-folders';
-          value: string | FolderInterface;
+          value: number | FolderInterface;
         }
       | {
           relationTo?: 'media';
-          value: string | Media;
+          value: number | Media;
         }
     )[];
     hasNextPage?: boolean;
@@ -390,21 +463,209 @@ export interface FolderInterface {
   createdAt: string;
 }
 /**
+ * Each sample format you manufacture gets its own SEO page at /products/<slug>.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products".
+ */
+export interface Product {
+  id: number;
+  /**
+   * Use the words buyers search for, e.g. "Fabric Sample Books".
+   */
+  title: string;
+  /**
+   * Optional two-line card title. Use | to split lines, e.g. "Sample|Books". Second line appears muted.
+   */
+  cardTitle?: string | null;
+  /**
+   * One or two sentences. Shown on cards and as the page intro.
+   */
+  summary: string;
+  /**
+   * Product cut-out (transparent PNG/WebP works best) for cards.
+   */
+  cardImage?: (number | null) | Media;
+  /**
+   * Large photo at the top of the product page.
+   */
+  heroImage: number | Media;
+  gallery?:
+    | {
+        image: number | Media;
+        caption?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Main page content. Use H2/H3 headings and explain formats, materials and options — this is what Google reads.
+   */
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Shown as a clean spec table (sizes, binding, materials, finishes...).
+   */
+  specs?:
+    | {
+        label: string;
+        value: string;
+        id?: string | null;
+      }[]
+    | null;
+  useCases?:
+    | {
+        text: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Pre-filled WhatsApp message for this product, e.g. "Hello, I need a quote for fabric sample books."
+   */
+  whatsappMessage?: string | null;
+  /**
+   * Industries this format is popular with.
+   */
+  industries?: (number | Industry)[] | null;
+  faqs?: (number | FAQ)[] | null;
+  relatedProducts?: (number | Product)[] | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  /**
+   * Lower numbers show first.
+   */
+  order?: number | null;
+  /**
+   * Colour of this item’s card in grids and carousels.
+   */
+  cardTone?: ('bronze' | 'charcoal' | 'ivory' | 'sand' | 'clay' | 'sage' | 'midnight') | null;
+  publishedAt?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * Industries you serve. Each one gets an SEO page at /industries/<slug>.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "industries".
+ */
+export interface Industry {
+  id: number;
+  title: string;
+  /**
+   * Short pill label on the card, e.g. "Sofas & chairs".
+   */
+  tag?: string | null;
+  summary: string;
+  cardImage?: (number | null) | Media;
+  heroImage: number | Media;
+  /**
+   * What businesses in this industry need from their sample catalogues.
+   */
+  needs?:
+    | {
+        title: string;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  faqs?: (number | FAQ)[] | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  order?: number | null;
+  /**
+   * Colour of this item’s card in grids and carousels.
+   */
+  cardTone?: ('bronze' | 'charcoal' | 'ivory' | 'sand' | 'clay' | 'sage' | 'midnight') | null;
+  publishedAt?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * Answers appear on pages and in Google structured data. Keep them factual.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faqs".
+ */
+export interface FAQ {
+  id: number;
+  question: string;
+  /**
+   * Plain text, 1–4 sentences.
+   */
+  answer: string;
+  category?: ('general' | 'products' | 'ordering' | 'delivery') | null;
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "categories".
  */
 export interface Category {
-  id: string;
+  id: number;
   title: string;
   /**
    * When enabled, the slug will auto-generate from the title field on save and autosave.
    */
   generateSlug?: boolean | null;
   slug: string;
-  parent?: (string | null) | Category;
+  parent?: (number | null) | Category;
   breadcrumbs?:
     | {
-        doc?: (string | null) | Category;
+        doc?: (number | null) | Category;
         url?: string | null;
         label?: string | null;
         id?: string | null;
@@ -418,7 +679,7 @@ export interface Category {
  * via the `definition` "users".
  */
 export interface User {
-  id: string;
+  id: number;
   name?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -427,6 +688,7 @@ export interface User {
   resetPasswordExpiration?: string | null;
   salt?: string | null;
   hash?: string | null;
+  resetPasswordRequestedAt?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
   sessions?:
@@ -440,10 +702,379 @@ export interface User {
   collection: 'users';
 }
 /**
+ * Portfolio of real sample catalogues you produced. Real photos convert best.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "CallToActionBlock".
+ * via the `definition` "projects".
  */
-export interface CallToActionBlock {
+export interface Project {
+  id: number;
+  title: string;
+  summary: string;
+  coverImage: number | Media;
+  gallery?:
+    | {
+        image: number | Media;
+        caption?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  clientName?: string | null;
+  showClientName?: boolean | null;
+  year?: number | null;
+  /**
+   * e.g. Format: A4 sample book · Swatches: 39 · Finish: foil logo
+   */
+  specs?:
+    | {
+        label: string;
+        value: string;
+        id?: string | null;
+      }[]
+    | null;
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  products?: (number | Product)[] | null;
+  industries?: (number | Industry)[] | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  /**
+   * Show in the home page gallery.
+   */
+  featured?: boolean | null;
+  publishedAt?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FormatGridBlock".
+ */
+export interface FormatGridBlock {
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+  /**
+   * Small label shown above the heading.
+   */
+  eyebrow?: string | null;
+  /**
+   * Wrap one word in *asterisks* to show it in the elegant italic accent font, e.g. "Crafted *in* the UAE".
+   */
+  heading?: string | null;
+  intro?: string | null;
+  /**
+   * Leave empty to show all published product formats in order.
+   */
+  products?: (number | Product)[] | null;
+  showWhatsapp?: boolean | null;
+  enableLink?: boolean | null;
+  link?: {
+    type?: ('reference' | 'custom' | 'whatsapp') | null;
+    newTab?: boolean | null;
+    reference?:
+      | ({
+          relationTo: 'pages';
+          value: number | Page;
+        } | null)
+      | ({
+          relationTo: 'posts';
+          value: number | Post;
+        } | null)
+      | ({
+          relationTo: 'products';
+          value: number | Product;
+        } | null)
+      | ({
+          relationTo: 'industries';
+          value: number | Industry;
+        } | null)
+      | ({
+          relationTo: 'projects';
+          value: number | Project;
+        } | null);
+    url?: string | null;
+    /**
+     * Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.
+     */
+    whatsappMessage?: string | null;
+    label: string;
+    /**
+     * Choose how the link should be rendered.
+     */
+    appearance?: ('glass' | 'outline' | 'link') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'formatGrid';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ProcessStoryBlock".
+ */
+export interface ProcessStoryBlock {
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+  /**
+   * Small label shown above the heading.
+   */
+  eyebrow?: string | null;
+  /**
+   * Wrap one word in *asterisks* to show it in the elegant italic accent font, e.g. "Crafted *in* the UAE".
+   */
+  heading?: string | null;
+  intro?: string | null;
+  steps: {
+    title: string;
+    text: string;
+    image: number | Media;
+    id?: string | null;
+  }[];
+  enableLink?: boolean | null;
+  link?: {
+    type?: ('reference' | 'custom' | 'whatsapp') | null;
+    newTab?: boolean | null;
+    reference?:
+      | ({
+          relationTo: 'pages';
+          value: number | Page;
+        } | null)
+      | ({
+          relationTo: 'posts';
+          value: number | Post;
+        } | null)
+      | ({
+          relationTo: 'products';
+          value: number | Product;
+        } | null)
+      | ({
+          relationTo: 'industries';
+          value: number | Industry;
+        } | null)
+      | ({
+          relationTo: 'projects';
+          value: number | Project;
+        } | null);
+    url?: string | null;
+    /**
+     * Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.
+     */
+    whatsappMessage?: string | null;
+    label: string;
+    /**
+     * Choose how the link should be rendered.
+     */
+    appearance?: ('primary' | 'glass' | 'link') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'processStory';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "WorkGalleryBlock".
+ */
+export interface WorkGalleryBlock {
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+  /**
+   * Small label shown above the heading.
+   */
+  eyebrow?: string | null;
+  /**
+   * Wrap one word in *asterisks* to show it in the elegant italic accent font, e.g. "Crafted *in* the UAE".
+   */
+  heading?: string | null;
+  intro?: string | null;
+  /**
+   * Leave empty to show the latest featured projects.
+   */
+  projects?: (number | Project)[] | null;
+  layout?: ('horizontal' | 'grid') | null;
+  limit?: number | null;
+  enableLink?: boolean | null;
+  link?: {
+    type?: ('reference' | 'custom' | 'whatsapp') | null;
+    newTab?: boolean | null;
+    reference?:
+      | ({
+          relationTo: 'pages';
+          value: number | Page;
+        } | null)
+      | ({
+          relationTo: 'posts';
+          value: number | Post;
+        } | null)
+      | ({
+          relationTo: 'products';
+          value: number | Product;
+        } | null)
+      | ({
+          relationTo: 'industries';
+          value: number | Industry;
+        } | null)
+      | ({
+          relationTo: 'projects';
+          value: number | Project;
+        } | null);
+    url?: string | null;
+    /**
+     * Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.
+     */
+    whatsappMessage?: string | null;
+    label: string;
+    /**
+     * Choose how the link should be rendered.
+     */
+    appearance?: ('glass' | 'outline' | 'link') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'workGallery';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "IndustriesCarouselBlock".
+ */
+export interface IndustriesCarouselBlock {
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+  /**
+   * Small label shown above the heading.
+   */
+  eyebrow?: string | null;
+  /**
+   * Wrap one word in *asterisks* to show it in the elegant italic accent font, e.g. "Crafted *in* the UAE".
+   */
+  heading?: string | null;
+  intro?: string | null;
+  /**
+   * Leave empty to show all published industries.
+   */
+  industries?: (number | Industry)[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'industriesCarousel';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CapabilitiesBlock".
+ */
+export interface CapabilitiesBlock {
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+  /**
+   * Small label shown above the heading.
+   */
+  eyebrow?: string | null;
+  /**
+   * Wrap one word in *asterisks* to show it in the elegant italic accent font, e.g. "Crafted *in* the UAE".
+   */
+  heading?: string | null;
+  intro?: string | null;
+  layout?: ('cards' | 'checklist') | null;
+  media?: (number | null) | Media;
+  items: {
+    /**
+     * 3D icon (transparent PNG/WebP, square).
+     */
+    icon?: (number | null) | Media;
+    title: string;
+    text?: string | null;
+    id?: string | null;
+  }[];
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom' | 'whatsapp') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'products';
+                value: number | Product;
+              } | null)
+            | ({
+                relationTo: 'industries';
+                value: number | Industry;
+              } | null)
+            | ({
+                relationTo: 'projects';
+                value: number | Project;
+              } | null);
+          url?: string | null;
+          /**
+           * Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.
+           */
+          whatsappMessage?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('primary' | 'glass' | 'link') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'capabilities';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MediaTextBlock".
+ */
+export interface MediaTextBlock {
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+  eyebrow?: string | null;
+  /**
+   * Wrap one word in *asterisks* to show it in the elegant italic accent font, e.g. "Crafted *in* the UAE".
+   */
+  heading?: string | null;
   richText?: {
     root: {
       type: string;
@@ -459,30 +1090,274 @@ export interface CallToActionBlock {
     };
     [k: string]: unknown;
   } | null;
+  media: number | Media;
+  imagePosition?: ('right' | 'left') | null;
+  /**
+   * Small glass labels floating on the image (e.g. "39 swatches").
+   */
+  pills?:
+    | {
+        text: string;
+        id?: string | null;
+      }[]
+    | null;
   links?:
     | {
         link: {
-          type?: ('reference' | 'custom') | null;
+          type?: ('reference' | 'custom' | 'whatsapp') | null;
           newTab?: boolean | null;
           reference?:
             | ({
                 relationTo: 'pages';
-                value: string | Page;
+                value: number | Page;
               } | null)
             | ({
                 relationTo: 'posts';
-                value: string | Post;
+                value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'products';
+                value: number | Product;
+              } | null)
+            | ({
+                relationTo: 'industries';
+                value: number | Industry;
+              } | null)
+            | ({
+                relationTo: 'projects';
+                value: number | Project;
               } | null);
           url?: string | null;
+          /**
+           * Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.
+           */
+          whatsappMessage?: string | null;
           label: string;
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('primary' | 'glass' | 'link') | null;
         };
         id?: string | null;
       }[]
     | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'mediaText';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StatsBandBlock".
+ */
+export interface StatsBandBlock {
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+  /**
+   * Only publish numbers you can prove (years in business, swatches per day...).
+   */
+  items?:
+    | {
+        /**
+         * e.g. 12+
+         */
+        value: string;
+        label: string;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'statsBand';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TestimonialsBlock".
+ */
+export interface TestimonialsBlock {
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+  /**
+   * Small label shown above the heading.
+   */
+  eyebrow?: string | null;
+  /**
+   * Wrap one word in *asterisks* to show it in the elegant italic accent font, e.g. "Crafted *in* the UAE".
+   */
+  heading?: string | null;
+  intro?: string | null;
+  /**
+   * Leave empty to show all verified testimonials. Unverified ones are never shown.
+   */
+  testimonials?: (number | Testimonial)[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'testimonials';
+}
+/**
+ * Only testimonials marked as verified are shown on the website.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials".
+ */
+export interface Testimonial {
+  id: number;
+  quote: string;
+  name: string;
+  role?: string | null;
+  company?: string | null;
+  photo?: (number | null) | Media;
+  verified?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LogosBlock".
+ */
+export interface LogosBlock {
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+  heading?: string | null;
+  /**
+   * Only add logos you have written permission to display.
+   */
+  logos?:
+    | {
+        name: string;
+        permission?: boolean | null;
+        logo: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'logos';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FAQBlock".
+ */
+export interface FAQBlock {
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+  /**
+   * Small label shown above the heading.
+   */
+  eyebrow?: string | null;
+  /**
+   * Wrap one word in *asterisks* to show it in the elegant italic accent font, e.g. "Crafted *in* the UAE".
+   */
+  heading?: string | null;
+  intro?: string | null;
+  /**
+   * Leave empty to show all FAQs (optionally filtered by category).
+   */
+  faqs?: (number | FAQ)[] | null;
+  category?: ('all' | 'general' | 'products' | 'ordering' | 'delivery') | null;
+  enableLink?: boolean | null;
+  link?: {
+    type?: ('reference' | 'custom' | 'whatsapp') | null;
+    newTab?: boolean | null;
+    reference?:
+      | ({
+          relationTo: 'pages';
+          value: number | Page;
+        } | null)
+      | ({
+          relationTo: 'posts';
+          value: number | Post;
+        } | null)
+      | ({
+          relationTo: 'products';
+          value: number | Product;
+        } | null)
+      | ({
+          relationTo: 'industries';
+          value: number | Industry;
+        } | null)
+      | ({
+          relationTo: 'projects';
+          value: number | Project;
+        } | null);
+    url?: string | null;
+    /**
+     * Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.
+     */
+    whatsappMessage?: string | null;
+    label: string;
+    /**
+     * Choose how the link should be rendered.
+     */
+    appearance?: ('primary' | 'glass' | 'link') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'faq';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CallToActionBlock".
+ */
+export interface CallToActionBlock {
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+  eyebrow?: string | null;
+  /**
+   * Wrap one word in *asterisks* to show it in the elegant italic accent font, e.g. "Crafted *in* the UAE".
+   */
+  heading: string;
+  text?: string | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom' | 'whatsapp') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'products';
+                value: number | Product;
+              } | null)
+            | ({
+                relationTo: 'industries';
+                value: number | Industry;
+              } | null)
+            | ({
+                relationTo: 'projects';
+                value: number | Project;
+              } | null);
+          url?: string | null;
+          /**
+           * Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.
+           */
+          whatsappMessage?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('primary' | 'glass' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  showContactDetails?: boolean | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'cta';
@@ -492,6 +1367,10 @@ export interface CallToActionBlock {
  * via the `definition` "ContentBlock".
  */
 export interface ContentBlock {
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
   columns?:
     | {
         size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
@@ -512,23 +1391,39 @@ export interface ContentBlock {
         } | null;
         enableLink?: boolean | null;
         link?: {
-          type?: ('reference' | 'custom') | null;
+          type?: ('reference' | 'custom' | 'whatsapp') | null;
           newTab?: boolean | null;
           reference?:
             | ({
                 relationTo: 'pages';
-                value: string | Page;
+                value: number | Page;
               } | null)
             | ({
                 relationTo: 'posts';
-                value: string | Post;
+                value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'products';
+                value: number | Product;
+              } | null)
+            | ({
+                relationTo: 'industries';
+                value: number | Industry;
+              } | null)
+            | ({
+                relationTo: 'projects';
+                value: number | Project;
               } | null);
           url?: string | null;
+          /**
+           * Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.
+           */
+          whatsappMessage?: string | null;
           label: string;
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('primary' | 'glass' | 'outline' | 'link') | null;
         };
         id?: string | null;
       }[]
@@ -542,7 +1437,7 @@ export interface ContentBlock {
  * via the `definition` "MediaBlock".
  */
 export interface MediaBlock {
-  media: string | Media;
+  media: number | Media;
   id?: string | null;
   blockName?: string | null;
   blockType: 'mediaBlock';
@@ -552,29 +1447,27 @@ export interface MediaBlock {
  * via the `definition` "ArchiveBlock".
  */
 export interface ArchiveBlock {
-  introContent?: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+  /**
+   * Small label shown above the heading.
+   */
+  eyebrow?: string | null;
+  /**
+   * Wrap one word in *asterisks* to show it in the elegant italic accent font, e.g. "Crafted *in* the UAE".
+   */
+  heading?: string | null;
+  intro?: string | null;
   populateBy?: ('collection' | 'selection') | null;
   relationTo?: 'posts' | null;
-  categories?: (string | Category)[] | null;
+  categories?: (number | Category)[] | null;
   limit?: number | null;
   selectedDocs?:
     | {
         relationTo: 'posts';
-        value: string | Post;
+        value: number | Post;
       }[]
     | null;
   id?: string | null;
@@ -586,23 +1479,21 @@ export interface ArchiveBlock {
  * via the `definition` "FormBlock".
  */
 export interface FormBlock {
-  form: string | Form;
-  enableIntro?: boolean | null;
-  introContent?: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
+  /**
+   * Page background blends to this colour while this section is on screen.
+   */
+  tone?: ('ink' | 'charcoal' | 'ivory' | 'sand' | 'linen' | 'bronze') | null;
+  /**
+   * Small label shown above the heading.
+   */
+  eyebrow?: string | null;
+  /**
+   * Wrap one word in *asterisks* to show it in the elegant italic accent font, e.g. "Crafted *in* the UAE".
+   */
+  heading?: string | null;
+  intro?: string | null;
+  form: number | Form;
+  showContactPanel?: boolean | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'formBlock';
@@ -612,7 +1503,7 @@ export interface FormBlock {
  * via the `definition` "forms".
  */
 export interface Form {
-  id: string;
+  id: number;
   title: string;
   fields?:
     | (
@@ -625,15 +1516,6 @@ export interface Form {
             id?: string | null;
             blockName?: string | null;
             blockType: 'checkbox';
-          }
-        | {
-            name: string;
-            label?: string | null;
-            width?: number | null;
-            required?: boolean | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'country';
           }
         | {
             name: string;
@@ -696,15 +1578,6 @@ export interface Form {
             name: string;
             label?: string | null;
             width?: number | null;
-            required?: boolean | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'state';
-          }
-        | {
-            name: string;
-            label?: string | null;
-            width?: number | null;
             defaultValue?: string | null;
             required?: boolean | null;
             id?: string | null;
@@ -724,9 +1597,6 @@ export interface Form {
       )[]
     | null;
   submitButtonLabel?: string | null;
-  /**
-   * Choose whether to display an on-page message or redirect to a different page after they submit the form.
-   */
   confirmationType?: ('message' | 'redirect') | null;
   confirmationMessage?: {
     root: {
@@ -746,9 +1616,6 @@ export interface Form {
   redirect?: {
     url: string;
   };
-  /**
-   * Send custom emails when the form submits. Use comma separated lists to send the same email to multiple recipients. To reference a value from this form, wrap that field's name with double curly brackets, i.e. {{firstName}}. You can use a wildcard {{*}} to output all data and {{*:table}} to format it as an HTML table in the email.
-   */
   emails?:
     | {
         emailTo?: string | null;
@@ -757,9 +1624,6 @@ export interface Form {
         replyTo?: string | null;
         emailFrom?: string | null;
         subject: string;
-        /**
-         * Enter the message that should be sent in this email.
-         */
         message?: {
           root: {
             type: string;
@@ -786,9 +1650,9 @@ export interface Form {
  * via the `definition` "redirects".
  */
 export interface Redirect {
-  id: string;
+  id: number;
   /**
-   * You will need to rebuild the website when changing this field.
+   * Old URL path, e.g. /old-page. Visitors and Google are sent to the new page (301).
    */
   from: string;
   to?: {
@@ -796,11 +1660,23 @@ export interface Redirect {
     reference?:
       | ({
           relationTo: 'pages';
-          value: string | Page;
+          value: number | Page;
         } | null)
       | ({
           relationTo: 'posts';
-          value: string | Post;
+          value: number | Post;
+        } | null)
+      | ({
+          relationTo: 'products';
+          value: number | Product;
+        } | null)
+      | ({
+          relationTo: 'industries';
+          value: number | Industry;
+        } | null)
+      | ({
+          relationTo: 'projects';
+          value: number | Project;
         } | null);
     url?: string | null;
   };
@@ -808,12 +1684,14 @@ export interface Redirect {
   createdAt: string;
 }
 /**
+ * Quote requests sent from the website forms.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "form-submissions".
  */
 export interface FormSubmission {
-  id: string;
-  form: string | Form;
+  id: number;
+  form: number | Form;
   submissionData?:
     | {
         field: string;
@@ -825,42 +1703,11 @@ export interface FormSubmission {
   createdAt: string;
 }
 /**
- * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "search".
- */
-export interface Search {
-  id: string;
-  title?: string | null;
-  priority?: number | null;
-  doc: {
-    relationTo: 'posts';
-    value: string | Post;
-  };
-  slug?: string | null;
-  meta?: {
-    title?: string | null;
-    description?: string | null;
-    image?: (string | null) | Media;
-  };
-  categories?:
-    | {
-        relationTo?: string | null;
-        categoryID?: string | null;
-        title?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
-  id: string;
+  id: number;
   key: string;
   data:
     | {
@@ -877,7 +1724,7 @@ export interface PayloadKv {
  * via the `definition` "payload-jobs".
  */
 export interface PayloadJob {
-  id: string;
+  id: number;
   /**
    * Input data provided to the job
    */
@@ -969,52 +1816,68 @@ export interface PayloadJob {
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: string;
+  id: number;
   document?:
     | ({
         relationTo: 'pages';
-        value: string | Page;
+        value: number | Page;
+      } | null)
+    | ({
+        relationTo: 'products';
+        value: number | Product;
+      } | null)
+    | ({
+        relationTo: 'industries';
+        value: number | Industry;
+      } | null)
+    | ({
+        relationTo: 'projects';
+        value: number | Project;
       } | null)
     | ({
         relationTo: 'posts';
-        value: string | Post;
+        value: number | Post;
+      } | null)
+    | ({
+        relationTo: 'faqs';
+        value: number | FAQ;
+      } | null)
+    | ({
+        relationTo: 'testimonials';
+        value: number | Testimonial;
       } | null)
     | ({
         relationTo: 'media';
-        value: string | Media;
+        value: number | Media;
       } | null)
     | ({
         relationTo: 'categories';
-        value: string | Category;
+        value: number | Category;
       } | null)
     | ({
         relationTo: 'users';
-        value: string | User;
+        value: number | User;
       } | null)
     | ({
         relationTo: 'redirects';
-        value: string | Redirect;
+        value: number | Redirect;
       } | null)
     | ({
         relationTo: 'forms';
-        value: string | Form;
+        value: number | Form;
       } | null)
     | ({
         relationTo: 'form-submissions';
-        value: string | FormSubmission;
-      } | null)
-    | ({
-        relationTo: 'search';
-        value: string | Search;
+        value: number | FormSubmission;
       } | null)
     | ({
         relationTo: 'payload-folders';
-        value: string | FolderInterface;
+        value: number | FolderInterface;
       } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -1024,10 +1887,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: string;
+  id: number;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   key?: string | null;
   value?:
@@ -1047,7 +1910,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: string;
+  id: number;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
@@ -1063,7 +1926,10 @@ export interface PagesSelect<T extends boolean = true> {
     | T
     | {
         type?: T;
-        richText?: T;
+        tone?: T;
+        eyebrow?: T;
+        heading?: T;
+        subheading?: T;
         links?:
           | T
           | {
@@ -1074,16 +1940,34 @@ export interface PagesSelect<T extends boolean = true> {
                     newTab?: T;
                     reference?: T;
                     url?: T;
+                    whatsappMessage?: T;
                     label?: T;
                     appearance?: T;
                   };
               id?: T;
             };
+        trustItems?:
+          | T
+          | {
+              text?: T;
+              id?: T;
+            };
         media?: T;
+        fanProducts?: T;
       };
   layout?:
     | T
     | {
+        formatGrid?: T | FormatGridBlockSelect<T>;
+        processStory?: T | ProcessStoryBlockSelect<T>;
+        workGallery?: T | WorkGalleryBlockSelect<T>;
+        industriesCarousel?: T | IndustriesCarouselBlockSelect<T>;
+        capabilities?: T | CapabilitiesBlockSelect<T>;
+        mediaText?: T | MediaTextBlockSelect<T>;
+        statsBand?: T | StatsBandBlockSelect<T>;
+        testimonials?: T | TestimonialsBlockSelect<T>;
+        logos?: T | LogosBlockSelect<T>;
+        faq?: T | FAQBlockSelect<T>;
         cta?: T | CallToActionBlockSelect<T>;
         content?: T | ContentBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
@@ -1106,10 +1990,121 @@ export interface PagesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "CallToActionBlock_select".
+ * via the `definition` "FormatGridBlock_select".
  */
-export interface CallToActionBlockSelect<T extends boolean = true> {
-  richText?: T;
+export interface FormatGridBlockSelect<T extends boolean = true> {
+  tone?: T;
+  eyebrow?: T;
+  heading?: T;
+  intro?: T;
+  products?: T;
+  showWhatsapp?: T;
+  enableLink?: T;
+  link?:
+    | T
+    | {
+        type?: T;
+        newTab?: T;
+        reference?: T;
+        url?: T;
+        whatsappMessage?: T;
+        label?: T;
+        appearance?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ProcessStoryBlock_select".
+ */
+export interface ProcessStoryBlockSelect<T extends boolean = true> {
+  tone?: T;
+  eyebrow?: T;
+  heading?: T;
+  intro?: T;
+  steps?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        image?: T;
+        id?: T;
+      };
+  enableLink?: T;
+  link?:
+    | T
+    | {
+        type?: T;
+        newTab?: T;
+        reference?: T;
+        url?: T;
+        whatsappMessage?: T;
+        label?: T;
+        appearance?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "WorkGalleryBlock_select".
+ */
+export interface WorkGalleryBlockSelect<T extends boolean = true> {
+  tone?: T;
+  eyebrow?: T;
+  heading?: T;
+  intro?: T;
+  projects?: T;
+  layout?: T;
+  limit?: T;
+  enableLink?: T;
+  link?:
+    | T
+    | {
+        type?: T;
+        newTab?: T;
+        reference?: T;
+        url?: T;
+        whatsappMessage?: T;
+        label?: T;
+        appearance?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "IndustriesCarouselBlock_select".
+ */
+export interface IndustriesCarouselBlockSelect<T extends boolean = true> {
+  tone?: T;
+  eyebrow?: T;
+  heading?: T;
+  intro?: T;
+  industries?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CapabilitiesBlock_select".
+ */
+export interface CapabilitiesBlockSelect<T extends boolean = true> {
+  tone?: T;
+  eyebrow?: T;
+  heading?: T;
+  intro?: T;
+  layout?: T;
+  media?: T;
+  items?:
+    | T
+    | {
+        icon?: T;
+        title?: T;
+        text?: T;
+        id?: T;
+      };
   links?:
     | T
     | {
@@ -1120,6 +2115,7 @@ export interface CallToActionBlockSelect<T extends boolean = true> {
               newTab?: T;
               reference?: T;
               url?: T;
+              whatsappMessage?: T;
               label?: T;
               appearance?: T;
             };
@@ -1130,9 +2126,148 @@ export interface CallToActionBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MediaTextBlock_select".
+ */
+export interface MediaTextBlockSelect<T extends boolean = true> {
+  tone?: T;
+  eyebrow?: T;
+  heading?: T;
+  richText?: T;
+  media?: T;
+  imagePosition?: T;
+  pills?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              whatsappMessage?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StatsBandBlock_select".
+ */
+export interface StatsBandBlockSelect<T extends boolean = true> {
+  tone?: T;
+  items?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TestimonialsBlock_select".
+ */
+export interface TestimonialsBlockSelect<T extends boolean = true> {
+  tone?: T;
+  eyebrow?: T;
+  heading?: T;
+  intro?: T;
+  testimonials?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LogosBlock_select".
+ */
+export interface LogosBlockSelect<T extends boolean = true> {
+  tone?: T;
+  heading?: T;
+  logos?:
+    | T
+    | {
+        name?: T;
+        permission?: T;
+        logo?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FAQBlock_select".
+ */
+export interface FAQBlockSelect<T extends boolean = true> {
+  tone?: T;
+  eyebrow?: T;
+  heading?: T;
+  intro?: T;
+  faqs?: T;
+  category?: T;
+  enableLink?: T;
+  link?:
+    | T
+    | {
+        type?: T;
+        newTab?: T;
+        reference?: T;
+        url?: T;
+        whatsappMessage?: T;
+        label?: T;
+        appearance?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CallToActionBlock_select".
+ */
+export interface CallToActionBlockSelect<T extends boolean = true> {
+  tone?: T;
+  eyebrow?: T;
+  heading?: T;
+  text?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              whatsappMessage?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  showContactDetails?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ContentBlock_select".
  */
 export interface ContentBlockSelect<T extends boolean = true> {
+  tone?: T;
   columns?:
     | T
     | {
@@ -1146,6 +2281,7 @@ export interface ContentBlockSelect<T extends boolean = true> {
               newTab?: T;
               reference?: T;
               url?: T;
+              whatsappMessage?: T;
               label?: T;
               appearance?: T;
             };
@@ -1168,7 +2304,10 @@ export interface MediaBlockSelect<T extends boolean = true> {
  * via the `definition` "ArchiveBlock_select".
  */
 export interface ArchiveBlockSelect<T extends boolean = true> {
-  introContent?: T;
+  tone?: T;
+  eyebrow?: T;
+  heading?: T;
+  intro?: T;
   populateBy?: T;
   relationTo?: T;
   categories?: T;
@@ -1182,11 +2321,143 @@ export interface ArchiveBlockSelect<T extends boolean = true> {
  * via the `definition` "FormBlock_select".
  */
 export interface FormBlockSelect<T extends boolean = true> {
+  tone?: T;
+  eyebrow?: T;
+  heading?: T;
+  intro?: T;
   form?: T;
-  enableIntro?: T;
-  introContent?: T;
+  showContactPanel?: T;
   id?: T;
   blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products_select".
+ */
+export interface ProductsSelect<T extends boolean = true> {
+  title?: T;
+  cardTitle?: T;
+  summary?: T;
+  cardImage?: T;
+  heroImage?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        caption?: T;
+        id?: T;
+      };
+  body?: T;
+  specs?:
+    | T
+    | {
+        label?: T;
+        value?: T;
+        id?: T;
+      };
+  useCases?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  whatsappMessage?: T;
+  industries?: T;
+  faqs?: T;
+  relatedProducts?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  order?: T;
+  cardTone?: T;
+  publishedAt?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "industries_select".
+ */
+export interface IndustriesSelect<T extends boolean = true> {
+  title?: T;
+  tag?: T;
+  summary?: T;
+  cardImage?: T;
+  heroImage?: T;
+  needs?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  body?: T;
+  faqs?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  order?: T;
+  cardTone?: T;
+  publishedAt?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  title?: T;
+  summary?: T;
+  coverImage?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        caption?: T;
+        id?: T;
+      };
+  clientName?: T;
+  showClientName?: T;
+  year?: T;
+  specs?:
+    | T
+    | {
+        label?: T;
+        value?: T;
+        id?: T;
+      };
+  body?: T;
+  products?: T;
+  industries?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  featured?: T;
+  publishedAt?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1194,9 +2465,11 @@ export interface FormBlockSelect<T extends boolean = true> {
  */
 export interface PostsSelect<T extends boolean = true> {
   title?: T;
+  excerpt?: T;
   heroImage?: T;
   content?: T;
   relatedPosts?: T;
+  relatedProducts?: T;
   categories?: T;
   meta?:
     | T
@@ -1221,11 +2494,38 @@ export interface PostsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faqs_select".
+ */
+export interface FaqsSelect<T extends boolean = true> {
+  question?: T;
+  answer?: T;
+  category?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials_select".
+ */
+export interface TestimonialsSelect<T extends boolean = true> {
+  quote?: T;
+  name?: T;
+  role?: T;
+  company?: T;
+  photo?: T;
+  verified?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   caption?: T;
+  _objectKey?: T;
   folder?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -1346,6 +2646,7 @@ export interface UsersSelect<T extends boolean = true> {
   resetPasswordExpiration?: T;
   salt?: T;
   hash?: T;
+  resetPasswordRequestedAt?: T;
   loginAttempts?: T;
   lockUntil?: T;
   sessions?:
@@ -1392,16 +2693,6 @@ export interface FormsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
-        country?:
-          | T
-          | {
-              name?: T;
-              label?: T;
-              width?: T;
-              required?: T;
-              id?: T;
-              blockName?: T;
-            };
         email?:
           | T
           | {
@@ -1445,16 +2736,6 @@ export interface FormsSelect<T extends boolean = true> {
                     value?: T;
                     id?: T;
                   };
-              required?: T;
-              id?: T;
-              blockName?: T;
-            };
-        state?:
-          | T
-          | {
-              name?: T;
-              label?: T;
-              width?: T;
               required?: T;
               id?: T;
               blockName?: T;
@@ -1516,33 +2797,6 @@ export interface FormSubmissionsSelect<T extends boolean = true> {
     | {
         field?: T;
         value?: T;
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "search_select".
- */
-export interface SearchSelect<T extends boolean = true> {
-  title?: T;
-  priority?: T;
-  doc?: T;
-  slug?: T;
-  meta?:
-    | T
-    | {
-        title?: T;
-        description?: T;
-        image?: T;
-      };
-  categories?:
-    | T
-    | {
-        relationTo?: T;
-        categoryID?: T;
-        title?: T;
         id?: T;
       };
   updatedAt?: T;
@@ -1632,27 +2886,178 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   createdAt?: T;
 }
 /**
+ * Company details used across the whole website: header, footer, WhatsApp buttons, contact page and Google structured data.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings".
+ */
+export interface SiteSetting {
+  id: number;
+  companyName: string;
+  /**
+   * Used for the logo wordmark and the large footer word.
+   */
+  shortName: string;
+  tagline?: string | null;
+  /**
+   * Light logo for dark backgrounds (SVG or PNG). Optional — the name is shown if empty.
+   */
+  logoOnDark?: (number | null) | Media;
+  /**
+   * Dark logo for light backgrounds.
+   */
+  logoOnLight?: (number | null) | Media;
+  /**
+   * Only fill in if verified. Used in structured data.
+   */
+  foundingYear?: number | null;
+  /**
+   * International format, digits only (e.g. 971501234567).
+   */
+  whatsappNumber: string;
+  /**
+   * How the phone number is shown on the site.
+   */
+  phoneDisplay?: string | null;
+  whatsappDefaultMessage?: string | null;
+  /**
+   * For click-to-call. Digits only.
+   */
+  phoneNumber?: string | null;
+  email?: string | null;
+  address?: {
+    street?: string | null;
+    locality?: string | null;
+    region?: string | null;
+    postalCode?: string | null;
+    countryCode?: string | null;
+    latitude?: number | null;
+    longitude?: number | null;
+    /**
+     * Google Maps link to your business (opens in a new tab).
+     */
+    mapUrl?: string | null;
+  };
+  serviceArea?: string | null;
+  openingHours?:
+    | {
+        days: ('Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday')[];
+        opens?: string | null;
+        closes?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  socials?:
+    | {
+        platform: 'instagram' | 'facebook' | 'linkedin' | 'tiktok' | 'youtube' | 'pinterest' | 'x';
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Appended to page titles, e.g. "Fabric Sample Books | UA Fabric".
+   */
+  titleSuffix?: string | null;
+  defaultDescription?: string | null;
+  defaultOgImage?: (number | null) | Media;
+  /**
+   * Google Tag Manager, e.g. GTM-XXXXXXX
+   */
+  gtmId?: string | null;
+  /**
+   * GA4 measurement ID, e.g. G-XXXXXXX (skip if using GTM)
+   */
+  ga4Id?: string | null;
+  /**
+   * Search Console HTML-tag verification code
+   */
+  googleSiteVerification?: string | null;
+  mobileBarEnabled?: boolean | null;
+  mobileBarLabel?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header".
  */
 export interface Header {
-  id: string;
+  id: number;
   navItems?:
     | {
         link: {
-          type?: ('reference' | 'custom') | null;
+          type?: ('reference' | 'custom' | 'whatsapp') | null;
           newTab?: boolean | null;
           reference?:
             | ({
                 relationTo: 'pages';
-                value: string | Page;
+                value: number | Page;
               } | null)
             | ({
                 relationTo: 'posts';
-                value: string | Post;
+                value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'products';
+                value: number | Product;
+              } | null)
+            | ({
+                relationTo: 'industries';
+                value: number | Industry;
+              } | null)
+            | ({
+                relationTo: 'projects';
+                value: number | Project;
               } | null);
           url?: string | null;
+          /**
+           * Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.
+           */
+          whatsappMessage?: string | null;
           label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Buttons on the right of the menu (e.g. Contact and WhatsApp).
+   */
+  actions?:
+    | {
+        link: {
+          type?: ('reference' | 'custom' | 'whatsapp') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'products';
+                value: number | Product;
+              } | null)
+            | ({
+                relationTo: 'industries';
+                value: number | Industry;
+              } | null)
+            | ({
+                relationTo: 'projects';
+                value: number | Project;
+              } | null);
+          url?: string | null;
+          /**
+           * Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.
+           */
+          whatsappMessage?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('primary' | 'glass' | 'link') | null;
         };
         id?: string | null;
       }[]
@@ -1665,29 +3070,145 @@ export interface Header {
  * via the `definition` "footer".
  */
 export interface Footer {
-  id: string;
-  navItems?:
+  id: number;
+  ctaHeading?: string | null;
+  columns?:
+    | {
+        title: string;
+        links?:
+          | {
+              link: {
+                type?: ('reference' | 'custom' | 'whatsapp') | null;
+                newTab?: boolean | null;
+                reference?:
+                  | ({
+                      relationTo: 'pages';
+                      value: number | Page;
+                    } | null)
+                  | ({
+                      relationTo: 'posts';
+                      value: number | Post;
+                    } | null)
+                  | ({
+                      relationTo: 'products';
+                      value: number | Product;
+                    } | null)
+                  | ({
+                      relationTo: 'industries';
+                      value: number | Industry;
+                    } | null)
+                  | ({
+                      relationTo: 'projects';
+                      value: number | Project;
+                    } | null);
+                url?: string | null;
+                /**
+                 * Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.
+                 */
+                whatsappMessage?: string | null;
+                label: string;
+              };
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  legalLinks?:
     | {
         link: {
-          type?: ('reference' | 'custom') | null;
+          type?: ('reference' | 'custom' | 'whatsapp') | null;
           newTab?: boolean | null;
           reference?:
             | ({
                 relationTo: 'pages';
-                value: string | Page;
+                value: number | Page;
               } | null)
             | ({
                 relationTo: 'posts';
-                value: string | Post;
+                value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'products';
+                value: number | Product;
+              } | null)
+            | ({
+                relationTo: 'industries';
+                value: number | Industry;
+              } | null)
+            | ({
+                relationTo: 'projects';
+                value: number | Project;
               } | null);
           url?: string | null;
+          /**
+           * Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.
+           */
+          whatsappMessage?: string | null;
           label: string;
         };
         id?: string | null;
       }[]
     | null;
+  showWordmark?: boolean | null;
   updatedAt?: string | null;
   createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings_select".
+ */
+export interface SiteSettingsSelect<T extends boolean = true> {
+  companyName?: T;
+  shortName?: T;
+  tagline?: T;
+  logoOnDark?: T;
+  logoOnLight?: T;
+  foundingYear?: T;
+  whatsappNumber?: T;
+  phoneDisplay?: T;
+  whatsappDefaultMessage?: T;
+  phoneNumber?: T;
+  email?: T;
+  address?:
+    | T
+    | {
+        street?: T;
+        locality?: T;
+        region?: T;
+        postalCode?: T;
+        countryCode?: T;
+        latitude?: T;
+        longitude?: T;
+        mapUrl?: T;
+      };
+  serviceArea?: T;
+  openingHours?:
+    | T
+    | {
+        days?: T;
+        opens?: T;
+        closes?: T;
+        id?: T;
+      };
+  socials?:
+    | T
+    | {
+        platform?: T;
+        url?: T;
+        id?: T;
+      };
+  titleSuffix?: T;
+  defaultDescription?: T;
+  defaultOgImage?: T;
+  gtmId?: T;
+  ga4Id?: T;
+  googleSiteVerification?: T;
+  mobileBarEnabled?: T;
+  mobileBarLabel?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1704,7 +3225,24 @@ export interface HeaderSelect<T extends boolean = true> {
               newTab?: T;
               reference?: T;
               url?: T;
+              whatsappMessage?: T;
               label?: T;
+            };
+        id?: T;
+      };
+  actions?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              whatsappMessage?: T;
+              label?: T;
+              appearance?: T;
             };
         id?: T;
       };
@@ -1717,7 +3255,29 @@ export interface HeaderSelect<T extends boolean = true> {
  * via the `definition` "footer_select".
  */
 export interface FooterSelect<T extends boolean = true> {
-  navItems?:
+  ctaHeading?: T;
+  columns?:
+    | T
+    | {
+        title?: T;
+        links?:
+          | T
+          | {
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    reference?: T;
+                    url?: T;
+                    whatsappMessage?: T;
+                    label?: T;
+                  };
+              id?: T;
+            };
+        id?: T;
+      };
+  legalLinks?:
     | T
     | {
         link?:
@@ -1727,10 +3287,12 @@ export interface FooterSelect<T extends boolean = true> {
               newTab?: T;
               reference?: T;
               url?: T;
+              whatsappMessage?: T;
               label?: T;
             };
         id?: T;
       };
+  showWordmark?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -1756,14 +3318,29 @@ export interface TaskSchedulePublish {
     doc?:
       | ({
           relationTo: 'pages';
-          value: string | Page;
+          value: number | Page;
+        } | null)
+      | ({
+          relationTo: 'products';
+          value: number | Product;
+        } | null)
+      | ({
+          relationTo: 'industries';
+          value: number | Industry;
+        } | null)
+      | ({
+          relationTo: 'projects';
+          value: number | Project;
         } | null)
       | ({
           relationTo: 'posts';
-          value: string | Post;
+          value: number | Post;
         } | null);
     global?: string | null;
-    user?: (string | null) | User;
+    user?: {
+      relationTo: 'users';
+      value: number | User;
+    } | null;
   };
   output?: unknown;
 }

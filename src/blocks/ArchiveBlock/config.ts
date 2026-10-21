@@ -1,69 +1,36 @@
 import type { Block } from 'payload'
 
-import {
-  FixedToolbarFeature,
-  HeadingFeature,
-  InlineToolbarFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
+import { sectionIntroFields, sectionToneField } from '@/fields/sectionTone'
 
 export const Archive: Block = {
   slug: 'archive',
   interfaceName: 'ArchiveBlock',
+  labels: { plural: 'Guides lists', singular: 'Guides list' },
   fields: [
-    {
-      name: 'introContent',
-      type: 'richText',
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [
-            ...rootFeatures,
-            HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-            FixedToolbarFeature(),
-            InlineToolbarFeature(),
-          ]
-        },
-      }),
-      label: 'Intro Content',
-    },
+    sectionToneField('ivory'),
+    ...sectionIntroFields(),
     {
       name: 'populateBy',
       type: 'select',
       defaultValue: 'collection',
       options: [
-        {
-          label: 'Collection',
-          value: 'collection',
-        },
-        {
-          label: 'Individual Selection',
-          value: 'selection',
-        },
+        { label: 'Latest guides', value: 'collection' },
+        { label: 'Individual selection', value: 'selection' },
       ],
     },
     {
       name: 'relationTo',
       type: 'select',
-      admin: {
-        condition: (_, siblingData) => siblingData.populateBy === 'collection',
-      },
+      admin: { condition: () => false },
       defaultValue: 'posts',
-      label: 'Collections To Show',
-      options: [
-        {
-          label: 'Posts',
-          value: 'posts',
-        },
-      ],
+      options: [{ label: 'Guides', value: 'posts' }],
     },
     {
       name: 'categories',
       type: 'relationship',
-      admin: {
-        condition: (_, siblingData) => siblingData.populateBy === 'collection',
-      },
+      admin: { condition: (_, siblingData) => siblingData.populateBy === 'collection' },
       hasMany: true,
-      label: 'Categories To Show',
+      label: 'Categories to show',
       relationTo: 'categories',
     },
     {
@@ -73,22 +40,16 @@ export const Archive: Block = {
         condition: (_, siblingData) => siblingData.populateBy === 'collection',
         step: 1,
       },
-      defaultValue: 10,
+      defaultValue: 3,
       label: 'Limit',
     },
     {
       name: 'selectedDocs',
       type: 'relationship',
-      admin: {
-        condition: (_, siblingData) => siblingData.populateBy === 'selection',
-      },
+      admin: { condition: (_, siblingData) => siblingData.populateBy === 'selection' },
       hasMany: true,
       label: 'Selection',
       relationTo: ['posts'],
     },
   ],
-  labels: {
-    plural: 'Archives',
-    singular: 'Archive',
-  },
 }

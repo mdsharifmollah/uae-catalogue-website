@@ -10,58 +10,31 @@ const BeforeDashboard: React.FC = () => {
   return (
     <div className={baseClass}>
       <Banner className={`${baseClass}__banner`} type="success">
-        <h4>Welcome to your dashboard!</h4>
+        <h4>Welcome to your website dashboard</h4>
       </Banner>
-      Here&apos;s what to do next:
       <ul className={`${baseClass}__instructions`}>
         <li>
-          <SeedButton />
-          {' with a few pages, posts, and projects to jump-start your new site, then '}
-          <a href="/" target="_blank">
-            visit your website
-          </a>
-          {' to see the results.'}
+          <strong>Site Settings</strong> — company name, WhatsApp number, phone, email, address and
+          opening hours. Changes appear everywhere on the site.
         </li>
         <li>
-          {'Modify your '}
-          <a
-            href="https://payloadcms.com/docs/configuration/collections"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            collections
-          </a>
-          {' and add more '}
-          <a
-            href="https://payloadcms.com/docs/fields/overview"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            fields
-          </a>
-          {' as needed. If you are new to Payload, we also recommend you check out the '}
-          <a
-            href="https://payloadcms.com/docs/getting-started/what-is-payload"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Getting Started
-          </a>
-          {' docs.'}
+          <strong>Product formats, Industries, Our Work</strong> — add photos and text. Each item
+          gets its own Google-friendly page.
         </li>
         <li>
-          Commit and push your changes to the repository to trigger a redeployment of your project.
+          <strong>Pages</strong> — edit the homepage and other pages. Drag sections to reorder,
+          and use the SEO tab on every page.
+        </li>
+        <li>
+          <strong>Media</strong> — always fill in the alt text describing the photo.
+        </li>
+        <li>
+          <strong>Inquiries</strong> — every quote request sent from the website.
+        </li>
+        <li>
+          First time only: <SeedButton /> to load the starter content and photos.
         </li>
       </ul>
-      {'Pro Tip: This block is a '}
-      <a
-        href="https://payloadcms.com/docs/custom-components/overview"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        custom component
-      </a>
-      , you can remove it at any time by updating your <strong>payload.config</strong>.
     </div>
   )
 }

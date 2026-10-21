@@ -17,6 +17,11 @@ const dirname = path.dirname(filename)
 export const Media: CollectionConfig = {
   slug: 'media',
   folders: true,
+  admin: {
+    group: 'Content',
+    description:
+      'All images. Always write alt text — describe what is in the photo (e.g. "Numbered fabric shade card with 39 linen swatches"). It helps Google Images and accessibility.',
+  },
   access: {
     create: authenticated,
     delete: authenticated,
@@ -27,7 +32,8 @@ export const Media: CollectionConfig = {
     {
       name: 'alt',
       type: 'text',
-      //required: true,
+      required: true,
+      localized: true,
     },
     {
       name: 'caption',

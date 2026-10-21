@@ -1,49 +1,55 @@
 import type { Metadata } from 'next'
 
-import type { Media, Page, Post, Config } from '../payload-types'
+import type { Media, Config } from '../payload-types'
 
 import { mergeOpenGraph } from './mergeOpenGraph'
-import { getServerSideURL } from './getURL'
 
-const getImageURL = (image?: Media | Config['db']['defaultIDType'] | null) => {
-  const serverUrl = getServerSideURL()
-
-  let url = serverUrl + '/website-template-OG.webp'
-
-  if (image && typeof image === 'object' && 'url' in image) {
-    const ogUrl = image.sizes?.og?.url
-
-    url = ogUrl ? serverUrl + ogUrl : serverUrl + image.url
-  }
-
-  return url
+type SeoDoc = {
+  title?: string | null
+  slug?: string | null
+  meta?: {
+    title?: string | null
+    description?: string | null
+    image?: Media | Config['db']['defaultIDType'] | null
+  } | null
 }
 
+const imageFor = (image: Media | Config['db']['defaultIDType'] | null, title: string) => {
+  if (image && typeof image === 'object' && image.url) {
+    return { url: image.sizes?.og?.url || image.url, width: 1200, height: 630, alt: image.alt || title }
+  }
+  return { url: `/og?title=${encodeURIComponent(title)}`, width: 1200, height: 630, alt: title }
+}
+
+/**
+ * Metadata for any CMS document.
+ * - meta.title from the SEO tab is used as-is (it already contains the brand suffix);
+ *   otherwise the document title goes through the layout's "%s | Brand" template.
+ * - Canonical URL is always the clean public path.
+ */
 export const generateMeta = async (args: {
-  doc: Partial<Page> | Partial<Post> | null
+  doc: SeoDoc | null
+  path: string
+  fallbackDescription?: string | null
+  type?: 'website' | 'article'
 }): Promise<Metadata> => {
-  const { doc } = args
+  const { doc, path, fallbackDescription, type = 'website' } = args
 
-  const ogImage = getImageURL(doc?.meta?.image)
-
-  const title = doc?.meta?.title
-    ? doc?.meta?.title + ' | Payload Website Template'
-    : 'Payload Website Template'
+  const plainTitle = (doc?.title || '').replace(/\*/g, '')
+  const title: Metadata['title'] = doc?.meta?.title ? { absolute: doc.meta.title } : plainTitle
+  const description = doc?.meta?.description || fallbackDescription || undefined
+  const ogTitle = doc?.meta?.title || plainTitle
 
   return {
-    description: doc?.meta?.description,
-    openGraph: mergeOpenGraph({
-      description: doc?.meta?.description || '',
-      images: ogImage
-        ? [
-            {
-              url: ogImage,
-            },
-          ]
-        : undefined,
-      title,
-      url: Array.isArray(doc?.slug) ? doc?.slug.join('/') : '/',
-    }),
     title,
+    description,
+    alternates: { canonical: path },
+    openGraph: mergeOpenGraph({
+      type,
+      title: ogTitle,
+      description,
+      url: path,
+      images: [imageFor(doc?.meta?.image ?? null, ogTitle)],
+    }),
   }
 }

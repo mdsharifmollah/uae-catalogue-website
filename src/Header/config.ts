@@ -1,10 +1,11 @@
 import type { GlobalConfig } from 'payload'
 
 import { link } from '@/fields/link'
-import { revalidateHeader } from './hooks/revalidateHeader'
+import { revalidateGlobalChange } from '@/hooks/revalidateSite'
 
 export const Header: GlobalConfig = {
   slug: 'header',
+  admin: { group: 'Settings' },
   access: {
     read: () => true,
   },
@@ -17,7 +18,7 @@ export const Header: GlobalConfig = {
           appearances: false,
         }),
       ],
-      maxRows: 6,
+      maxRows: 7,
       admin: {
         initCollapsed: true,
         components: {
@@ -25,8 +26,18 @@ export const Header: GlobalConfig = {
         },
       },
     },
+    {
+      name: 'actions',
+      type: 'array',
+      maxRows: 2,
+      admin: {
+        description: 'Buttons on the right of the menu (e.g. Contact and WhatsApp).',
+        initCollapsed: true,
+      },
+      fields: [link({ appearances: ['primary', 'glass', 'link'] })],
+    },
   ],
   hooks: {
-    afterChange: [revalidateHeader],
+    afterChange: [revalidateGlobalChange],
   },
 }

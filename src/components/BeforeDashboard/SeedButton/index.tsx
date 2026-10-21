@@ -3,7 +3,6 @@
 import React, { Fragment, useCallback, useState } from 'react'
 import { toast } from '@payloadcms/ui'
 
-import './index.scss'
 
 const SuccessMessage: React.FC = () => (
   <div>

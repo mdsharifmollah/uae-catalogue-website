@@ -3,14 +3,21 @@
 import type { PayloadAdminBarProps, PayloadMeUser } from '@payloadcms/admin-bar'
 
 import { cn } from '@/utilities/ui'
+import dynamic from 'next/dynamic'
 import { useSelectedLayoutSegments } from 'next/navigation'
-import { PayloadAdminBar } from '@payloadcms/admin-bar'
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import './index.scss'
 
 import { getClientSideURL } from '@/utilities/getURL'
+
+// Split into its own chunk, fetched after hydration: visitors who aren't
+// signed in never see it, so it stays off the critical path.
+const PayloadAdminBar = dynamic(
+  () => import('@payloadcms/admin-bar').then((m) => m.PayloadAdminBar),
+  { ssr: false },
+)
 
 const baseClass = 'admin-bar'
 

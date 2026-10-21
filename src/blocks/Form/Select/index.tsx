@@ -1,63 +1,49 @@
 import type { SelectField } from '@payloadcms/plugin-form-builder/types'
-import type { Control, FieldErrorsImpl } from 'react-hook-form'
+import type { FieldErrorsImpl, FieldValues, UseFormRegister } from 'react-hook-form'
 
+import { fieldClass } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import {
-  Select as SelectComponent,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
+import { cn } from '@/utilities/ui'
 import React from 'react'
-import { Controller } from 'react-hook-form'
 
 import { Error } from '../Error'
+import { RequiredMark } from '../RequiredMark'
 import { Width } from '../Width'
 
+/** Native select: accessible, keyboard friendly, and uses the phone's own picker. */
 export const Select: React.FC<
   SelectField & {
-    control: Control
     errors: Partial<FieldErrorsImpl>
+    register: UseFormRegister<FieldValues>
   }
-> = ({ name, control, errors, label, options, required, width, defaultValue }) => {
-  return (
-    <Width width={width}>
-      <Label htmlFor={name}>
-        {label}
-        {required && (
-          <span className="required">
-            * <span className="sr-only">(required)</span>
-          </span>
-        )}
-      </Label>
-      <Controller
-        control={control}
-        defaultValue={defaultValue}
-        name={name}
-        render={({ field: { onChange, value } }) => {
-          const controlledValue = options.find((t) => t.value === value)
-
-          return (
-            <SelectComponent onValueChange={(val) => onChange(val)} value={controlledValue?.value}>
-              <SelectTrigger className="w-full" id={name}>
-                <SelectValue placeholder={label} />
-              </SelectTrigger>
-              <SelectContent>
-                {options.map(({ label, value }) => {
-                  return (
-                    <SelectItem key={value} value={value}>
-                      {label}
-                    </SelectItem>
-                  )
-                })}
-              </SelectContent>
-            </SelectComponent>
-          )
-        }}
-        rules={{ required }}
-      />
-      {errors[name] && <Error name={name} />}
-    </Width>
-  )
-}
+> = ({ name, errors, label, options, required, width, defaultValue, register }) => (
+  <Width width={width}>
+    <Label htmlFor={name}>
+      {label}
+      <RequiredMark required={required} />
+    </Label>
+    <div className="relative">
+      <select
+        id={name}
+        defaultValue={defaultValue || ''}
+        className={cn(fieldClass, 'h-14 appearance-none pr-12')}
+        aria-invalid={Boolean(errors[name])}
+        aria-describedby={errors[name] ? `${name}-error` : undefined}
+        {...register(name, { required })}
+      >
+        <option value="" disabled>
+          Choose…
+        </option>
+        {options.map(({ label: optionLabel, value }) => (
+          <option key={value} value={value}>
+            {optionLabel}
+          </option>
+        ))}
+      </select>
+      <svg aria-hidden="true" className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="m6 9 6 6 6-6" />
+      </svg>
+    </div>
+    {errors[name] && <Error name={name} />}
+  </Width>
+)

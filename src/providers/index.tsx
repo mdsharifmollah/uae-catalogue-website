@@ -1,14 +1,10 @@
 import React from 'react'
 
-import { HeaderThemeProvider } from './HeaderTheme'
-import { ThemeProvider } from './Theme'
+import { type PublicSettings, SiteSettingsProvider } from './SiteSettings'
 
 export const Providers: React.FC<{
   children: React.ReactNode
-}> = ({ children }) => {
-  return (
-    <ThemeProvider>
-      <HeaderThemeProvider>{children}</HeaderThemeProvider>
-    </ThemeProvider>
-  )
+  settings: PublicSettings
+}> = ({ children, settings }) => {
+  return <SiteSettingsProvider value={settings}>{children}</SiteSettingsProvider>
 }

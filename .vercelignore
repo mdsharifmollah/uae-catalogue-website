@@ -1,0 +1,14 @@
+node_modules
+.next
+.git
+.claude
+.agents
+.vscode
+public/media
+tests
+test-results
+playwright-report
+*.log
+.env
+.env.*
+!.env.example

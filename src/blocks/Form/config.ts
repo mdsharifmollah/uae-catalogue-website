@@ -1,51 +1,21 @@
 import type { Block } from 'payload'
 
-import {
-  FixedToolbarFeature,
-  HeadingFeature,
-  InlineToolbarFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
+import { sectionIntroFields, sectionToneField } from '@/fields/sectionTone'
 
 export const FormBlock: Block = {
   slug: 'formBlock',
   interfaceName: 'FormBlock',
+  graphQL: { singularName: 'FormBlock' },
+  labels: { plural: 'Quote forms', singular: 'Quote form' },
   fields: [
+    sectionToneField('sand'),
+    ...sectionIntroFields(),
+    { name: 'form', type: 'relationship', relationTo: 'forms', required: true },
     {
-      name: 'form',
-      type: 'relationship',
-      relationTo: 'forms',
-      required: true,
-    },
-    {
-      name: 'enableIntro',
+      name: 'showContactPanel',
       type: 'checkbox',
-      label: 'Enable Intro Content',
-    },
-    {
-      name: 'introContent',
-      type: 'richText',
-      admin: {
-        condition: (_, { enableIntro }) => Boolean(enableIntro),
-      },
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [
-            ...rootFeatures,
-            HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-            FixedToolbarFeature(),
-            InlineToolbarFeature(),
-          ]
-        },
-      }),
-      label: 'Intro Content',
+      defaultValue: true,
+      label: 'Show WhatsApp / phone / email panel beside the form',
     },
   ],
-  graphQL: {
-    singularName: 'FormBlock',
-  },
-  labels: {
-    plural: 'Form Blocks',
-    singular: 'Form Block',
-  },
 }

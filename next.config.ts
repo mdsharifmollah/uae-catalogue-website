@@ -23,8 +23,10 @@ const nextConfig: NextConfig = {
         pathname: '/api/media/file/**',
       },
     ],
-    qualities: [100],
+    qualities: [70, 80, 90],
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
+      { protocol: 'https', hostname: '*.public.blob.vercel-storage.com' },
       ...[NEXT_PUBLIC_SERVER_URL /* 'https://example.com' */].map((item) => {
         const url = new URL(item)
 
@@ -45,6 +47,11 @@ const nextConfig: NextConfig = {
     return webpackConfig
   },
   reactStrictMode: true,
+  // Until the client's real content and domain go live, keep every page out of search results.
+  async headers() {
+    if (process.env.SITE_INDEXABLE === 'true') return []
+    return [{ source: '/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] }]
+  },
   redirects,
   turbopack: {
     root: path.resolve(dirname),

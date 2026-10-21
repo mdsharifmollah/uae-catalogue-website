@@ -1,163 +1,90 @@
-'use client'
-import type { FormFieldBlock, Form as FormType } from '@payloadcms/plugin-form-builder/types'
+import type { Form as FormType } from '@payloadcms/plugin-form-builder/types'
+import React from 'react'
 
-import { useRouter } from 'next/navigation'
-import React, { useCallback, useState } from 'react'
-import { useForm, FormProvider } from 'react-hook-form'
-import RichText from '@/components/RichText'
-import { Button } from '@/components/ui/button'
-import type { DefaultTypedEditorState } from '@payloadcms/richtext-lexical'
+import type { FormBlock as FormBlockProps } from '@/payload-types'
 
-import { fields } from './fields'
-import { getClientSideURL } from '@/utilities/getURL'
+import { ClockIcon, MailIcon, PhoneIcon, PinIcon, WhatsAppIcon } from '@/components/site/icons'
+import { Section, type Tone } from '@/components/site/Section'
+import { SectionIntro } from '@/components/site/SectionIntro'
+import { WhatsAppAnchor } from '@/components/site/WhatsAppAnchor'
+import { getSiteSettings } from '@/utilities/getSiteSettings'
+import { telHref } from '@/utilities/whatsapp'
+import { QuoteForm } from './LazyQuoteForm'
 
-export type FormBlockType = {
-  blockName?: string
-  blockType?: 'formBlock'
-  enableIntro: boolean
-  form: FormType
-  introContent?: DefaultTypedEditorState
-}
-
-export const FormBlock: React.FC<
-  {
-    id?: string
-  } & FormBlockType
-> = (props) => {
-  const {
-    enableIntro,
-    form: formFromProps,
-    form: { id: formID, confirmationMessage, confirmationType, redirect, submitButtonLabel } = {},
-    introContent,
-  } = props
-
-  const formMethods = useForm({
-    defaultValues: formFromProps.fields,
-  })
-  const {
-    control,
-    formState: { errors },
-    handleSubmit,
-    register,
-  } = formMethods
-
-  const [isLoading, setIsLoading] = useState(false)
-  const [hasSubmitted, setHasSubmitted] = useState<boolean>()
-  const [error, setError] = useState<{ message: string; status?: string } | undefined>()
-  const router = useRouter()
-
-  const onSubmit = useCallback(
-    (data: FormFieldBlock[]) => {
-      let loadingTimerID: ReturnType<typeof setTimeout>
-      const submitForm = async () => {
-        setError(undefined)
-
-        const dataToSend = Object.entries(data).map(([name, value]) => ({
-          field: name,
-          value,
-        }))
-
-        // delay loading indicator by 1s
-        loadingTimerID = setTimeout(() => {
-          setIsLoading(true)
-        }, 1000)
-
-        try {
-          const req = await fetch(`${getClientSideURL()}/api/form-submissions`, {
-            body: JSON.stringify({
-              form: formID,
-              submissionData: dataToSend,
-            }),
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            method: 'POST',
-          })
-
-          const res = await req.json()
-
-          clearTimeout(loadingTimerID)
-
-          if (req.status >= 400) {
-            setIsLoading(false)
-
-            setError({
-              message: res.errors?.[0]?.message || 'Internal Server Error',
-              status: res.status,
-            })
-
-            return
-          }
-
-          setIsLoading(false)
-          setHasSubmitted(true)
-
-          if (confirmationType === 'redirect' && redirect) {
-            const { url } = redirect
-
-            const redirectUrl = url
-
-            if (redirectUrl) router.push(redirectUrl)
-          }
-        } catch (err) {
-          console.warn(err)
-          setIsLoading(false)
-          setError({
-            message: 'Something went wrong.',
-          })
-        }
-      }
-
-      void submitForm()
-    },
-    [router, formID, redirect, confirmationType],
-  )
+export const FormBlock: React.FC<FormBlockProps & { id?: string | null }> = async ({
+  id,
+  tone,
+  eyebrow,
+  heading,
+  intro,
+  form,
+  showContactPanel,
+}) => {
+  if (!form || typeof form !== 'object') return null
+  const settings = showContactPanel !== false ? await getSiteSettings() : null
+  const a = settings?.address
 
   return (
-    <div className="container lg:max-w-[48rem]">
-      {enableIntro && introContent && !hasSubmitted && (
-        <RichText className="mb-8 lg:mb-12" data={introContent} enableGutter={false} />
-      )}
-      <div className="p-4 lg:p-6 border border-border rounded-[0.8rem]">
-        <FormProvider {...formMethods}>
-          {!isLoading && hasSubmitted && confirmationType === 'message' && (
-            <RichText data={confirmationMessage} />
+    <Section tone={(tone as Tone) || 'sand'} id={id ? `block-${id}` : 'quote'}>
+      <div className="shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        <div className="flex flex-col gap-10">
+          <SectionIntro eyebrow={eyebrow} heading={heading} intro={intro} />
+          {settings && (
+            <div className="glass flex flex-col gap-2 rounded-[var(--radius-panel)] p-4 md:p-6">
+              <WhatsAppAnchor className="group flex min-h-16 items-center gap-4 rounded-2xl p-3 transition-colors hover:bg-white/10">
+                <span className="grid size-12 place-items-center rounded-full bg-[#25d366] text-white">
+                  <WhatsAppIcon />
+                </span>
+                <span>
+                  <span className="block text-[1rem] text-muted">Fastest reply</span>
+                  <span className="block font-semibold">Chat on WhatsApp</span>
+                </span>
+              </WhatsAppAnchor>
+              {settings.phoneNumber && (
+                <a href={telHref(settings.phoneNumber)} data-track="phone_click" className="flex min-h-16 items-center gap-4 rounded-2xl p-3 transition-colors hover:bg-white/10">
+                  <span className="grid size-12 place-items-center rounded-full border"><PhoneIcon /></span>
+                  <span>
+                    <span className="block text-[1rem] text-muted">Call</span>
+                    <span className="block font-semibold">{settings.phoneDisplay || `+${settings.phoneNumber}`}</span>
+                  </span>
+                </a>
+              )}
+              {settings.email && (
+                <a href={`mailto:${settings.email}`} data-track="email_click" className="flex min-h-16 items-center gap-4 rounded-2xl p-3 transition-colors hover:bg-white/10">
+                  <span className="grid size-12 place-items-center rounded-full border"><MailIcon /></span>
+                  <span>
+                    <span className="block text-[1rem] text-muted">Email</span>
+                    <span className="block font-semibold break-all">{settings.email}</span>
+                  </span>
+                </a>
+              )}
+              {(a?.street || a?.locality) && (
+                <div className="flex min-h-16 items-center gap-4 rounded-2xl p-3">
+                  <span className="grid size-12 shrink-0 place-items-center rounded-full border"><PinIcon /></span>
+                  <span>
+                    <span className="block text-[1rem] text-muted">Location</span>
+                    <span className="block font-semibold">{[a?.street, a?.locality, 'UAE'].filter(Boolean).join(', ')}</span>
+                  </span>
+                </div>
+              )}
+              {settings.openingHours?.[0] && (
+                <div className="flex min-h-16 items-center gap-4 rounded-2xl p-3">
+                  <span className="grid size-12 shrink-0 place-items-center rounded-full border"><ClockIcon /></span>
+                  <span>
+                    <span className="block text-[1rem] text-muted">Hours</span>
+                    <span className="block font-semibold">
+                      {settings.openingHours.map((h) => `${(h.days || []).map((d) => d.slice(0, 3)).join(', ')} ${h.opens}–${h.closes}`).join(' · ')}
+                    </span>
+                  </span>
+                </div>
+              )}
+            </div>
           )}
-          {isLoading && !hasSubmitted && <p>Loading, please wait...</p>}
-          {error && <div>{`${error.status || '500'}: ${error.message || ''}`}</div>}
-          {!hasSubmitted && (
-            <form id={formID} onSubmit={handleSubmit(onSubmit)}>
-              <div className="mb-4 last:mb-0">
-                {formFromProps &&
-                  formFromProps.fields &&
-                  formFromProps.fields?.map((field, index) => {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    const Field: React.FC<any> = fields?.[field.blockType as keyof typeof fields]
-                    if (Field) {
-                      return (
-                        <div className="mb-6 last:mb-0" key={index}>
-                          <Field
-                            form={formFromProps}
-                            {...field}
-                            {...formMethods}
-                            control={control}
-                            errors={errors}
-                            register={register}
-                          />
-                        </div>
-                      )
-                    }
-                    return null
-                  })}
-              </div>
-
-              <Button form={formID} type="submit" variant="default">
-                {submitButtonLabel}
-              </Button>
-            </form>
-          )}
-        </FormProvider>
+        </div>
+        <div data-reveal className="glass rounded-[var(--radius-panel)] p-6 md:p-10">
+          <QuoteForm form={form as unknown as FormType} />
+        </div>
       </div>
-    </div>
+    </Section>
   )
 }

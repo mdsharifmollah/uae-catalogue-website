@@ -2,18 +2,28 @@ import type { Field, GroupField } from 'payload'
 
 import deepMerge from '@/utilities/deepMerge'
 
-export type LinkAppearances = 'default' | 'outline'
+export type LinkAppearances = 'primary' | 'glass' | 'outline' | 'link'
 
 export const appearanceOptions: Record<LinkAppearances, { label: string; value: string }> = {
-  default: {
-    label: 'Default',
-    value: 'default',
+  primary: {
+    label: 'Primary button (bronze glow)',
+    value: 'primary',
+  },
+  glass: {
+    label: 'Glass button',
+    value: 'glass',
   },
   outline: {
-    label: 'Outline',
+    label: 'Outline button',
     value: 'outline',
   },
+  link: {
+    label: 'Text link',
+    value: 'link',
+  },
 }
+
+export const linkableCollections = ['pages', 'posts', 'products', 'industries', 'projects'] as const
 
 type LinkType = (options?: {
   appearances?: LinkAppearances[] | false
@@ -49,12 +59,17 @@ export const link: LinkType = ({ appearances, disableLabel = false, overrides = 
                 label: 'Custom URL',
                 value: 'custom',
               },
+              {
+                label: 'WhatsApp chat',
+                value: 'whatsapp',
+              },
             ],
           },
           {
             name: 'newTab',
             type: 'checkbox',
             admin: {
+              condition: (_, siblingData) => siblingData?.type !== 'whatsapp',
               style: {
                 alignSelf: 'flex-end',
               },
@@ -75,7 +90,7 @@ export const link: LinkType = ({ appearances, disableLabel = false, overrides = 
         condition: (_, siblingData) => siblingData?.type === 'reference',
       },
       label: 'Document to link to',
-      relationTo: ['pages', 'posts'],
+      relationTo: [...linkableCollections],
       required: true,
     },
     {
@@ -87,24 +102,34 @@ export const link: LinkType = ({ appearances, disableLabel = false, overrides = 
       label: 'Custom URL',
       required: true,
     },
+    {
+      name: 'whatsappMessage',
+      type: 'text',
+      localized: true,
+      admin: {
+        condition: (_, siblingData) => siblingData?.type === 'whatsapp',
+        description:
+          'Pre-filled message. Leave empty to use the default message from Site Settings. The WhatsApp number itself is set once in Site Settings.',
+      },
+      label: 'WhatsApp message',
+    },
   ]
 
   if (!disableLabel) {
-    linkTypes.map((linkType) => ({
-      ...linkType,
-      admin: {
-        ...linkType.admin,
-        width: '50%',
-      },
-    }))
-
     linkResult.fields.push({
       type: 'row',
       fields: [
-        ...linkTypes,
+        ...linkTypes.map((linkType) => ({
+          ...linkType,
+          admin: {
+            ...linkType.admin,
+            width: '50%',
+          },
+        })) as Field[],
         {
           name: 'label',
           type: 'text',
+          localized: true,
           admin: {
             width: '50%',
           },
@@ -118,7 +143,12 @@ export const link: LinkType = ({ appearances, disableLabel = false, overrides = 
   }
 
   if (appearances !== false) {
-    let appearanceOptionsToUse = [appearanceOptions.default, appearanceOptions.outline]
+    let appearanceOptionsToUse = [
+      appearanceOptions.primary,
+      appearanceOptions.glass,
+      appearanceOptions.outline,
+      appearanceOptions.link,
+    ]
 
     if (appearances) {
       appearanceOptionsToUse = appearances.map((appearance) => appearanceOptions[appearance])
@@ -130,7 +160,7 @@ export const link: LinkType = ({ appearances, disableLabel = false, overrides = 
       admin: {
         description: 'Choose how the link should be rendered.',
       },
-      defaultValue: 'default',
+      defaultValue: appearanceOptionsToUse[0]?.value,
       options: appearanceOptionsToUse,
     })
   }

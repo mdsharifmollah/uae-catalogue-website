@@ -1,45 +1,38 @@
 import type React from 'react'
-import type { Page, Post } from '@/payload-types'
 
-import { getCachedDocument } from '@/utilities/getDocument'
-import { getCachedRedirects } from '@/utilities/getRedirects'
+import configPromise from '@payload-config'
 import { notFound, redirect } from 'next/navigation'
+import { getPayload } from 'payload'
+
+import { getCachedRedirects } from '@/utilities/getRedirects'
+import { docPath, type RoutableCollection } from '@/utilities/routes'
 
 interface Props {
   disableNotFound?: boolean
   url: string
 }
 
-/* This component helps us with SSR based dynamic redirects */
+/* SSR-based dynamic redirects managed in Settings → Redirects (301). */
 export const PayloadRedirects: React.FC<Props> = async ({ disableNotFound, url }) => {
   const redirects = await getCachedRedirects()()
-
-  const redirectItem = redirects.find((redirect) => redirect.from === url)
+  const redirectItem = redirects.find((r) => r.from === url || r.from === `${url}/`)
 
   if (redirectItem) {
-    if (redirectItem.to?.url) {
-      redirect(redirectItem.to.url)
+    if (redirectItem.to?.url) redirect(redirectItem.to.url)
+
+    const ref = redirectItem.to?.reference
+    if (ref) {
+      const collection = ref.relationTo as RoutableCollection
+      let slug: string | null | undefined
+      if (typeof ref.value === 'object') {
+        slug = (ref.value as { slug?: string | null })?.slug
+      } else {
+        const payload = await getPayload({ config: configPromise })
+        const doc = await payload.findByID({ collection, id: ref.value, depth: 0, disableErrors: true })
+        slug = (doc as { slug?: string | null } | null)?.slug
+      }
+      if (slug) redirect(docPath(collection, slug))
     }
-
-    let redirectUrl: string
-
-    if (typeof redirectItem.to?.reference?.value === 'string') {
-      const collection = redirectItem.to?.reference?.relationTo
-      const id = redirectItem.to?.reference?.value
-
-      const document = (await getCachedDocument(collection, id)()) as Page | Post
-      redirectUrl = `${redirectItem.to?.reference?.relationTo !== 'pages' ? `/${redirectItem.to?.reference?.relationTo}` : ''}/${
-        document?.slug
-      }`
-    } else {
-      redirectUrl = `${redirectItem.to?.reference?.relationTo !== 'pages' ? `/${redirectItem.to?.reference?.relationTo}` : ''}/${
-        typeof redirectItem.to?.reference?.value === 'object'
-          ? redirectItem.to?.reference?.value?.slug
-          : ''
-      }`
-    }
-
-    if (redirectUrl) redirect(redirectUrl)
   }
 
   if (disableNotFound) return null
