@@ -47,17 +47,20 @@ export const seed = async ({
   /* ---------------------------------------------------------------- Media */
   payload.logger.info('— Photos and 3D icons...')
   const media: Record<string, number> = {}
-  const existing = await payload.find({ collection: 'media', depth: 0, limit: 1000, pagination: false, locale: 'en' })
+  const existing = await payload.find({ collection: 'media', depth: 0, limit: 1000, pagination: false, locale: 'en', req })
   const byFilename = new Map(existing.docs.map((d) => [d.filename, d.id]))
-  // No shared `req` for media: cloud-storage plugins flag `req.context.skipCloudStorage`
-  // after an upload, which would silently skip every following file.
   const upload = async (file: string, alt: string, dir = ASSETS) => {
     const found = byFilename.get(file)
     if (found) {
-      await payload.update({ collection: 'media', id: found, data: { alt }, locale: 'en', depth: 0, context: { ...ctx } })
+      // Inside the shared transaction: outside it, this write would wait on the
+      // migration's own locks and never finish.
+      await payload.update({ collection: 'media', id: found, data: { alt }, locale: 'en', depth: 0, req, context: ctx })
       media[file] = found
       return
     }
+    // New files go without the shared `req`: cloud-storage plugins flag
+    // `req.context.skipCloudStorage` after an upload, which would silently skip
+    // every following file.
     const data = await fs.readFile(path.join(dir, file))
     const created = await payload.create({
       collection: 'media',

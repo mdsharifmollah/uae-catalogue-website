@@ -59,19 +59,14 @@ const applyCollection = async (payload: Payload, req: PayloadRequest, entry: Ent
     locale: 'en',
     depth: 0,
     limit: 1,
-    // Media are written without the shared request (see the seed), so read them the same way.
-    ...(slug === ('media' as string) ? {} : { req }),
+    req,
   })
   const doc = found.docs[0] as unknown as Doc | undefined
   if (!doc) return
   const data = arabicData(doc, entry.strings, config.flattenedFields)
   if (!Object.keys(data).length) return
   if (config.versions?.drafts) data._status = 'published'
-  if (slug === ('media' as string)) {
-    await payload.update({ collection: slug, id: doc.id as number, locale: 'ar', depth: 0, data, context })
-  } else {
-    await payload.update({ collection: slug, id: doc.id as number, locale: 'ar', depth: 0, data, req, context })
-  }
+  await payload.update({ collection: slug, id: doc.id as number, locale: 'ar', depth: 0, data, req, context })
 }
 
 const applyGlobal = async (payload: Payload, req: PayloadRequest, entry: Entry) => {
