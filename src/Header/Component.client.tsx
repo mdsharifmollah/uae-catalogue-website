@@ -7,7 +7,7 @@ import type { Header, Media as MediaType } from '@/payload-types'
 
 import { CMSLink, resolveHref } from '@/components/Link'
 import { CloseIcon, MenuIcon, PhoneIcon, WhatsAppIcon } from '@/components/site/icons'
-import { LanguageSwitch } from '@/components/site/LanguageSwitch'
+import { LanguageSwitch, LanguageToggle } from '@/components/site/LanguageSwitch'
 import { Wordmark } from '@/components/site/Wordmark'
 import { WhatsAppAnchor } from '@/components/site/WhatsAppAnchor'
 import { useSiteSettings } from '@/providers/SiteSettings'
@@ -148,7 +148,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
                         {...link}
                         appearance="inline"
                         className={cn(
-                          'flex min-h-11 items-center whitespace-nowrap rounded-full px-5 text-[1.125rem] font-medium transition-colors duration-300',
+                          'flex min-h-11 items-center whitespace-nowrap rounded-full px-3.5 text-[1.0625rem] font-medium transition-colors duration-300 2xl:px-5 2xl:text-[1.125rem]',
                           active
                             ? 'bg-[color:var(--page-fg)] text-[color:var(--page-bg)]'
                             : 'hover:bg-white/10 opacity-85 hover:opacity-100',
@@ -162,30 +162,22 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
             </nav>
 
             <div className="flex items-center gap-2">
+              {/* Language swap sits in the top bar on every screen size; the phone dock has no room for it. */}
+              <LanguageToggle className={cn(docked && quoteLabel && 'max-md:hidden')} />
               <div className="hidden items-center gap-2 md:flex">
-                <LanguageSwitch className="btn btn-glass btn-sm" />
                 {actions.map(({ link }, i) => (
                   <CMSLink key={i} {...link} size="sm" icon={false} />
                 ))}
               </div>
-              {docked && quoteLabel ? (
-                phoneNumber && (
-                  <a
-                    href={telHref(phoneNumber)}
-                    className="btn btn-glass btn-sm !px-0 w-[3.25rem] md:hidden"
-                    aria-label={t.a11y.callUs}
-                    data-track="phone_click"
-                  >
-                    <PhoneIcon />
-                  </a>
-                )
-              ) : (
-                <WhatsAppAnchor
-                  className="btn btn-primary btn-sm !px-0 w-[3.25rem] md:hidden"
-                  aria-label={t.a11y.chatWhatsApp}
+              {docked && quoteLabel && phoneNumber && (
+                <a
+                  href={telHref(phoneNumber)}
+                  className="btn btn-glass btn-sm !px-0 w-[3.25rem] md:hidden"
+                  aria-label={t.a11y.callUs}
+                  data-track="phone_click"
                 >
-                  <WhatsAppIcon />
-                </WhatsAppAnchor>
+                  <PhoneIcon />
+                </a>
               )}
               <button
                 ref={toggleRef}

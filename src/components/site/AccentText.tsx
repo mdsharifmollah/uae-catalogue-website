@@ -2,7 +2,7 @@ import React from 'react'
 
 /**
  * Renders editor text where words wrapped in *asterisks* become the italic
- * serif accent. "Fabric Sample Books, *Crafted* in the UAE"
+ * serif accent. "From Fabric Rolls to *Premium* Sample Collections"
  */
 export const AccentText: React.FC<{ text?: string | null }> = ({ text }) => {
   if (!text) return null

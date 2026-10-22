@@ -1,6 +1,21 @@
 import { MigrateUpArgs, MigrateDownArgs } from '@payloadcms/db-postgres'
 
-import { homeHero, otherCataloguesFaq, privacyPolicy } from '../endpoints/seed/content'
+import { privacyPolicy } from '../endpoints/seed/content'
+
+// Copy as it was when this migration was written (the seed has moved on since;
+// migration 20261022_150000_business_content replaces it on every site).
+const homeHero = {
+  eyebrow: 'Catalogue Manufacturer · Sharjah, UAE',
+  subheading:
+    'Fabric sample books, waterfall hangers, shade cards, presentation boxes and catalogues of every kind — made for textile, upholstery, curtain and interior brands.',
+}
+
+const otherCataloguesFaq = {
+  category: 'general' as const,
+  question: 'Do you make other kinds of catalogues, not only fabric?',
+  answer:
+    'Yes. Besides fabric, we make sample books and catalogues for wallpaper, carpets and rugs, blinds and other materials. Send us your samples and how you plan to present them, and we will suggest a suitable format.',
+}
 
 // Skip the site-wide revalidation hooks; they need a Next.js request and the
 // deploy rebuilds every page anyway.

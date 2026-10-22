@@ -251,7 +251,7 @@ export const SiteSettings: GlobalConfig = {
               name: 'titleSuffix',
               type: 'text',
               defaultValue: 'Al Hejlah',
-              admin: { description: 'Appended to page titles, e.g. "Fabric Sample Books | Al Hejlah".' },
+              admin: { description: 'Appended to page titles, e.g. "Fabric Sample Hangers | Al Hejlah".' },
             },
             {
               name: 'defaultDescription',

@@ -10,7 +10,7 @@ const MARK = `data:image/svg+xml;base64,${Buffer.from(
 /** Branded fallback social image: /og?title=Fabric%20Sample%20Books */
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url)
-  const title = (searchParams.get('title') || 'Fabric Sample Books & Catalogues').slice(0, 110)
+  const title = (searchParams.get('title') || 'Fabric Swatches, Sample Hangers & Swatch Books').slice(0, 110)
 
   return new ImageResponse(
     (
@@ -30,7 +30,7 @@ export async function GET(req: Request) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 18, fontSize: 30, letterSpacing: 6, color: '#c9a66b' }}>
           {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
           <img src={MARK} width={64} height={64} />
-          AL HEJLAH · CATALOGUE MANUFACTURER · UAE
+          AL HEJLAH · UPHOLSTERY FABRIC SAMPLING · UAE
         </div>
         <div style={{ display: 'flex', fontSize: 76, fontWeight: 700, lineHeight: 1.05, letterSpacing: -2, maxWidth: 980 }}>
           {title}

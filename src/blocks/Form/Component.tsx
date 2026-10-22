@@ -13,7 +13,6 @@ import { QuoteForm } from './LazyQuoteForm'
 import { getDictionary } from '@/i18n/server'
 
 export const FormBlock: React.FC<FormBlockProps & { id?: string | null }> = async ({
-  id,
   tone,
   eyebrow,
   heading,
@@ -26,7 +25,8 @@ export const FormBlock: React.FC<FormBlockProps & { id?: string | null }> = asyn
   const a = settings?.address
 
   return (
-    <Section tone={(tone as Tone) || 'sand'} id={id ? `block-${id}` : 'quote'}>
+    // One quote form per page: "Request a quote" buttons link to #quote.
+    <Section tone={(tone as Tone) || 'sand'} id="quote" className="scroll-mt-6">
       <div className="shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
         <div className="flex flex-col gap-10">
           <SectionIntro eyebrow={eyebrow} heading={heading} intro={intro} />

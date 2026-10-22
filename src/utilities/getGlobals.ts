@@ -21,6 +21,10 @@ async function getGlobal<T extends Global>(slug: T, depth: number, locale: Local
   return global
 }
 
+// The data cache outlives deployments, while migrations change globals during
+// the build without revalidating them — so each deployment keys its own entries.
+const DEPLOYMENT = process.env.VERCEL_DEPLOYMENT_ID || process.env.VERCEL_GIT_COMMIT_SHA || 'local'
+
 /**
  * Returns a function that loads the global in the current locale, cached
  * (unstable_cache) under the tag `global_${slug}` for every locale.
@@ -29,7 +33,7 @@ export const getCachedGlobal =
   <T extends Global>(slug: T, depth = 0) =>
   async (): Promise<DataFromGlobalSlug<T>> => {
     const locale = await getLocale()
-    return unstable_cache(async () => getGlobal<T>(slug, depth, locale), [slug, String(depth), locale], {
+    return unstable_cache(async () => getGlobal<T>(slug, depth, locale), [slug, String(depth), locale, DEPLOYMENT], {
       tags: [`global_${slug}`],
     })()
   }

@@ -774,33 +774,6 @@ html.motion-ok [data-reveal][data-revealed] {
   }
 }
 
-@keyframes fan-in {
-  from {
-    transform: translateY(45%);
-    opacity: 0;
-  }
-  to {
-    transform: none;
-    opacity: 1;
-  }
-}
-.fan-card {
-  animation: fan-in 1.3s var(--ease-out-expo) backwards;
-  animation-delay: calc(var(--i, 0) * 90ms + 250ms);
-  transition:
-    transform 0.6s var(--ease-out-expo),
-    box-shadow 0.6s var(--ease-out-expo);
-}
-.fan-card:hover,
-.fan-card:focus-visible {
-  transform: translateY(-18px) scale(1.02);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.4),
-    0 0 0 1px rgba(227, 199, 146, 0.5),
-    0 40px 80px -30px rgba(0, 0, 0, 0.7),
-    0 0 80px -20px rgba(201, 166, 107, 0.55);
-}
-
 .hero-tag {
   display: inline-flex;
   align-items: center;
@@ -826,6 +799,75 @@ html.motion-ok [data-reveal][data-revealed] {
   border-bottom: 16px solid var(--tag);
   transform: rotate(-40deg);
 }
+/* Home hero photo showcase (HeroShowcase.tsx) */
+.hero-showcase {
+  --px: 0;
+  --py: 0;
+  perspective: 1400px;
+}
+.showcase-frame {
+  transform: rotateY(calc(var(--px) * 3deg)) rotateX(calc(var(--py) * -3deg));
+  transition: transform 0.6s var(--ease-out-expo);
+}
+.showcase-tag {
+  transform: translate(calc(var(--px) * -16px), calc(var(--py) * -12px));
+  transition: transform 0.6s var(--ease-out-expo);
+}
+.showcase-slide {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+.showcase-slide.is-active {
+  opacity: 1;
+}
+/* Reset the zoom only once a photo has faded out. */
+.showcase-slide img {
+  transform: scale(1.02);
+  transition: transform 0s linear 0.9s;
+}
+.hero-showcase.is-ready .showcase-slide.is-active img {
+  transform: scale(1.12);
+  transition: transform 7.5s cubic-bezier(0.25, 0.6, 0.3, 1);
+}
+.showcase-caption {
+  animation: showcase-caption-in 0.7s var(--ease-out-expo) both;
+}
+@keyframes showcase-caption-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+.showcase-progress {
+  transform: scaleX(0);
+}
+.showcase-progress.is-done {
+  transform: scaleX(1);
+}
+.showcase-progress.is-running {
+  animation: showcase-progress linear both;
+}
+@keyframes showcase-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .showcase-frame,
+  .showcase-tag,
+  .showcase-slide,
+  .showcase-slide img {
+    transition: none;
+  }
+  .showcase-slide img,
+  .hero-showcase.is-ready .showcase-slide.is-active img {
+    transform: none;
+  }
+  .showcase-caption {
+    animation: none;
+  }
+}
+
 @keyframes tag-float {
   50% {
     translate: 0 -10px;
@@ -834,7 +876,6 @@ html.motion-ok [data-reveal][data-revealed] {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-rise,
-  .fan-card,
   .hero-tag {
     animation: none;
   }

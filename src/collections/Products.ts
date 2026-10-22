@@ -47,7 +47,7 @@ export const Products: CollectionConfig<'products'> = {
       type: 'text',
       required: true,
       localized: true,
-      admin: { description: 'Use the words buyers search for, e.g. "Fabric Sample Books".' },
+      admin: { description: 'Use the words buyers search for, e.g. "Fabric Sample Hangers".' },
     },
     {
       type: 'tabs',
@@ -146,7 +146,7 @@ export const Products: CollectionConfig<'products'> = {
               type: 'text',
               localized: true,
               admin: {
-                description: 'Pre-filled WhatsApp message for this product, e.g. "Hello, I need a quote for fabric sample books."',
+                description: 'Pre-filled WhatsApp message for this product, e.g. "Hello, I need a quote for fabric sample hangers."',
               },
             },
           ],

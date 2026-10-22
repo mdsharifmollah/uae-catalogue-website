@@ -1,8 +1,7 @@
-import { MigrateUpArgs, MigrateDownArgs } from '@payloadcms/db-postgres'
 import type { FlattenedField, Payload, PayloadRequest } from 'payload'
 
-import content from './data/ar-content.json'
-import { getAt, setAt, stripLocalizedRowIds } from './data/translatable'
+import content from './ar-content.json'
+import { getAt, setAt, stripLocalizedRowIds } from './translatable'
 
 type Path = (string | number)[]
 type Doc = Record<string, unknown>
@@ -42,9 +41,10 @@ const arabicData = (doc: Doc, strings: Entry['strings'], fields: FlattenedField[
   // A new Arabic row would otherwise get a field's English default value where
   // the English page has deliberately left it empty.
   for (const field of fields) {
-    if ('name' in field && field.localized && 'defaultValue' in field && !doc[field.name] && field.type === 'text') {
-      data[field.name] = ''
-    }
+    if (!('name' in field) || !field.localized || field.type !== 'text' || field.name in data) continue
+    if ('defaultValue' in field && !doc[field.name]) data[field.name] = ''
+    // A required field without a translation keeps the English text, so the update stays valid.
+    else if (field.required && doc[field.name]) data[field.name] = doc[field.name]
   }
   return data
 }
@@ -59,14 +59,19 @@ const applyCollection = async (payload: Payload, req: PayloadRequest, entry: Ent
     locale: 'en',
     depth: 0,
     limit: 1,
-    req,
+    // Media are written without the shared request (see the seed), so read them the same way.
+    ...(slug === ('media' as string) ? {} : { req }),
   })
   const doc = found.docs[0] as unknown as Doc | undefined
   if (!doc) return
   const data = arabicData(doc, entry.strings, config.flattenedFields)
   if (!Object.keys(data).length) return
   if (config.versions?.drafts) data._status = 'published'
-  await payload.update({ collection: slug, id: doc.id as number, locale: 'ar', depth: 0, data, req, context })
+  if (slug === ('media' as string)) {
+    await payload.update({ collection: slug, id: doc.id as number, locale: 'ar', depth: 0, data, context })
+  } else {
+    await payload.update({ collection: slug, id: doc.id as number, locale: 'ar', depth: 0, data, req, context })
+  }
 }
 
 const applyGlobal = async (payload: Payload, req: PayloadRequest, entry: Entry) => {
@@ -80,18 +85,14 @@ const applyGlobal = async (payload: Payload, req: PayloadRequest, entry: Entry) 
 }
 
 /**
- * Arabic translation of all site content (pages, products, industries, work,
- * guides, FAQs, image descriptions, form labels, header, footer and settings).
- * Each document is matched by slug (or another stable field), so this works on
- * any copy of the site. Safe to run more than once.
+ * Arabic translation of the site content (pages, services, who we serve,
+ * work, guides, FAQs, image descriptions, form labels, header, footer and
+ * settings). Each document is matched by slug (or another stable field) and
+ * only text still matching the English it was translated from is replaced.
  */
-export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
+export const applyArabic = async (payload: Payload, req: PayloadRequest): Promise<void> => {
   for (const entry of (content as { docs: Entry[] }).docs) {
     if (entry.global) await applyGlobal(payload, req, entry)
     else await applyCollection(payload, req, entry)
   }
-}
-
-export async function down(_args: MigrateDownArgs): Promise<void> {
-  // Content change only; Arabic text can be edited or cleared in the dashboard.
 }

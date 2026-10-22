@@ -6,7 +6,7 @@ import * as migration_20261022_100000_al_hejlah_brand from './20261022_100000_al
 import * as migration_20261022_110000_quote_notification from './20261022_110000_quote_notification';
 import * as migration_20261022_120000_content_updates from './20261022_120000_content_updates';
 import * as migration_20261022_123844_add_arabic_locale from './20261022_123844_add_arabic_locale';
-import * as migration_20261022_140000_arabic_content from './20261022_140000_arabic_content';
+import * as migration_20261022_150000_business_content from './20261022_150000_business_content';
 
 export const migrations = [
   {
@@ -50,8 +50,8 @@ export const migrations = [
     name: '20261022_123844_add_arabic_locale'
   },
   {
-    up: migration_20261022_140000_arabic_content.up,
-    down: migration_20261022_140000_arabic_content.down,
-    name: '20261022_140000_arabic_content'
+    up: migration_20261022_150000_business_content.up,
+    down: migration_20261022_150000_business_content.down,
+    name: '20261022_150000_business_content'
   },
 ];

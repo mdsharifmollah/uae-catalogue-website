@@ -1,5 +1,8 @@
 // 404 page for the whole site. The root layout lives under the [lang] segment,
 // so Next renders this standalone page (own <html>) for every missing URL.
+// Its links are plain <a>s on purpose: a full load picks up the right layout,
+// language and text direction.
+/* eslint-disable @next/next/no-html-link-for-pages */
 import './(frontend)/globals.css'
 
 import type { Metadata } from 'next'

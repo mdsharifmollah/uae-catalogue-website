@@ -1,48 +1,44 @@
 /**
- * Starter website copy. Everything here is editable in the dashboard.
- * Rule followed throughout: describe capabilities and options to discuss —
- * never invent certifications, client counts, prices or delivery guarantees.
+ * Website copy for Al Hejlah: upholstery fabric sampling — fabric swatch
+ * cutting, fabric sample hangers, and swatch books & sample catalogues.
+ * Everything here is editable in the dashboard.
+ * Rule followed throughout: describe what the business actually does — never
+ * invent certifications, client counts, capacity, prices or delivery guarantees.
  */
 import { doc, h2, h3, ol, p, ul } from './lexical'
 
 /* ------------------------------------------------------------------ Media */
 export const mediaFiles: Record<string, string> = {
   'draped-bronze-fabric-texture.webp': 'Close-up of draped bronze fabric with soft folds and shadows',
-  'numbered-shade-card-fan-swatches.webp': 'Fanned colour shade card with numbered swatches from blue to green',
-  'stacked-colour-fabric-swatches.webp': 'Stacked fabric swatches arranged by colour from red to yellow',
-  'fabric-header-card-swatch-strips.webp': 'Fabric sample page with horizontal swatch strips in neutral tones',
+  'tailor-scissors-cutting-swatches.webp': 'Tailor scissors used to cut fabric swatches',
+  'stacked-colour-fabric-swatches.webp': 'Fabric swatches with pinked edges arranged colour by colour',
+  'fabric-header-card-swatch-strips.webp': 'Swatch book page with fabric strips in neutral tones',
+  'designer-choosing-fabric-samples.webp': 'Hands flipping through fabric sample hangers with header cards',
   'upholstery-fabric-swatches-overlapping.webp': 'Overlapping upholstery fabric swatches in sage, beige and blue weaves',
-  'designer-choosing-fabric-samples.webp': 'Designer choosing fabric samples from a spread of swatch cards',
-  'fabric-sample-presentation-box.webp': 'Fabric swatches and sketches laid out for a client presentation',
-  'material-samples-presentation-board.webp': 'Material and fabric samples arranged on a presentation board',
   'hanging-fabric-swatches-display.webp': 'Fabric swatches hanging on a display wall in a sampling studio',
   'plum-and-rust-fabric-swatches.webp': 'Plum and rust coloured fabric swatches folded together',
   'patterned-fabric-rolls-on-shelves.webp': 'Rolls of patterned and plain fabric stored on shelves',
-  'tailor-scissors-cutting-swatches.webp': 'Tailor scissors used to cut fabric swatches',
   'stitching-fabric-samples-sewing-machine.webp': 'Hands guiding fabric through a sewing machine to finish sample edges',
   'textile-sampling-workshop.webp': 'Busy textile workshop with sewing stations and fabric',
   'thread-spools-workshop.webp': 'Spools of natural thread stacked in a textile workshop',
   'folded-fabric-stack-neutral.webp': 'Stack of folded fabrics in neutral, pink and peach tones',
   'green-upholstered-sofa-fabric.webp': 'Green upholstered sofa showing the texture of the fabric',
   'sheer-curtains-living-room.webp': 'Sheer and lined curtains in a bright living room',
-  'grey-carpet-texture-closeup.webp': 'Close-up of a grey looped carpet texture',
-  'wooden-window-blinds.webp': 'Wooden window blinds with sunlight between the slats',
-  'floral-striped-wallpaper.webp': 'Floral striped wallpaper pattern in green, orange and cream',
   'damask-curtain-fabric.webp': 'Brown and cream damask curtain fabric',
   'gold-floral-velvet-fabric.webp': 'Gold floral pattern on dark brown velvet fabric',
   'dark-brown-velvet-texture.webp': 'Dark brown velvet fabric texture',
-  'printed-wallpaper-fabric-coordinate.webp': 'Printed wallpaper and fabric coordinate with stag and tree motif',
-  'mixed-texture-material-samples.webp': 'Mixed texture material samples including leather and woven fabric',
+  'mixed-texture-material-samples.webp': 'Mixed texture upholstery samples including leather and woven fabric',
+  'material-samples-presentation-board.webp': 'Upholstery and material samples laid out for a client presentation',
+  'fabric-sample-presentation-box.webp': 'Fabric swatches and sketches laid out for a client meeting',
   'beige-linen-fabric-swirl.webp': 'Beige linen fabric twisted into a soft swirl',
-  'colour-fan-deck-swatches.webp': 'Colour fan deck spread out to show a full spectrum of swatches',
 }
 
 export const iconFiles: Record<string, string> = {
   'icon-3d-scissor.webp': '3D scissors icon',
   'icon-3d-color-palette.webp': '3D colour palette icon',
-  'icon-3d-notebook.webp': '3D sample book icon',
+  'icon-3d-notebook.webp': '3D swatch book icon',
   'icon-3d-pin.webp': '3D pin icon',
-  'icon-3d-gift-box.webp': '3D presentation box icon',
+  'icon-3d-gift-box.webp': '3D package icon',
   'icon-3d-crown.webp': '3D crown icon',
   'icon-3d-tick.webp': '3D check mark icon',
   'icon-3d-chat-bubble.webp': '3D chat bubble icon',
@@ -55,32 +51,46 @@ export const iconFiles: Record<string, string> = {
 /* ------------------------------------------------------------------ FAQs */
 export const faqs = [
   {
-    key: 'types',
+    key: 'services',
     category: 'general',
-    question: 'What types of fabric sample catalogues do you make?',
+    question: 'What services do you offer?',
     answer:
-      'We make fabric sample books, hanging and waterfall samples, numbered shade cards, swatch and header cards, and sample boxes or presenters. Tell us how you sell your collection and we will suggest the format that fits.',
+      'We specialise in upholstery fabric sampling: fabric swatch cutting, fabric sample hangers, and swatch books & sample catalogues. We cut your fabric rolls and turn them into organised samples — that is all we do.',
+  },
+  {
+    key: 'swatches-only',
+    category: 'products',
+    question: 'Can you cut swatches only, without hangers or books?',
+    answer:
+      'Yes. We can cut your fabric into swatches or sample strips at the size you need and supply them sorted and ready to use. Hangers and swatch books are optional.',
   },
   {
     key: 'custom',
     category: 'products',
-    question: 'Can I request a custom sample catalogue?',
+    question: 'Can the samples be made to our requirements?',
     answer:
-      'Yes. Share your fabric range, the size you have in mind and how the samples will be used — showroom, sales visits or mailing — and we will discuss a suitable layout, binding and finish.',
+      'Yes. Share your fabric range, the swatch size you need and how the samples will be used — showroom, sales visits or sending to dealers — and we will plan the layout and quantity with you.',
   },
   {
-    key: 'numbered',
+    key: 'sizes',
     category: 'products',
-    question: 'Can you make numbered fabric samples?',
+    question: 'Which swatch sizes can you cut?',
     answer:
-      'Yes. Swatches can be arranged by colour, pattern or article and numbered (for example 01–39) so buyers can note and re-order the exact shade.',
+      'We cut to the size you need. Tell us the swatch or strip size — or send a reference sample — and we will keep it consistent across the whole collection.',
+  },
+  {
+    key: 'colour',
+    category: 'products',
+    question: 'Can the swatches be arranged colour-wise?',
+    answer:
+      'Yes. Swatches are sorted colour by colour, by article or by collection, so your customers can browse the range easily.',
   },
   {
     key: 'quote',
     category: 'ordering',
     question: 'How do I get a quotation?',
     answer:
-      'Message us on WhatsApp, call, email or use the quote form. Include the format, approximate size, number of swatches per catalogue and estimated quantity. Photos of a reference sample help us quote faster.',
+      'Use the quote form or message us on WhatsApp. Include the service you need, the number of fabrics, the sample size, the quantity and your deadline. Photos of a reference sample help us quote faster.',
   },
   {
     key: 'photos',
@@ -94,315 +104,317 @@ export const faqs = [
     category: 'ordering',
     question: 'Is there a minimum order quantity?',
     answer:
-      'Minimums depend on the format and finishing you choose. We confirm the minimum quantity together with your quotation.',
+      'Minimums depend on the service and the number of pieces. We confirm the minimum quantity together with your quotation.',
   },
   {
     key: 'fabric',
     category: 'delivery',
     question: 'Do I need to supply the fabric?',
     answer:
-      'Most clients supply their own fabric so the samples match their stock exactly. Contact us to discuss how much fabric is needed for your catalogue.',
+      'Yes — we work with your own fabric rolls, so every sample matches your stock exactly. Tell us about your collection and we will confirm how much fabric is needed.',
   },
   {
     key: 'location',
     category: 'general',
     question: 'Where are you located?',
     answer:
-      'We are based in Sharjah, United Arab Emirates, and work with textile and interior businesses across the UAE. Contact us to discuss delivery to your location.',
+      'We are based in Sharjah, United Arab Emirates, and work with furniture, upholstery and textile businesses across the UAE. Contact us to discuss delivery to your location.',
   },
 ] as const
 
-/* ------------------------------------------------------------------ Industries */
+/* ------------------------------------------------------------------ Who we serve (industries collection) */
 export const industries = [
   {
-    key: 'upholstery',
-    title: 'Upholstery & Sofa Fabrics',
-    slug: 'upholstery-sofa-fabrics',
-    tag: 'Sofas & seating',
+    key: 'furniture',
+    title: 'Furniture Manufacturers',
+    slug: 'furniture-manufacturers',
+    tag: 'Sofas & chairs',
     cardTone: 'sage',
     image: 'green-upholstered-sofa-fabric.webp',
+    products: ['books', 'cutting'],
     summary:
-      'Sample books and swatch cards that let furniture buyers feel the weave, compare colours and choose upholstery fabrics with confidence.',
+      'Swatch books for sofa and chair collections, so your customers can compare every fabric option before they order.',
     needs: [
-      { title: 'Texture you can feel', text: 'Swatches large enough to show weave, pile and hand-feel — not just colour.' },
-      { title: 'Large colour ranges', text: 'Numbered layouts that keep 20, 40 or more colourways easy to browse.' },
-      { title: 'Built for handling', text: 'Sturdy binding and finished edges for daily use in showrooms and on sales visits.' },
+      { title: 'Every option in one place', text: 'All the fabrics offered for a sofa or chair collection, together in one book.' },
+      { title: 'Texture you can feel', text: 'Swatches large enough to judge weave, pile and hand-feel — not just colour.' },
+      { title: 'Easy to choose from', text: 'Sorted colour by colour, so customers find their option quickly.' },
     ],
     body: doc(
-      h2('Upholstery fabric sample books that sell the feel of the fabric'),
+      h2('Fabric swatch books for furniture manufacturers'),
       p(
-        'Furniture manufacturers, sofa makers and upholstery suppliers choose fabrics by touch as much as by colour. A good upholstery sample book puts every colourway of a quality side by side, with swatches large enough to judge texture and durability.',
+        'Customers choose a sofa or chair by its fabric as much as its shape. A swatch book puts every upholstery option for the collection in their hands, organised so they can compare colours and textures and decide with confidence.',
       ),
-      h3('Formats that work well for upholstery'),
+      h3('What we prepare for furniture makers'),
       ul([
-        '**Fabric sample books** with one quality per page and numbered colourways',
-        '**Shade cards** for wide colour ranges of a single fabric',
-        '**Waterfall hangers** for showroom rails',
+        '**Swatch books & sample catalogues** for each sofa or chair collection',
+        '**Fabric swatch cutting** from your rolls, sized to your requirement',
+        '**Sample hangers** for the fabric corner of your showroom',
+      ]),
+    ),
+  },
+  {
+    key: 'wholesalers',
+    title: 'Upholstery Fabric Wholesalers',
+    slug: 'upholstery-fabric-wholesalers',
+    tag: 'Wholesale & dealers',
+    cardTone: 'charcoal',
+    image: 'patterned-fabric-rolls-on-shelves.webp',
+    products: ['hangers', 'cutting'],
+    summary:
+      'Sample hangers that sofa and upholstery fabric wholesalers can hand to retailers and dealers to show the full range.',
+    needs: [
+      { title: 'Show the whole range', text: 'Every colour of a quality on one hanger that dealers can flip through.' },
+      { title: 'Many sets, all the same', text: 'Consistent cutting and order across every hanger you send out.' },
+      { title: 'Built for handling', text: 'Neat, finished swatches that stay presentable in busy shops.' },
+    ],
+    body: doc(
+      h2('Sample hangers for upholstery fabric wholesalers'),
+      p(
+        'Wholesalers and sofa fabric suppliers sell through retailers and dealers who need to show your range to their own customers. Sample hangers cut from your rolls give every dealer the same organised view of each quality and its colours.',
+      ),
+      h3('What we prepare for wholesalers'),
+      ul([
+        '**Fabric sample hangers** sorted colour by colour',
+        '**Fabric swatch cutting** in the quantities your dealer network needs',
+        '**Swatch books** for collections you present as a set',
+      ]),
+    ),
+  },
+  {
+    key: 'mills',
+    title: 'Textile Mills & Fabric Suppliers',
+    slug: 'textile-mills-fabric-suppliers',
+    tag: 'Mills & importers',
+    cardTone: 'sand',
+    image: 'thread-spools-workshop.webp',
+    products: ['books', 'hangers', 'cutting'],
+    summary:
+      'Swatches, hangers and sample catalogues that help textile mills, suppliers and importers present a new collection to buyers.',
+    needs: [
+      { title: 'Launch-ready samples', text: 'A new collection cut, sorted and assembled for presenting to buyers.' },
+      { title: 'Organised by collection', text: 'Qualities and colours grouped the way your range is sold.' },
+      { title: 'Consistent across sets', text: 'The same order and swatch size in every set you send out.' },
+    ],
+    body: doc(
+      h2('Sample collections for textile mills and fabric suppliers'),
+      p(
+        'When a new collection arrives, buyers need to see and feel it before they order. We cut the fabrics from your rolls and assemble them into hangers or sample catalogues, so the collection is presented clearly from day one.',
+      ),
+      h3('What we prepare for mills, suppliers and importers'),
+      ul([
+        '**Swatch books & sample catalogues** for new collections',
+        '**Fabric sample hangers** for each quality',
+        '**Fabric swatch cutting** for samples you send to buyers yourself',
+      ]),
+    ),
+  },
+  {
+    key: 'designers',
+    title: 'Interior Design Companies',
+    slug: 'interior-design-companies',
+    tag: 'Interior design',
+    cardTone: 'ivory',
+    image: 'material-samples-presentation-board.webp',
+    products: ['books', 'cutting'],
+    summary:
+      'Fabric swatches and compact swatch books that interior design teams use to show fabric options to their clients.',
+    needs: [
+      { title: 'Easy to present', text: 'Options organised so a client can compare them in one meeting.' },
+      { title: 'True colour and texture', text: 'Real fabric, cut cleanly, so clients see exactly what they will get.' },
+      { title: 'Compact and portable', text: 'Swatches and books that travel to site visits and client offices.' },
+    ],
+    body: doc(
+      h2('Fabric samples for interior design companies'),
+      p(
+        'Interior designers present fabric options to clients for every project. Clean, consistently cut swatches and compact swatch books make those choices easier to show, compare and approve.',
+      ),
+      h3('What we prepare for interior designers'),
+      ul([
+        '**Fabric swatch cutting** for project selections',
+        '**Swatch books** of the upholstery options you offer clients',
       ]),
     ),
   },
   {
     key: 'curtains',
-    title: 'Curtain & Drapery Fabrics',
-    slug: 'curtain-drapery',
-    tag: 'Curtains & sheers',
-    cardTone: 'sand',
-    image: 'sheer-curtains-living-room.webp',
-    summary:
-      'Hanging samples and sample books that show how curtain fabrics drape, filter light and coordinate across a collection.',
-    needs: [
-      { title: 'Show the drape', text: 'Hanging formats let sheers and heavy drapes fall naturally, the way they will at the window.' },
-      { title: 'Coordinate collections', text: 'Group plains, prints and sheers that belong together so designers can build a scheme.' },
-      { title: 'Easy to re-order', text: 'Clear article numbers and colour references on every swatch.' },
-    ],
-    body: doc(
-      h2('Curtain fabric sample catalogues'),
-      p(
-        'Curtain and drapery fabrics are judged by how they hang and how much light they let through. Waterfall hangers and long-format swatches show both, while sample books keep a full collection organised for designers and retailers.',
-      ),
-    ),
-  },
-  {
-    key: 'carpets',
-    title: 'Carpets & Rugs',
-    slug: 'carpets-rugs',
-    tag: 'Carpets & rugs',
-    cardTone: 'charcoal',
-    image: 'grey-carpet-texture-closeup.webp',
-    summary:
-      'Carpet sample books and boards that present pile, texture and colour ranges in a format buyers can carry and compare.',
-    needs: [
-      { title: 'Show pile and depth', text: 'Mounting suited to thicker materials so texture and pile height are visible.' },
-      { title: 'Compare side by side', text: 'Layouts that put colourways of one range next to each other.' },
-      { title: 'Portable', text: 'Formats sized for sales visits and project presentations.' },
-    ],
-    body: doc(
-      h2('Carpet sample books and boards'),
-      p(
-        'Carpet and rug suppliers need samples that show pile, texture and colour at a glance. We discuss mounting and binding suited to thicker materials so your range stays neat and easy to compare.',
-      ),
-    ),
-  },
-  {
-    key: 'blinds',
-    title: 'Blinds',
-    slug: 'blinds',
-    tag: 'Roller & roman blinds',
-    cardTone: 'ivory',
-    image: 'wooden-window-blinds.webp',
-    summary:
-      'Blind sample books that organise roller, roman and blackout fabrics by opacity, colour and article — ready for quoting at the client’s home.',
-    needs: [
-      { title: 'Group by opacity', text: 'Sheer, dim-out and blackout fabrics clearly separated.' },
-      { title: 'Specs at a glance', text: 'Article number, width and composition printed with each swatch.' },
-      { title: 'Ready for home visits', text: 'Compact books that installers and sales teams can carry.' },
-    ],
-    body: doc(
-      h2('Blind fabric sample books'),
-      p(
-        'Blind retailers and installers use sample books on every home visit. Organising fabrics by opacity and colour — with the article details beside each swatch — makes it faster to agree a choice and prepare a quotation.',
-      ),
-    ),
-  },
-  {
-    key: 'wallpaper',
-    title: 'Wallpaper & Wallcoverings',
-    slug: 'wallpaper-wallcoverings',
-    tag: 'Wallcoverings',
+    title: 'Curtain & Furnishing Suppliers',
+    slug: 'curtain-furnishing-suppliers',
+    tag: 'Curtains & furnishings',
     cardTone: 'clay',
-    image: 'floral-striped-wallpaper.webp',
+    image: 'sheer-curtains-living-room.webp',
+    products: ['hangers', 'books'],
     summary:
-      'Pattern books and coordinate catalogues that present wallcoverings alongside matching fabrics.',
+      'Physical samples of curtain and furnishing fabrics — on hangers that show the drape, or in books that keep a range organised.',
     needs: [
-      { title: 'Show the full repeat', text: 'Page sizes that let a pattern repeat be seen properly.' },
-      { title: 'Fabric coordinates', text: 'Wallcoverings and matching fabrics presented together.' },
-      { title: 'Durable pages', text: 'Bindings that open flat for browsing and photography.' },
+      { title: 'Show the drape', text: 'Hanging samples let fabrics fall naturally, the way they will at the window.' },
+      { title: 'Real samples to touch', text: 'Customers feel weight and texture before they choose.' },
+      { title: 'Organised ranges', text: 'Plains, textures and patterns grouped so a scheme comes together quickly.' },
     ],
     body: doc(
-      h2('Wallpaper and coordinate pattern books'),
+      h2('Fabric samples for curtain and furnishing suppliers'),
       p(
-        'Wallcovering brands often launch collections with matching fabrics. A coordinate book presents both together so designers can see the complete scheme in one place.',
+        'Curtain and furnishing fabrics are chosen by how they hang and how they feel. Sample hangers show the drape, while swatch books keep a full range organised for customers and designers.',
       ),
+      h3('What we prepare for curtain suppliers'),
+      ul(['**Fabric sample hangers** that show drape and weight', '**Swatch books & sample catalogues** for complete ranges']),
+    ),
+  },
+  {
+    key: 'showrooms',
+    title: 'Furniture Showrooms',
+    slug: 'furniture-showrooms',
+    tag: 'Showrooms',
+    cardTone: 'bronze',
+    image: 'hanging-fabric-swatches-display.webp',
+    products: ['hangers', 'books'],
+    summary:
+      'Hangers and swatch books that make fabric selection quick and easy for customers visiting your showroom.',
+    needs: [
+      { title: 'Quick to browse', text: 'Customers find the colour and texture they want without help.' },
+      { title: 'Neat on display', text: 'Organised hangers and books that keep the showroom looking its best.' },
+      { title: 'Easy to replace', text: 'Re-order the same samples when a range is updated.' },
+    ],
+    body: doc(
+      h2('Fabric samples for furniture showrooms'),
+      p(
+        'In a showroom, fabric selection should be simple. Sample hangers on a rail and swatch books on the table let customers explore colours and textures at their own pace and choose with confidence.',
+      ),
+      h3('What we prepare for showrooms'),
+      ul(['**Fabric sample hangers** for rails and stands', '**Swatch books & sample catalogues** for the selection table']),
     ),
   },
 ] as const
 
-/* ------------------------------------------------------------------ Products */
+/* ------------------------------------------------------------------ Services (products collection) */
 export const products = [
   {
-    key: 'books',
+    key: 'cutting',
     order: 1,
-    title: 'Fabric Sample Books',
-    cardTitle: 'Fabric|Sample Books',
-    slug: 'fabric-sample-books',
-    cardTone: 'ivory',
-    hero: 'upholstery-fabric-swatches-overlapping.webp',
-    gallery: ['fabric-header-card-swatch-strips.webp', 'designer-choosing-fabric-samples.webp'],
-    industries: ['upholstery', 'curtains', 'carpets', 'blinds'],
-    faqs: ['custom', 'numbered', 'quote', 'moq'],
+    title: 'Fabric Swatch Cutting',
+    cardTitle: 'Fabric Swatch|Cutting',
+    slug: 'fabric-swatch-cutting',
+    cardTone: 'charcoal',
+    hero: 'tailor-scissors-cutting-swatches.webp',
+    gallery: ['stacked-colour-fabric-swatches.webp', 'patterned-fabric-rolls-on-shelves.webp'],
+    faqs: ['swatches-only', 'sizes', 'fabric', 'quote'],
     summary:
-      'Bound sample books that present your fabric range — colours, textures and patterns — in one organised, easy-to-browse catalogue.',
-    whatsappMessage: "Hello, I'd like a quotation for fabric sample books.",
+      'We cut your upholstery fabric rolls into clean, consistent swatches and sample strips — sized to your requirement and sorted colour by colour.',
+    whatsappMessage: "Hello, I'd like a quotation for fabric swatch cutting.",
     specs: [
-      { label: 'Common sizes', value: 'A4, A3, or custom to your swatch size' },
-      { label: 'Binding', value: 'Ring, screw-post or hardcover — to discuss' },
-      { label: 'Swatch layout', value: 'One quality per page, multi-swatch or numbered' },
-      { label: 'Cover', value: 'Printed, logo-branded or fabric-wrapped' },
+      { label: 'Fabric', value: 'Upholstery and furnishing fabrics, cut from your rolls' },
+      { label: 'Swatch size', value: 'Cut to your required size' },
+      { label: 'Finishing', value: 'Neat, finished swatches ready for handling' },
+      { label: 'Sorting', value: 'Colour-wise, by article or by collection' },
+      { label: 'Supplied as', value: 'Loose swatches, or assembled on hangers or in books' },
       { label: 'Minimum order', value: 'Confirmed with your quotation' },
     ],
     useCases: [
-      'Upholstery and sofa fabric ranges',
-      'Curtain and drapery collections',
-      'Showrooms and interior designer studios',
-      'Sales visits and trade presentations',
+      'Fabric wholesalers sending samples to dealers',
+      'Textile suppliers launching a new collection',
+      'Furniture makers preparing samples for customers',
+      'Interior designers presenting project options',
     ],
     body: doc(
-      h2('Custom fabric sample books for textile and interior brands'),
+      h2('Fabric swatch cutting from your rolls'),
       p(
-        'A fabric sample book keeps your whole collection in one place. Buyers can browse every quality and colourway, compare textures side by side and note the exact article they want to order. For fabric traders, upholstery suppliers and curtain businesses, it is often the first thing a client touches.',
+        'Every good sample starts with a clean cut. We take your fabric rolls and cut them into swatches or sample strips of the same size, so every piece in the collection looks consistent and professional.',
       ),
-      h3('Formats we can discuss'),
+      h3('How we work'),
       ul([
-        'A4 and A3 books in portrait or landscape',
-        'Ring-bound, screw-post and hardcover bindings',
-        'Swatch windows, flaps or full-page swatches',
-        'Numbered pages and article labels for easy re-ordering',
+        'Swatches and strips cut to the size you specify',
+        'Finished so they look neat and hold up to handling',
+        'Sorted colour by colour, by article or by collection',
+        'Supplied loose, or assembled into hangers and swatch books',
       ]),
-      h3('Designed for how buyers browse'),
-      p(
-        'We organise swatches the way your customers shop — by colour family, by fabric quality or by collection — so the book is quick to use in a showroom or on a sales visit.',
-      ),
       h3('What to send us'),
       ol([
-        'Your fabric range or a list of qualities and colours',
-        'Preferred size and binding (or a reference photo)',
-        'Estimated quantity of books',
+        'Your fabric rolls, or a list of the qualities and colours',
+        'The swatch size you need (or a reference sample)',
+        'The quantity and your deadline',
       ]),
     ),
   },
   {
     key: 'hangers',
     order: 2,
-    title: 'Fabric Hangers & Waterfall Samples',
-    cardTitle: 'Hangers &|Waterfalls',
-    slug: 'fabric-hangers-waterfall-samples',
-    cardTone: 'charcoal',
-    hero: 'hanging-fabric-swatches-display.webp',
-    gallery: ['damask-curtain-fabric.webp', 'sheer-curtains-living-room.webp'],
-    industries: ['curtains', 'upholstery'],
-    faqs: ['custom', 'quote', 'photos'],
-    summary:
-      'Header hangers and waterfall cards that let buyers flip through your colours on a rail, stand or showroom wall.',
-    whatsappMessage: "Hello, I'd like a quotation for fabric hangers / waterfall samples.",
-    specs: [
-      { label: 'Formats', value: 'Single header hangers, waterfall cards, hanger sets' },
-      { label: 'Display', value: 'Rails, stands or wall display' },
-      { label: 'Header', value: 'Printed with logo, article and composition' },
-      { label: 'Swatches per hanger', value: 'Planned to your colour range' },
-      { label: 'Minimum order', value: 'Confirmed with your quotation' },
-    ],
-    useCases: ['Curtain and sheer fabrics', 'Showroom rails and stands', 'Large colour ranges of one quality'],
-    body: doc(
-      h2('Fabric sample hangers and waterfall cards'),
-      p(
-        'Hanging samples show fabric the way it will be used — falling freely, with its true drape and weight. A waterfall card staggers the colours of one quality so a buyer can see the whole range at once and lift a swatch to feel it.',
-      ),
-      h3('When to choose a hanging format'),
-      ul([
-        'Curtain, sheer and drapery fabrics where drape matters',
-        'Showrooms with rails or display stands',
-        'Collections with many colourways of a single quality',
-      ]),
-    ),
-  },
-  {
-    key: 'shade',
-    order: 3,
-    title: 'Shade Cards & Numbered Swatches',
-    cardTitle: 'Shade Cards|& Numbering',
-    slug: 'shade-cards-numbered-swatches',
-    cardTone: 'bronze',
-    hero: 'numbered-shade-card-fan-swatches.webp',
-    gallery: ['stacked-colour-fabric-swatches.webp', 'colour-fan-deck-swatches.webp'],
-    industries: ['upholstery', 'blinds', 'curtains'],
-    faqs: ['numbered', 'quote'],
-    summary:
-      'Numbered colour cards — for example 01 to 39 — that make it easy for buyers to choose, note and re-order the exact shade.',
-    whatsappMessage: "Hello, I'd like a quotation for numbered shade cards.",
-    specs: [
-      { label: 'Numbering', value: 'Sequential, by colour family or by article' },
-      { label: 'Layout', value: 'Rows, columns or fan-style' },
-      { label: 'Card', value: 'Printed with logo and colour references' },
-      { label: 'Minimum order', value: 'Confirmed with your quotation' },
-    ],
-    useCases: ['Plain fabrics with wide colour ranges', 'Re-order catalogues for regular buyers', 'Mailing to clients'],
-    body: doc(
-      h2('Numbered fabric shade cards'),
-      p(
-        'A shade card shows every colour of one fabric quality in a single view, with a clear number beside each swatch. Buyers can point to "shade 23" on WhatsApp instead of describing a colour — fewer mistakes, faster orders.',
-      ),
-      h3('Numbering options'),
-      ul([
-        'Simple sequence (01, 02, 03 …)',
-        'Grouped by colour family',
-        'Matched to your own article or SKU numbers',
-      ]),
-    ),
-  },
-  {
-    key: 'cards',
-    order: 4,
-    title: 'Swatch Cards & Header Cards',
-    cardTitle: 'Swatch &|Header Cards',
-    slug: 'swatch-cards-header-cards',
+    title: 'Fabric Sample Hangers',
+    cardTitle: 'Fabric Sample|Hangers',
+    slug: 'fabric-sample-hangers',
     cardTone: 'sand',
-    hero: 'fabric-header-card-swatch-strips.webp',
-    gallery: ['plum-and-rust-fabric-swatches.webp', 'mixed-texture-material-samples.webp'],
-    industries: ['upholstery', 'wallpaper'],
-    faqs: ['custom', 'quote'],
+    hero: 'designer-choosing-fabric-samples.webp',
+    gallery: ['stacked-colour-fabric-swatches.webp', 'hanging-fabric-swatches-display.webp'],
+    faqs: ['custom', 'colour', 'quote', 'moq'],
     summary:
-      'Single-quality swatch cards and printed header cards with your logo, article number and composition — ideal for mailing and showroom tables.',
-    whatsappMessage: "Hello, I'd like a quotation for swatch cards / header cards.",
+      'Fabric swatches cut and assembled on hangers, so your customers can flip through colours and feel textures on a rail, stand or showroom wall.',
+    whatsappMessage: "Hello, I'd like a quotation for fabric sample hangers.",
     specs: [
-      { label: 'Card types', value: 'Swatch cards, header cards, memo samples' },
-      { label: 'Printing', value: 'Logo, article, composition, care details' },
-      { label: 'Use', value: 'Mailing, showroom tables, client folders' },
+      { label: 'Fabric', value: 'Upholstery and furnishing fabrics, cut from your rolls' },
+      { label: 'Swatches per hanger', value: 'Planned around your colour range' },
+      { label: 'Arrangement', value: 'Colour-wise or by article' },
+      { label: 'Display', value: 'Showroom rails, stands or walls' },
       { label: 'Minimum order', value: 'Confirmed with your quotation' },
     ],
-    useCases: ['Sending samples to clients', 'Trade fair handouts', 'Quick reference for sales teams'],
+    useCases: [
+      'Upholstery fabric wholesalers supplying retailers and dealers',
+      'Furniture showrooms',
+      'Curtain and furnishing suppliers',
+      'Qualities with many colours',
+    ],
     body: doc(
-      h2('Fabric swatch cards and printed header cards'),
+      h2('Fabric sample hangers for upholstery collections'),
       p(
-        'Swatch cards are the simplest way to put a fabric in a client’s hands. A printed header with your brand, article number and composition turns every swatch into a professional reference card.',
+        'A sample hanger shows every colour of a fabric quality in one place. Customers can flip through the range, lift a swatch to feel it and choose without unrolling a single bolt.',
       ),
+      h3('When to choose hangers'),
+      ul([
+        'Qualities with many colours',
+        'Showrooms with rails, stands or wall space',
+        'Ranges you send to retailers and dealers',
+        'Curtain and furnishing fabrics where drape matters',
+      ]),
     ),
   },
   {
-    key: 'boxes',
-    order: 5,
-    title: 'Sample Boxes & Presenters',
-    cardTitle: 'Sample Boxes|& Presenters',
-    slug: 'sample-boxes-presenters',
-    cardTone: 'clay',
-    hero: 'fabric-sample-presentation-box.webp',
-    gallery: ['material-samples-presentation-board.webp', 'folded-fabric-stack-neutral.webp'],
-    industries: ['upholstery', 'wallpaper', 'carpets'],
-    faqs: ['custom', 'quote', 'moq'],
+    key: 'books',
+    order: 3,
+    title: 'Swatch Books & Sample Catalogues',
+    cardTitle: 'Swatch Books &|Sample Catalogues',
+    slug: 'swatch-books-sample-catalogues',
+    cardTone: 'ivory',
+    hero: 'fabric-header-card-swatch-strips.webp',
+    gallery: ['upholstery-fabric-swatches-overlapping.webp', 'plum-and-rust-fabric-swatches.webp'],
+    faqs: ['custom', 'colour', 'quote', 'moq'],
     summary:
-      'Presentation boxes and folders that hold a curated selection of swatches — for launches, key clients and premium collections.',
-    whatsappMessage: "Hello, I'd like a quotation for fabric sample boxes.",
+      'Swatch books and sample catalogues that present your upholstery collection in one organised book — easy to carry, browse and choose from.',
+    whatsappMessage: "Hello, I'd like a quotation for swatch books / sample catalogues.",
     specs: [
-      { label: 'Formats', value: 'Rigid boxes, presenter folders, swatch kits' },
-      { label: 'Contents', value: 'Curated swatches, cards and printed inserts' },
-      { label: 'Branding', value: 'Logo on lid or cover — to discuss' },
+      { label: 'Contents', value: 'Your fabrics, cut and arranged page by page' },
+      { label: 'Layout', value: 'Colour-wise, by quality or by collection' },
+      { label: 'Size', value: 'Planned around your swatch size and range' },
+      { label: 'Binding & cover', value: 'Discussed with your quotation' },
       { label: 'Minimum order', value: 'Confirmed with your quotation' },
     ],
-    useCases: ['Collection launches', 'Key-account and designer gifts', 'Project presentations'],
+    useCases: [
+      'Sofa and chair collections',
+      'New collection launches',
+      'Showrooms and interior design studios',
+      'Sales visits and client meetings',
+    ],
     body: doc(
-      h2('Custom fabric sample boxes and presenters'),
+      h2('Swatch books and sample catalogues for upholstery fabrics'),
       p(
-        'When a collection deserves a moment, a sample box presents a curated selection of swatches with your brand on the lid. It works for launches, interior designer kits and project presentations.',
+        'A swatch book keeps a whole collection in one place. Customers can browse every quality and colour, compare textures side by side and note exactly what they want to order.',
       ),
+      h3('Organised the way your customers choose'),
+      p(
+        'We arrange the swatches colour by colour, by quality or by collection — whichever makes your range easiest to browse in a showroom or on a sales visit.',
+      ),
+      h3('What to send us'),
+      ol([
+        'Your fabric rolls, or a list of the qualities and colours',
+        'The swatch size and preferred layout (or a reference photo)',
+        'The number of books and your deadline',
+      ]),
     ),
   },
 ] as const
@@ -410,229 +422,215 @@ export const products = [
 /* ------------------------------------------------------------------ Process */
 export const processSteps = [
   {
-    title: 'Share your requirements',
-    text: 'Send your fabric range, intended use and preferred format on WhatsApp or by email. Reference photos help us understand exactly what you need.',
+    title: 'Receive your fabric rolls',
+    text: 'You send the fabric rolls for the collection with your requirements: swatch size, quantity and how the samples will be presented.',
     image: 'patterned-fabric-rolls-on-shelves.webp',
   },
   {
-    title: 'Cut & finish the swatches',
-    text: 'Fabrics are cut to the agreed swatch size, with pinked or clean-finished edges to suit the format.',
+    title: 'Cut to size',
+    text: 'Each fabric is cut into swatches or sample strips at the agreed size, keeping every piece consistent.',
     image: 'tailor-scissors-cutting-swatches.webp',
   },
   {
-    title: 'Arrange & number',
-    text: 'Swatches are arranged by colour, pattern or article and numbered so buyers can order exactly the shade they want.',
-    image: 'stacked-colour-fabric-swatches.webp',
-  },
-  {
-    title: 'Mount on pages or headers',
-    text: 'Each swatch is mounted on pages, header cards or hanger strips with consistent spacing and alignment.',
+    title: 'Finish',
+    text: 'Cut pieces are finished so every swatch looks neat and holds up to handling by your customers.',
     image: 'stitching-fabric-samples-sewing-machine.webp',
   },
   {
-    title: 'Bind, hang or box',
-    text: 'The catalogue is bound into books, fitted to hangers or packed into presentation boxes.',
-    image: 'hanging-fabric-swatches-display.webp',
+    title: 'Sort colour by colour',
+    text: 'Swatches are sorted colour-wise, by article or by collection — the order your customers will browse them in.',
+    image: 'stacked-colour-fabric-swatches.webp',
   },
   {
-    title: 'Brand, check & deliver',
-    text: 'Your logo and article details are added, every piece is checked, and the order is prepared for delivery.',
-    image: 'fabric-sample-presentation-box.webp',
+    title: 'Assemble hangers & books',
+    text: 'Sorted swatches are assembled onto sample hangers or into swatch books and sample catalogues.',
+    image: 'fabric-header-card-swatch-strips.webp',
+  },
+  {
+    title: 'Quality check',
+    text: 'Every hanger and book is checked for the right order, alignment and clean edges before packing.',
+    image: 'designer-choosing-fabric-samples.webp',
+  },
+  {
+    title: 'Pack & deliver',
+    text: 'Finished samples are packed with care and prepared for delivery or collection.',
+    image: 'folded-fabric-stack-neutral.webp',
   },
 ]
 
-/* ------------------------------------------------------------------ Projects (demo — replace with real work) */
+/* ------------------------------------------------------------------ Projects (examples — replace with real work and photos) */
 export const projects = [
   {
-    title: 'Numbered shade card for a 39-colour linen range',
-    slug: 'numbered-linen-shade-card',
+    title: 'Colour-wise sample hangers for an upholstery fabric wholesaler',
+    slug: 'upholstery-wholesaler-sample-hangers',
     cover: 'stacked-colour-fabric-swatches.webp',
-    gallery: ['numbered-shade-card-fan-swatches.webp', 'beige-linen-fabric-swirl.webp'],
-    products: ['shade'],
-    industries: ['upholstery'],
-    summary: 'A colour-ordered shade card with numbered swatches so buyers can re-order by number.',
+    gallery: ['designer-choosing-fabric-samples.webp', 'hanging-fabric-swatches-display.webp'],
+    products: ['cutting', 'hangers'],
+    industries: ['wholesalers'],
+    summary: 'Fabric cut from the wholesaler’s rolls, sorted colour by colour and assembled on hangers for dealers and retailers.',
     specs: [
-      { label: 'Format', value: 'Numbered shade card' },
-      { label: 'Swatches', value: '39 colours' },
+      { label: 'Service', value: 'Fabric sample hangers' },
+      { label: 'Arrangement', value: 'Colour-wise' },
     ],
   },
   {
-    title: 'Upholstery collection sample book',
-    slug: 'upholstery-collection-sample-book',
+    title: 'Swatch book for a sofa collection',
+    slug: 'sofa-collection-swatch-book',
     cover: 'upholstery-fabric-swatches-overlapping.webp',
-    gallery: ['fabric-header-card-swatch-strips.webp', 'plum-and-rust-fabric-swatches.webp'],
-    products: ['books'],
-    industries: ['upholstery'],
-    summary: 'A multi-quality sample book organised by colour family for showroom and sales use.',
+    gallery: ['fabric-header-card-swatch-strips.webp', 'green-upholstered-sofa-fabric.webp'],
+    products: ['cutting', 'books'],
+    industries: ['furniture'],
+    summary: 'A swatch book presenting the fabric options for a sofa and chair collection, organised by colour family.',
     specs: [
-      { label: 'Format', value: 'A4 sample book' },
-      { label: 'Layout', value: 'One quality per page' },
+      { label: 'Service', value: 'Swatch book' },
+      { label: 'Layout', value: 'By colour family' },
     ],
   },
   {
-    title: 'Damask curtain collection on waterfall hangers',
-    slug: 'damask-curtain-waterfall-hangers',
+    title: 'New collection swatches for a fabric supplier',
+    slug: 'fabric-supplier-collection-swatches',
+    cover: 'plum-and-rust-fabric-swatches.webp',
+    gallery: ['patterned-fabric-rolls-on-shelves.webp', 'folded-fabric-stack-neutral.webp'],
+    products: ['cutting'],
+    industries: ['mills'],
+    summary: 'Swatches cut from a new collection’s rolls, finished and sorted by article so the supplier could send them to buyers.',
+    specs: [
+      { label: 'Service', value: 'Fabric swatch cutting' },
+      { label: 'Sorting', value: 'By article' },
+    ],
+  },
+  {
+    title: 'Velvet upholstery sample catalogue',
+    slug: 'velvet-upholstery-sample-catalogue',
+    cover: 'gold-floral-velvet-fabric.webp',
+    gallery: ['dark-brown-velvet-texture.webp', 'draped-bronze-fabric-texture.webp'],
+    products: ['books'],
+    industries: ['showrooms', 'designers'],
+    summary: 'A sample catalogue for a velvet upholstery range, made for showroom and designer use.',
+    specs: [{ label: 'Service', value: 'Sample catalogue' }],
+  },
+  {
+    title: 'Curtain fabric sample hangers for a furnishing supplier',
+    slug: 'curtain-fabric-sample-hangers',
     cover: 'damask-curtain-fabric.webp',
-    gallery: ['hanging-fabric-swatches-display.webp', 'sheer-curtains-living-room.webp'],
+    gallery: ['sheer-curtains-living-room.webp', 'hanging-fabric-swatches-display.webp'],
     products: ['hangers'],
     industries: ['curtains'],
-    summary: 'Hanging samples that let a damask curtain range drape naturally on a showroom rail.',
+    summary: 'Hanging samples that let a curtain and furnishing range show its drape on a showroom rail.',
     specs: [
-      { label: 'Format', value: 'Waterfall hanger set' },
+      { label: 'Service', value: 'Fabric sample hangers' },
       { label: 'Display', value: 'Showroom rail' },
     ],
   },
   {
-    title: 'Velvet collection presentation box',
-    slug: 'velvet-collection-presentation-box',
-    cover: 'gold-floral-velvet-fabric.webp',
-    gallery: ['dark-brown-velvet-texture.webp', 'fabric-sample-presentation-box.webp'],
-    products: ['boxes'],
-    industries: ['upholstery'],
-    summary: 'A curated box of velvet swatches for a premium collection launch.',
-    specs: [
-      { label: 'Format', value: 'Rigid presentation box' },
-      { label: 'Contents', value: 'Curated swatches + printed card' },
-    ],
-  },
-  {
-    title: 'Wallcovering & fabric coordinates book',
-    slug: 'wallcovering-fabric-coordinates-book',
-    cover: 'printed-wallpaper-fabric-coordinate.webp',
-    gallery: ['floral-striped-wallpaper.webp'],
-    products: ['books', 'cards'],
-    industries: ['wallpaper'],
-    summary: 'A pattern book presenting wallcoverings alongside their matching fabrics.',
-    specs: [{ label: 'Format', value: 'Coordinate pattern book' }],
-  },
-  {
-    title: 'Designer material sample board',
-    slug: 'designer-material-sample-board',
-    cover: 'material-samples-presentation-board.webp',
-    gallery: ['mixed-texture-material-samples.webp', 'designer-choosing-fabric-samples.webp'],
-    products: ['cards', 'boxes'],
-    industries: ['upholstery'],
-    summary: 'A mixed-material board for an interior design presentation.',
-    specs: [{ label: 'Format', value: 'Presentation board' }],
+    title: 'Fabric selection book for an interior design studio',
+    slug: 'interior-studio-fabric-selection-book',
+    cover: 'beige-linen-fabric-swirl.webp',
+    gallery: ['material-samples-presentation-board.webp', 'mixed-texture-material-samples.webp'],
+    products: ['cutting', 'books'],
+    industries: ['designers'],
+    summary: 'A compact swatch book of upholstery options that an interior design team uses in client meetings.',
+    specs: [{ label: 'Service', value: 'Swatch book' }],
   },
 ]
 
 /* ------------------------------------------------------------------ Guides */
 export const guides = [
   {
-    title: 'How a Fabric Sample Book Is Made: Step by Step',
-    slug: 'how-a-fabric-sample-book-is-made',
+    title: 'How Fabric Sample Hangers and Swatch Books Are Made',
+    slug: 'how-fabric-samples-are-made',
     image: 'fabric-header-card-swatch-strips.webp',
-    relatedProducts: ['books', 'shade'],
+    relatedProducts: ['cutting', 'hangers', 'books'],
     excerpt:
-      'From choosing the format to cutting, numbering, mounting and binding — what happens when a fabric collection becomes a sample book.',
+      'From receiving the fabric rolls to cutting, finishing, sorting and assembly — what happens when a fabric collection becomes a set of samples.',
     content: doc(
       p(
-        'A fabric sample book looks simple: a cover, some pages and a set of swatches. Behind it is a sequence of decisions that decide whether buyers find it easy to use. Here is how a typical sample book comes together.',
+        'A sample hanger or swatch book looks simple, but it is the result of careful steps that decide whether customers find it easy to use. Here is how a fabric collection becomes a finished set of samples.',
       ),
-      h2('1. Decide what the book needs to do'),
+      h2('1. Plan the samples'),
       p(
-        'Start with the buyer. Will the book live in a showroom, travel with a sales team or be mailed to interior designers? That decides the size, how sturdy the binding needs to be and how many qualities go in one book.',
+        'Start with the customer. Will the samples hang in a showroom, travel with a sales team or go to dealers? That decides the swatch size, the format — hanger or book — and how many sets are needed.',
       ),
-      h2('2. Choose the size and binding'),
-      p(
-        'A4 and A3 are the most common sizes. **Ring and screw-post bindings** make it easy to add or replace pages as a range changes; **hardcover books** feel more premium for a fixed collection.',
-      ),
+      h2('2. Receive the fabric rolls'),
+      p('The fabric for the collection arrives on rolls, together with the list of qualities and colours to include.'),
       h2('3. Cut and finish the swatches'),
       p(
-        'Fabric is cut to a consistent swatch size. Edges are pinked or finished so they do not fray with handling. Larger swatches suit textured upholstery fabrics; smaller ones work for plain colour ranges.',
+        'Each fabric is cut to the same swatch size and finished so the edges stay neat with handling. Larger swatches suit textured upholstery fabrics; smaller ones work for plain colour ranges.',
       ),
-      h2('4. Arrange and number'),
+      h2('4. Sort colour by colour'),
       p(
-        'Swatches are grouped by colour family, quality or collection and numbered. Clear numbering lets a client say "shade 23" on WhatsApp instead of describing a colour.',
+        'Swatches are sorted colour-wise, by article or by collection — the order in which customers will browse them.',
       ),
-      h2('5. Mount, bind and brand'),
+      h2('5. Assemble, check and pack'),
       p(
-        'Swatches are mounted with even spacing, labelled with article details, and the book is bound and branded with your logo.',
+        'The sorted swatches are assembled onto hangers or into swatch books, every piece is checked for order and alignment, and the finished samples are packed for delivery.',
       ),
       h2('What to prepare before asking for a quote'),
       ul([
         'The list of qualities and colours to include',
-        'Preferred size, binding and cover style',
-        'Estimated number of books',
-        'Photos of any sample book you like',
+        'The swatch size you need',
+        'Hangers, swatch books or loose swatches',
+        'The quantity and your deadline',
       ]),
     ),
   },
   {
-    title: 'Sample Book, Waterfall Hanger or Shade Card: Which Format Fits Your Range?',
-    slug: 'sample-book-vs-hanger-vs-shade-card',
-    image: 'numbered-shade-card-fan-swatches.webp',
-    relatedProducts: ['books', 'hangers', 'shade'],
+    title: 'Sample Hangers or Swatch Books: Which Suits Your Fabric Collection?',
+    slug: 'sample-hangers-vs-swatch-books',
+    image: 'stacked-colour-fabric-swatches.webp',
+    relatedProducts: ['hangers', 'books'],
     excerpt:
-      'Each sample format suits a different way of selling. Compare sample books, waterfall hangers and numbered shade cards.',
+      'Hangers and swatch books suit different ways of selling fabric. Here is how to choose — and when cut swatches alone are enough.',
     content: doc(
       p(
-        'Choosing the right sample format makes your collection easier to sell. The best choice depends on the fabric, the size of the colour range and where buyers will see it.',
+        'The right sample format makes your collection easier to sell. The best choice depends on the fabric, the size of the colour range and where customers will see it.',
       ),
-      h2('Fabric sample books'),
+      h2('Fabric sample hangers'),
       p(
-        'Best for **complete collections** with several qualities. Books are portable, organised and easy to update with ring or screw-post binding.',
+        'Best for **one quality in many colours**, and for fabrics where drape matters. Hangers suit showroom rails and stands, and are easy for dealers to flip through.',
       ),
-      h2('Waterfall hangers'),
+      h2('Swatch books & sample catalogues'),
       p(
-        'Best for **fabrics where drape matters** — curtains, sheers and soft upholstery. Hangers suit showroom rails and stands.',
+        'Best for **complete collections** with several qualities — for example all the fabrics offered for a sofa range. Books are portable and keep everything organised.',
       ),
-      h2('Numbered shade cards'),
+      h2('Cut swatches only'),
       p(
-        'Best for **one quality in many colours**. Buyers see every shade at once and can order by number.',
+        'Best when you **send samples to buyers yourself** or need loose swatches for designers. We cut and sort them, ready to use.',
       ),
       h2('Quick guide'),
       ul([
-        'Many qualities, mixed buyers → **sample book**',
-        'Showroom rail, curtain fabrics → **waterfall hanger**',
-        'One fabric, wide colour range → **shade card**',
-        'Launch or key client gift → **sample box**',
+        'One fabric, many colours, showroom rail → **sample hanger**',
+        'Several qualities, one collection → **swatch book**',
+        'Samples to send or hand out → **cut swatches**',
       ]),
     ),
   },
   {
-    title: 'What Affects the Cost of a Fabric Sample Book?',
-    slug: 'fabric-sample-book-cost-factors',
+    title: 'What Affects the Cost of Fabric Sampling?',
+    slug: 'fabric-sampling-cost-factors',
     image: 'mixed-texture-material-samples.webp',
-    relatedProducts: ['books', 'boxes'],
+    relatedProducts: ['cutting', 'books'],
     excerpt:
-      'Size, number of swatches, binding, branding and quantity all shape the price of a sample book. Here is what to consider.',
+      'The number of fabrics, swatch size, format and quantity all shape the price of fabric samples. Here is what to consider.',
     content: doc(
       p(
-        'Every sample book is built to order, so prices depend on the specification. Understanding the main factors helps you plan a budget and get an accurate quotation faster.',
+        'Every set of samples is made to order, so prices depend on the specification. Knowing the main factors helps you plan a budget and get an accurate quotation faster.',
       ),
       h2('The main cost factors'),
       ul([
-        '**Size and page count** — larger books and more pages use more material and handling time.',
-        '**Number of swatches** — each swatch is cut, finished and mounted.',
-        '**Binding and cover** — ring binding, screw-post and hardcover differ in material and labour.',
-        '**Branding** — printed covers, logo application and labels.',
+        '**Number of fabrics and colours** — each one is cut, finished and sorted.',
+        '**Swatch size** — larger swatches use more fabric and handling time.',
+        '**Format** — loose swatches, hangers or swatch books.',
         '**Quantity** — set-up work is shared across a larger order.',
+        '**Deadline** — tell us early if the samples are needed by a fixed date.',
       ]),
       h2('How to get an accurate quote'),
       p(
-        'Send the format, size, number of swatches per book and the quantity you need. A photo of a reference book removes most of the guesswork.',
+        'Send the service you need, the number of fabrics, the swatch size, the quantity and your deadline. A photo of a reference sample removes most of the guesswork.',
       ),
     ),
   },
 ]
-
-/* Copy added after launch prep (also applied to existing sites by migration 20261022_120000_content_updates). */
-
-export const homeHero = {
-  eyebrow: 'Catalogue Manufacturer · Sharjah, UAE',
-  subheading:
-    'Fabric sample books, waterfall hangers, shade cards, presentation boxes and catalogues of every kind — made for textile, upholstery, curtain and interior brands.',
-}
-
-export const otherCataloguesFaq = {
-  key: 'other',
-  category: 'general' as const,
-  question: 'Do you make other kinds of catalogues, not only fabric?',
-  answer:
-    'Yes. Besides fabric, we make sample books and catalogues for wallpaper, carpets and rugs, blinds and other materials. Send us your samples and how you plan to present them, and we will suggest a suitable format.',
-}
 
 export const privacyPolicy = doc(
   p('**Last updated: 22 October 2026.**'),
@@ -641,7 +639,7 @@ export const privacyPolicy = doc(
   ),
   h2('Information we collect'),
   ul([
-    '**Quote requests:** your name, company, email, phone number, the product you are interested in, quantity and any message you write in the form.',
+    '**Quote requests:** your name, company, email, phone number, the service you need, quantity, sample size, deadline and any message you write in the form.',
     '**Messages:** what you send us by WhatsApp, phone or email.',
     '**Technical data:** our hosting provider records basic request data such as IP address, browser type and the pages requested, to keep the website secure and working.',
   ]),

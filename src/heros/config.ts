@@ -16,7 +16,7 @@ export const hero: Field = {
       required: true,
       options: [
         { label: 'None', value: 'none' },
-        { label: 'Catalogue (home — WebGL fabric + fanned cards)', value: 'catalog' },
+        { label: 'Home (WebGL fabric + service photo showcase)', value: 'catalog' },
         { label: 'Page (heading + image)', value: 'page' },
         { label: 'Minimal (heading only)', value: 'minimal' },
       ],
@@ -84,7 +84,8 @@ export const hero: Field = {
       maxRows: 5,
       admin: {
         condition: (_, { type } = {}) => type === 'catalog',
-        description: 'Up to 5 products shown as fanned catalogue cards. Leave empty to use the first five.',
+        description:
+          'Services shown in the photo showcase (their main photo, title and quote button). Leave empty to use the first five.',
       },
     },
   ],

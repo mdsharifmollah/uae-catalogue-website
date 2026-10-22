@@ -236,7 +236,7 @@ export interface Page {
      */
     media?: (number | null) | Media;
     /**
-     * Up to 5 products shown as fanned catalogue cards. Leave empty to use the first five.
+     * Services shown in the photo showcase (their main photo, title and quote button). Leave empty to use the first five.
      */
     fanProducts?: (number | Product)[] | null;
   };
@@ -341,7 +341,7 @@ export interface Post {
   _status?: ('draft' | 'published') | null;
 }
 /**
- * All images. Always write alt text — describe what is in the photo (e.g. "Numbered fabric shade card with 39 linen swatches"). It helps Google Images and accessibility.
+ * All images. Always write alt text — describe what is in the photo (e.g. "Sample hanger with 24 linen swatches sorted by colour"). It helps Google Images and accessibility.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
@@ -470,7 +470,7 @@ export interface FolderInterface {
 export interface Product {
   id: number;
   /**
-   * Use the words buyers search for, e.g. "Fabric Sample Books".
+   * Use the words buyers search for, e.g. "Fabric Sample Hangers".
    */
   title: string;
   /**
@@ -531,7 +531,7 @@ export interface Product {
       }[]
     | null;
   /**
-   * Pre-filled WhatsApp message for this product, e.g. "Hello, I need a quote for fabric sample books."
+   * Pre-filled WhatsApp message for this product, e.g. "Hello, I need a quote for fabric sample hangers."
    */
   whatsappMessage?: string | null;
   /**
@@ -2953,7 +2953,7 @@ export interface SiteSetting {
       }[]
     | null;
   /**
-   * Appended to page titles, e.g. "Fabric Sample Books | Al Hejlah".
+   * Appended to page titles, e.g. "Fabric Sample Hangers | Al Hejlah".
    */
   titleSuffix?: string | null;
   defaultDescription?: string | null;

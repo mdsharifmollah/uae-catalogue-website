@@ -1,0 +1,6713 @@
+{
+ "docs": [
+  {
+   "collection": "pages",
+   "by": "slug",
+   "value": "privacy-policy",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Privacy Policy",
+     "ar": "سياسة الخصوصية"
+    },
+    {
+     "path": [
+      "hero",
+      "heading"
+     ],
+     "en": "Privacy policy",
+     "ar": "سياسة الخصوصية"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Last updated: 22 October 2026.",
+     "ar": "آخر تحديث: 22 أكتوبر 2026."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "This policy explains how Al Hejlah Catalogue Manufacture (“we”, “us”), based in Sharjah, United Arab Emirates, handles personal information collected through this website. We follow the UAE Personal Data Protection Law (Federal Decree-Law No. 45 of 2021).",
+     "ar": "توضح هذه السياسة كيف تتعامل Al Hejlah Catalogue Manufacture («نحن»)، ومقرها الشارقة في الإمارات العربية المتحدة، مع البيانات الشخصية التي تُجمع عبر هذا الموقع. نلتزم بقانون حماية البيانات الشخصية في دولة الإمارات (المرسوم بقانون اتحادي رقم 45 لسنة 2021)."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Information we collect",
+     "ar": "المعلومات التي نجمعها"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Quote requests:",
+     "ar": "طلبات عروض الأسعار:"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " your name, company, email, phone number, the service you need, quantity, sample size, deadline and any message you write in the form.",
+     "ar": " اسمك واسم شركتك وبريدك الإلكتروني ورقم هاتفك والخدمة التي تحتاجها والكمية ومقاس العينة والموعد النهائي وأي رسالة تكتبها في النموذج."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Messages:",
+     "ar": "الرسائل:"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " what you send us by WhatsApp, phone or email.",
+     "ar": " ما ترسله إلينا عبر واتساب أو الهاتف أو البريد الإلكتروني."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      3,
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Technical data:",
+     "ar": "البيانات التقنية:"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      3,
+      "children",
+      2,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " our hosting provider records basic request data such as IP address, browser type and the pages requested, to keep the website secure and working.",
+     "ar": " يسجّل مزوّد الاستضافة بيانات أساسية عن الطلبات، مثل عنوان IP ونوع المتصفح والصفحات المطلوبة، للحفاظ على أمان الموقع وعمله."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      4,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "You do not need an account to use this website, and we do not ask for payment details online.",
+     "ar": "لا تحتاج إلى حساب لاستخدام هذا الموقع، ولا نطلب أي بيانات دفع عبر الإنترنت."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      5,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "How we use it",
+     "ar": "كيف نستخدمها"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      6,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "To reply to your enquiry, prepare quotations and discuss samples.",
+     "ar": "للرد على استفسارك، وإعداد عروض الأسعار، ومناقشة العينات."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      6,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "To produce and deliver orders you place with us, and keep the related business records.",
+     "ar": "لتصنيع الطلبات التي تقدمها لنا وتسليمها، والاحتفاظ بالسجلات التجارية المتعلقة بها."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      6,
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "To keep the website secure and fix problems.",
+     "ar": "للحفاظ على أمان الموقع وإصلاح المشكلات."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      7,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "We do not sell your personal information, and we do not send marketing messages unless you ask for them.",
+     "ar": "لا نبيع بياناتك الشخصية، ولا نرسل رسائل تسويقية إلا إذا طلبتها."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      8,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Who we share it with",
+     "ar": "مع من نشاركها"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      9,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Only with service providers that help us run the website and reply to you — website hosting (Vercel), our database (Neon) and email delivery (Resend) — and with WhatsApp (Meta) when you choose to contact us there. These providers may process data outside the UAE under their own security and privacy commitments. We may also disclose information when the law requires it.",
+     "ar": "فقط مع مزوّدي الخدمات الذين يساعدوننا في تشغيل الموقع والرد عليك — استضافة الموقع (Vercel)، وقاعدة البيانات (Neon)، وإرسال البريد الإلكتروني (Resend) — ومع واتساب (Meta) عندما تختار التواصل معنا عبره. قد يعالج هؤلاء المزوّدون البيانات خارج دولة الإمارات وفق التزاماتهم الخاصة بالأمان والخصوصية. وقد نفصح عن المعلومات أيضاً عندما يتطلب القانون ذلك."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      10,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Cookies and analytics",
+     "ar": "ملفات تعريف الارتباط والتحليلات"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      11,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "This website does not use advertising cookies. It does not currently use analytics cookies either; if we add analytics in future (for example Google Analytics), we will update this policy first.",
+     "ar": "لا يستخدم هذا الموقع ملفات تعريف الارتباط الإعلانية، ولا يستخدم حالياً ملفات تعريف ارتباط للتحليلات؛ وإذا أضفنا أدوات تحليل مستقبلاً (مثل Google Analytics) فسنحدّث هذه السياسة أولاً."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      12,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "How long we keep it",
+     "ar": "مدة الاحتفاظ بها"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      13,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Enquiries are kept for up to three years so we can follow up and refer back to previous quotations. Order records are kept for as long as UAE accounting and tax rules require.",
+     "ar": "نحتفظ بالاستفسارات لمدة تصل إلى ثلاث سنوات حتى نتمكن من المتابعة والرجوع إلى عروض الأسعار السابقة. ونحتفظ بسجلات الطلبات للمدة التي تتطلبها أنظمة المحاسبة والضرائب في دولة الإمارات."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      14,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Your rights",
+     "ar": "حقوقك"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      15,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "You can ask to see the personal information we hold about you, correct it, delete it or stop us using it, and you can withdraw consent at any time. Contact us using the details below and we will respond within 30 days.",
+     "ar": "يمكنك أن تطلب الاطلاع على بياناتك الشخصية المحفوظة لدينا، أو تصحيحها، أو حذفها، أو إيقاف استخدامنا لها، كما يمكنك سحب موافقتك في أي وقت. تواصل معنا عبر البيانات أدناه وسنرد خلال 30 يوماً."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      16,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Security",
+     "ar": "الأمان"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      17,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Data is sent to us over an encrypted (HTTPS) connection and access to the dashboard is limited to our team. No system is completely secure, but we take reasonable steps to protect your information.",
+     "ar": "تُرسل البيانات إلينا عبر اتصال مشفّر (HTTPS)، ويقتصر الوصول إلى لوحة التحكم على فريقنا. لا يوجد نظام آمن تماماً، لكننا نتخذ خطوات معقولة لحماية معلوماتك."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      18,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Contact",
+     "ar": "تواصل معنا"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      19,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "For any privacy question or request, email ",
+     "ar": "لأي سؤال أو طلب يتعلق بالخصوصية، راسلنا على "
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "columns",
+      0,
+      "richText",
+      "root",
+      "children",
+      19,
+      "children",
+      2,
+      "text"
+     ],
+     "en": " or message us on WhatsApp at ",
+     "ar": " أو عبر واتساب على "
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Privacy Policy | Al Hejlah",
+     "ar": "سياسة الخصوصية | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "How we handle information sent through this website.",
+     "ar": "كيف نتعامل مع المعلومات المرسلة عبر هذا الموقع."
+    }
+   ]
+  },
+  {
+   "collection": "pages",
+   "by": "slug",
+   "value": "guides",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Guides",
+     "ar": "الأدلة"
+    },
+    {
+     "path": [
+      "hero",
+      "eyebrow"
+     ],
+     "en": "Guides",
+     "ar": "الأدلة"
+    },
+    {
+     "path": [
+      "hero",
+      "heading"
+     ],
+     "en": "Fabric sampling, *explained*",
+     "ar": "عينات الأقمشة، *بوضوح*"
+    },
+    {
+     "path": [
+      "hero",
+      "subheading"
+     ],
+     "en": "Practical guidance for businesses planning their next upholstery sample collection.",
+     "ar": "إرشادات عملية للشركات التي تخطط لمجموعة عينات التنجيد القادمة."
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Fabric Sampling Guides | Swatches, Hangers & Swatch Books | Al Hejlah",
+     "ar": "أدلة عينات الأقمشة | العينات والعلّاقات وكتب العينات | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Practical guides to fabric swatch cutting, sample hangers, swatch books and sampling costs.",
+     "ar": "أدلة عملية حول قصّ عينات الأقمشة وعلّاقات العينات وكتب العينات وتكاليف تجهيز العينات."
+    }
+   ]
+  },
+  {
+   "collection": "pages",
+   "by": "slug",
+   "value": "work",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Our Work",
+     "ar": "أعمالنا"
+    },
+    {
+     "path": [
+      "hero",
+      "eyebrow"
+     ],
+     "en": "Portfolio",
+     "ar": "معرض الأعمال"
+    },
+    {
+     "path": [
+      "hero",
+      "heading"
+     ],
+     "en": "Real samples. *Professional* presentation.",
+     "ar": "عينات حقيقية. عرض *احترافي*."
+    },
+    {
+     "path": [
+      "hero",
+      "subheading"
+     ],
+     "en": "Examples of the swatches, sample hangers and swatch books we prepare.",
+     "ar": "نماذج من العينات وعلّاقات العينات وكتب العينات التي نجهّزها."
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Our Work | Fabric Sample Hangers & Swatch Books | Al Hejlah",
+     "ar": "أعمالنا | علّاقات عينات الأقمشة وكتب العينات | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Examples of fabric swatch cutting, sample hangers and swatch books prepared in Sharjah, UAE.",
+     "ar": "نماذج من قصّ عينات الأقمشة وعلّاقات العينات وكتب العينات المجهّزة في الشارقة، الإمارات."
+    }
+   ]
+  },
+  {
+   "collection": "pages",
+   "by": "slug",
+   "value": "industries",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Who We Serve",
+     "ar": "من نخدم"
+    },
+    {
+     "path": [
+      "hero",
+      "eyebrow"
+     ],
+     "en": "Who we serve",
+     "ar": "من نخدم"
+    },
+    {
+     "path": [
+      "hero",
+      "heading"
+     ],
+     "en": "Fabric samples for businesses that *sell* upholstery",
+     "ar": "عينات أقمشة للشركات التي *تبيع* أقمشة التنجيد"
+    },
+    {
+     "path": [
+      "hero",
+      "subheading"
+     ],
+     "en": "Furniture makers, fabric wholesalers, textile suppliers, interior designers, curtain suppliers and showrooms — each needs samples that make choosing easy.",
+     "ar": "مصنّعو الأثاث، وتجّار الأقمشة بالجملة، وموردو المنسوجات، ومصممو الديكور الداخلي، وموردو الستائر، وصالات العرض — كلٌّ منهم يحتاج إلى عينات تجعل الاختيار سهلاً."
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Who We Serve | Upholstery Fabric Sampling UAE | Al Hejlah",
+     "ar": "من نخدم | تجهيز عينات أقمشة التنجيد في الإمارات | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Fabric swatches, sample hangers and swatch books for furniture manufacturers, fabric wholesalers, textile suppliers, interior designers, curtain suppliers and showrooms.",
+     "ar": "عينات أقمشة وعلّاقات عينات وكتب عينات لمصنّعي الأثاث وتجّار الأقمشة بالجملة وموردي المنسوجات ومصممي الديكور الداخلي وموردي الستائر وصالات العرض."
+    }
+   ]
+  },
+  {
+   "collection": "pages",
+   "by": "slug",
+   "value": "products",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Products & Services",
+     "ar": "المنتجات والخدمات"
+    },
+    {
+     "path": [
+      "hero",
+      "eyebrow"
+     ],
+     "en": "Products & services",
+     "ar": "المنتجات والخدمات"
+    },
+    {
+     "path": [
+      "hero",
+      "heading"
+     ],
+     "en": "Fabric swatches, hangers and *swatch* books",
+     "ar": "عينات الأقمشة والعلّاقات و*كتب* العينات"
+    },
+    {
+     "path": [
+      "hero",
+      "subheading"
+     ],
+     "en": "Three focused services for upholstery fabric businesses — cut, sorted and assembled in Sharjah.",
+     "ar": "ثلاث خدمات متخصصة لشركات أقمشة التنجيد — قصّ وفرز وتجميع في الشارقة."
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Fabric Swatch Cutting, Sample Hangers & Swatch Books | Al Hejlah",
+     "ar": "قصّ عينات الأقمشة وعلّاقات العينات وكتب العينات | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Fabric swatch cutting, fabric sample hangers, and swatch books & sample catalogues for upholstery businesses — made in Sharjah, UAE.",
+     "ar": "قصّ عينات الأقمشة، وعلّاقات عينات الأقمشة، وكتب وكتالوجات العينات لشركات التنجيد — تُصنع في الشارقة، الإمارات."
+    }
+   ]
+  },
+  {
+   "collection": "pages",
+   "by": "slug",
+   "value": "contact",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Contact",
+     "ar": "تواصل معنا"
+    },
+    {
+     "path": [
+      "hero",
+      "eyebrow"
+     ],
+     "en": "Contact",
+     "ar": "تواصل معنا"
+    },
+    {
+     "path": [
+      "hero",
+      "heading"
+     ],
+     "en": "Request a *quotation*",
+     "ar": "اطلب *عرض سعر*"
+    },
+    {
+     "path": [
+      "hero",
+      "subheading"
+     ],
+     "en": "Tell us the product you need, the quantity, sample size and deadline. WhatsApp is the fastest way to reach us.",
+     "ar": "أخبرنا بالمنتج الذي تحتاجه والكمية ومقاس العينة والموعد النهائي. واتساب هو أسرع طريقة للتواصل معنا."
+    },
+    {
+     "path": [
+      "hero",
+      "links",
+      0,
+      "link",
+      "label"
+     ],
+     "en": "Chat on WhatsApp",
+     "ar": "تحدث معنا عبر واتساب"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "eyebrow"
+     ],
+     "en": "Quote request",
+     "ar": "طلب عرض سعر"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "heading"
+     ],
+     "en": "Tell us about your *project*",
+     "ar": "أخبرنا عن *مشروعك*"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "intro"
+     ],
+     "en": "A few details help us plan your samples and prepare an accurate quotation.",
+     "ar": "بعض التفاصيل تساعدنا على تخطيط عيناتك وإعداد عرض سعر دقيق."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "eyebrow"
+     ],
+     "en": "Before you ask",
+     "ar": "قبل أن تسأل"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "heading"
+     ],
+     "en": "Ordering *questions*",
+     "ar": "*أسئلة* حول الطلب"
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Request a Quote | Fabric Sample Hangers & Swatch Books UAE | Al Hejlah",
+     "ar": "اطلب عرض سعر | علّاقات عينات الأقمشة وكتب العينات في الإمارات | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Request a quotation for fabric swatch cutting, sample hangers or swatch books. WhatsApp, phone or email our Sharjah team.",
+     "ar": "اطلب عرض سعر لقصّ عينات الأقمشة أو علّاقات العينات أو كتب العينات. تواصل مع فريقنا في الشارقة عبر واتساب أو الهاتف أو البريد الإلكتروني."
+    }
+   ]
+  },
+  {
+   "collection": "pages",
+   "by": "slug",
+   "value": "about",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "About",
+     "ar": "من نحن"
+    },
+    {
+     "path": [
+      "hero",
+      "eyebrow"
+     ],
+     "en": "About us",
+     "ar": "من نحن"
+    },
+    {
+     "path": [
+      "hero",
+      "heading"
+     ],
+     "en": "Upholstery fabric *sampling* specialists in Sharjah",
+     "ar": "متخصصون في *تجهيز* عينات أقمشة التنجيد في الشارقة"
+    },
+    {
+     "path": [
+      "hero",
+      "subheading"
+     ],
+     "en": "We cut fabric and make sample collections — nothing else. That focus keeps every swatch, hanger and swatch book consistent.",
+     "ar": "نقصّ الأقمشة ونصنع مجموعات العينات — ولا شيء غير ذلك. وهذا التركيز يحافظ على تناسق كل عينة وعلّاقة وكتاب عينات."
+    },
+    {
+     "path": [
+      "hero",
+      "links",
+      0,
+      "link",
+      "label"
+     ],
+     "en": "Talk to our team",
+     "ar": "تحدث مع فريقنا"
+    },
+    {
+     "path": [
+      "hero",
+      "links",
+      1,
+      "link",
+      "label"
+     ],
+     "en": "See our work",
+     "ar": "شاهد أعمالنا"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "eyebrow"
+     ],
+     "en": "What we do",
+     "ar": "ما نقوم به"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "heading"
+     ],
+     "en": "We make fabric *easier* to choose",
+     "ar": "نجعل اختيار القماش *أسهل*"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "richText",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "A customer’s first contact with your fabric is often a sample. We cut your fabric rolls and turn them into organised swatches, sample hangers and swatch books, so that first impression is clear and professional.",
+     "ar": "غالباً ما يكون أول تعامل لعميلك مع قماشك من خلال عينة. نقصّ لفائف أقمشتك ونحوّلها إلى عينات منظّمة وعلّاقات عينات وكتب عينات، ليكون هذا الانطباع الأول واضحاً واحترافياً."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "richText",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "We work with furniture manufacturers, upholstery fabric wholesalers, textile mills and suppliers, interior design companies, curtain and furnishing suppliers and furniture showrooms.",
+     "ar": "نعمل مع مصنّعي الأثاث، وتجّار أقمشة التنجيد بالجملة، ومصانع النسيج والموردين، وشركات التصميم الداخلي، وموردي الستائر والمفروشات، وصالات عرض الأثاث."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "pills",
+      0,
+      "text"
+     ],
+     "en": "Sharjah, UAE",
+     "ar": "الشارقة، الإمارات"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "pills",
+      1,
+      "text"
+     ],
+     "en": "Upholstery sampling",
+     "ar": "عينات التنجيد"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "eyebrow"
+     ],
+     "en": "How we work",
+     "ar": "كيف نعمل"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "heading"
+     ],
+     "en": "Clear, *honest* and practical",
+     "ar": "واضحون و*صادقون* وعمليون"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      0,
+      "title"
+     ],
+     "en": "Listen first",
+     "ar": "نستمع أولاً"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      0,
+      "text"
+     ],
+     "en": "We start from how your customers choose fabric — then plan the samples.",
+     "ar": "نبدأ من الطريقة التي يختار بها عملاؤك القماش — ثم نخطط للعينات."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      1,
+      "title"
+     ],
+     "en": "Agree before we cut",
+     "ar": "نتفق قبل أن نقصّ"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      1,
+      "text"
+     ],
+     "en": "Swatch size, layout and quantity are agreed before production.",
+     "ar": "يُتفق على مقاس العينة والتصميم والكمية قبل بدء الإنتاج."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      2,
+      "title"
+     ],
+     "en": "Communicate directly",
+     "ar": "تواصل مباشر"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      2,
+      "text"
+     ],
+     "en": "WhatsApp, phone or email — whichever suits you.",
+     "ar": "واتساب أو الهاتف أو البريد الإلكتروني — ما يناسبك."
+    },
+    {
+     "path": [
+      "layout",
+      2,
+      "heading"
+     ],
+     "en": "Let’s talk about your *collection*",
+     "ar": "لنتحدث عن *مجموعتك*"
+    },
+    {
+     "path": [
+      "layout",
+      2,
+      "links",
+      0,
+      "link",
+      "label"
+     ],
+     "en": "Request a Quote",
+     "ar": "اطلب عرض سعر"
+    },
+    {
+     "path": [
+      "layout",
+      2,
+      "links",
+      1,
+      "link",
+      "label"
+     ],
+     "en": "Message us on WhatsApp",
+     "ar": "راسلنا عبر واتساب"
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "About Us | Upholstery Fabric Sampling Specialists, Sharjah | Al Hejlah",
+     "ar": "من نحن | متخصصون في عينات أقمشة التنجيد، الشارقة | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Al Hejlah cuts upholstery fabric rolls into swatches, sample hangers and swatch books for furniture and textile businesses in Sharjah, Dubai and across the UAE.",
+     "ar": "تقصّ Al Hejlah لفائف أقمشة التنجيد إلى عينات وعلّاقات عينات وكتب عينات لشركات الأثاث والمنسوجات في الشارقة ودبي وجميع أنحاء الإمارات."
+    }
+   ]
+  },
+  {
+   "collection": "pages",
+   "by": "slug",
+   "value": "process",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "How We Make Fabric Samples",
+     "ar": "كيف نصنع عينات الأقمشة"
+    },
+    {
+     "path": [
+      "hero",
+      "eyebrow"
+     ],
+     "en": "Our process",
+     "ar": "طريقة عملنا"
+    },
+    {
+     "path": [
+      "hero",
+      "heading"
+     ],
+     "en": "From fabric roll to *finished* sample",
+     "ar": "من لفّة القماش إلى العينة *الجاهزة*"
+    },
+    {
+     "path": [
+      "hero",
+      "subheading"
+     ],
+     "en": "A clear, seven-step process — from receiving your fabric rolls to packing the finished samples.",
+     "ar": "طريقة عمل واضحة من سبع خطوات — من استلام لفائف أقمشتك إلى تغليف العينات الجاهزة."
+    },
+    {
+     "path": [
+      "hero",
+      "links",
+      0,
+      "link",
+      "label"
+     ],
+     "en": "Request a Quote",
+     "ar": "اطلب عرض سعر"
+    },
+    {
+     "path": [
+      "hero",
+      "links",
+      1,
+      "link",
+      "label"
+     ],
+     "en": "Discuss Your Project",
+     "ar": "ناقش مشروعك"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "eyebrow"
+     ],
+     "en": "Step by step",
+     "ar": "خطوة بخطوة"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "heading"
+     ],
+     "en": "Seven steps to *finished* samples",
+     "ar": "سبع خطوات إلى عينات *جاهزة*"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      0,
+      "title"
+     ],
+     "en": "Receive your fabric rolls",
+     "ar": "استلام لفائف أقمشتك"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      0,
+      "text"
+     ],
+     "en": "You send the fabric rolls for the collection with your requirements: swatch size, quantity and how the samples will be presented.",
+     "ar": "ترسل لنا لفائف أقمشة المجموعة مع متطلباتك: مقاس العينة والكمية وطريقة عرض العينات."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      1,
+      "title"
+     ],
+     "en": "Cut to size",
+     "ar": "القصّ حسب المقاس"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      1,
+      "text"
+     ],
+     "en": "Each fabric is cut into swatches or sample strips at the agreed size, keeping every piece consistent.",
+     "ar": "يُقصّ كل قماش إلى عينات أو شرائح عينات بالمقاس المتفق عليه، مع الحفاظ على تناسق كل قطعة."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      2,
+      "title"
+     ],
+     "en": "Finish",
+     "ar": "التشطيب"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      2,
+      "text"
+     ],
+     "en": "Cut pieces are finished so every swatch looks neat and holds up to handling by your customers.",
+     "ar": "تُشطّب القطع المقصوصة لتبدو كل عينة أنيقة وتتحمل تداول عملائك لها."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      3,
+      "title"
+     ],
+     "en": "Sort colour by colour",
+     "ar": "الفرز لوناً بلون"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      3,
+      "text"
+     ],
+     "en": "Swatches are sorted colour-wise, by article or by collection — the order your customers will browse them in.",
+     "ar": "تُفرز العينات حسب اللون أو الصنف أو المجموعة — بالترتيب الذي سيتصفحها به عملاؤك."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      4,
+      "title"
+     ],
+     "en": "Assemble hangers & books",
+     "ar": "تجميع العلّاقات والكتب"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      4,
+      "text"
+     ],
+     "en": "Sorted swatches are assembled onto sample hangers or into swatch books and sample catalogues.",
+     "ar": "تُجمّع العينات المفروزة على علّاقات العينات أو في كتب وكتالوجات العينات."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      5,
+      "title"
+     ],
+     "en": "Quality check",
+     "ar": "فحص الجودة"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      5,
+      "text"
+     ],
+     "en": "Every hanger and book is checked for the right order, alignment and clean edges before packing.",
+     "ar": "تُفحص كل علّاقة وكل كتاب للتأكد من صحة الترتيب والمحاذاة ونظافة الحواف قبل التغليف."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      6,
+      "title"
+     ],
+     "en": "Pack & deliver",
+     "ar": "التغليف والتسليم"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "steps",
+      6,
+      "text"
+     ],
+     "en": "Finished samples are packed with care and prepared for delivery or collection.",
+     "ar": "تُغلّف العينات الجاهزة بعناية وتُجهّز للتوصيل أو الاستلام."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "eyebrow"
+     ],
+     "en": "Options",
+     "ar": "الخيارات"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "heading"
+     ],
+     "en": "What we can *customise*",
+     "ar": "ما يمكننا *تخصيصه*"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      0,
+      "title"
+     ],
+     "en": "Swatch size",
+     "ar": "مقاس العينة"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      0,
+      "text"
+     ],
+     "en": "Swatches and strips cut to the size you need.",
+     "ar": "عينات وشرائح مقصوصة بالمقاس الذي تحتاجه."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      1,
+      "title"
+     ],
+     "en": "Sorting",
+     "ar": "الفرز"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      1,
+      "text"
+     ],
+     "en": "Colour-wise, by article or by collection.",
+     "ar": "حسب اللون أو الصنف أو المجموعة."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      2,
+      "title"
+     ],
+     "en": "Sample hangers",
+     "ar": "علّاقات العينات"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      2,
+      "text"
+     ],
+     "en": "For rails, stands and showroom walls.",
+     "ar": "لقضبان العرض والحوامل وجدران صالات العرض."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      3,
+      "title"
+     ],
+     "en": "Swatch books",
+     "ar": "كتب العينات"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      3,
+      "text"
+     ],
+     "en": "Collections organised page by page.",
+     "ar": "مجموعات منظّمة صفحة بصفحة."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      4,
+      "title"
+     ],
+     "en": "Quantity",
+     "ar": "الكمية"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      4,
+      "text"
+     ],
+     "en": "From a few sets to a full dealer network.",
+     "ar": "من مجموعات قليلة إلى شبكة موزعين كاملة."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      5,
+      "title"
+     ],
+     "en": "Quality check",
+     "ar": "فحص الجودة"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "items",
+      5,
+      "text"
+     ],
+     "en": "Order, alignment and edges checked before packing.",
+     "ar": "فحص الترتيب والمحاذاة والحواف قبل التغليف."
+    },
+    {
+     "path": [
+      "layout",
+      2,
+      "eyebrow"
+     ],
+     "en": "FAQ",
+     "ar": "الأسئلة الشائعة"
+    },
+    {
+     "path": [
+      "layout",
+      2,
+      "heading"
+     ],
+     "en": "Production *questions*",
+     "ar": "*أسئلة* حول الإنتاج"
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "heading"
+     ],
+     "en": "Ready to *start*?",
+     "ar": "جاهز *للبدء*؟"
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "text"
+     ],
+     "en": "Share your fabric range, the sample size and the quantity — we will guide you through the rest.",
+     "ar": "شاركنا تشكيلة أقمشتك ومقاس العينة والكمية — وسنرشدك في بقية الخطوات."
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "links",
+      0,
+      "link",
+      "label"
+     ],
+     "en": "Request a Quote",
+     "ar": "اطلب عرض سعر"
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "links",
+      1,
+      "link",
+      "label"
+     ],
+     "en": "Discuss Your Project",
+     "ar": "ناقش مشروعك"
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "How Fabric Samples Are Made | Our Process | Al Hejlah",
+     "ar": "كيف تُصنع عينات الأقمشة | طريقة عملنا | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "See how we turn your fabric rolls into swatches, sample hangers and swatch books: receiving, cutting, finishing, sorting, assembly, quality check and packing.",
+     "ar": "تعرّف كيف نحوّل لفائف أقمشتك إلى عينات وعلّاقات عينات وكتب عينات: الاستلام والقصّ والتشطيب والفرز والتجميع وفحص الجودة والتغليف."
+    }
+   ]
+  },
+  {
+   "collection": "pages",
+   "by": "slug",
+   "value": "home",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Home",
+     "ar": "الرئيسية"
+    },
+    {
+     "path": [
+      "hero",
+      "eyebrow"
+     ],
+     "en": "Upholstery Fabric Sampling · Sharjah, UAE",
+     "ar": "تجهيز عينات أقمشة التنجيد · الشارقة، الإمارات"
+    },
+    {
+     "path": [
+      "hero",
+      "heading"
+     ],
+     "en": "From Fabric Rolls to *Premium* Sample Collections",
+     "ar": "من لفائف القماش إلى مجموعات عينات *فاخرة*"
+    },
+    {
+     "path": [
+      "hero",
+      "subheading"
+     ],
+     "en": "We transform upholstery fabrics into organised, professional sample hangers and swatch books that help your customers explore colours, textures and collections with confidence.",
+     "ar": "نحوّل أقمشة التنجيد إلى علّاقات عينات وكتب عينات منظّمة واحترافية تساعد عملاءك على استكشاف الألوان والملامس والمجموعات بثقة."
+    },
+    {
+     "path": [
+      "hero",
+      "links",
+      0,
+      "link",
+      "label"
+     ],
+     "en": "Request a Quote",
+     "ar": "اطلب عرض سعر"
+    },
+    {
+     "path": [
+      "hero",
+      "links",
+      1,
+      "link",
+      "label"
+     ],
+     "en": "Discuss Your Project",
+     "ar": "ناقش مشروعك"
+    },
+    {
+     "path": [
+      "hero",
+      "trustItems",
+      0,
+      "text"
+     ],
+     "en": "Cut from your fabric rolls",
+     "ar": "مقصوصة من لفائف أقمشتك"
+    },
+    {
+     "path": [
+      "hero",
+      "trustItems",
+      1,
+      "text"
+     ],
+     "en": "Sorted colour by colour",
+     "ar": "مفروزة لوناً بلون"
+    },
+    {
+     "path": [
+      "hero",
+      "trustItems",
+      2,
+      "text"
+     ],
+     "en": "Checked before delivery",
+     "ar": "مفحوصة قبل التسليم"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "eyebrow"
+     ],
+     "en": "Products & services",
+     "ar": "المنتجات والخدمات"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "heading"
+     ],
+     "en": "From cutting to *finished* sample collections",
+     "ar": "من القصّ إلى مجموعات عينات *جاهزة*"
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "intro"
+     ],
+     "en": "Fabric sampling is all we do — so every swatch, hanger and swatch book gets our full attention.",
+     "ar": "تجهيز عينات الأقمشة هو كل ما نقوم به — لذلك تحظى كل عينة وعلّاقة وكتاب عينات باهتمامنا الكامل."
+    },
+    {
+     "path": [
+      "layout",
+      0,
+      "link",
+      "label"
+     ],
+     "en": "All services",
+     "ar": "جميع الخدمات"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "eyebrow"
+     ],
+     "en": "How it works",
+     "ar": "كيف نعمل"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "heading"
+     ],
+     "en": "From fabric roll to *finished* sample",
+     "ar": "من لفّة القماش إلى العينة *الجاهزة*"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "intro"
+     ],
+     "en": "Seven careful steps turn your fabric rolls into samples your customers enjoy using.",
+     "ar": "سبع خطوات دقيقة تحوّل لفائف أقمشتك إلى عينات يستمتع عملاؤك باستخدامها."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      0,
+      "title"
+     ],
+     "en": "Receive your fabric rolls",
+     "ar": "استلام لفائف أقمشتك"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      0,
+      "text"
+     ],
+     "en": "You send the fabric rolls for the collection with your requirements: swatch size, quantity and how the samples will be presented.",
+     "ar": "ترسل لنا لفائف أقمشة المجموعة مع متطلباتك: مقاس العينة والكمية وطريقة عرض العينات."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      1,
+      "title"
+     ],
+     "en": "Cut to size",
+     "ar": "القصّ حسب المقاس"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      1,
+      "text"
+     ],
+     "en": "Each fabric is cut into swatches or sample strips at the agreed size, keeping every piece consistent.",
+     "ar": "يُقصّ كل قماش إلى عينات أو شرائح عينات بالمقاس المتفق عليه، مع الحفاظ على تناسق كل قطعة."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      2,
+      "title"
+     ],
+     "en": "Finish",
+     "ar": "التشطيب"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      2,
+      "text"
+     ],
+     "en": "Cut pieces are finished so every swatch looks neat and holds up to handling by your customers.",
+     "ar": "تُشطّب القطع المقصوصة لتبدو كل عينة أنيقة وتتحمل تداول عملائك لها."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      3,
+      "title"
+     ],
+     "en": "Sort colour by colour",
+     "ar": "الفرز لوناً بلون"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      3,
+      "text"
+     ],
+     "en": "Swatches are sorted colour-wise, by article or by collection — the order your customers will browse them in.",
+     "ar": "تُفرز العينات حسب اللون أو الصنف أو المجموعة — بالترتيب الذي سيتصفحها به عملاؤك."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      4,
+      "title"
+     ],
+     "en": "Assemble hangers & books",
+     "ar": "تجميع العلّاقات والكتب"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      4,
+      "text"
+     ],
+     "en": "Sorted swatches are assembled onto sample hangers or into swatch books and sample catalogues.",
+     "ar": "تُجمّع العينات المفروزة على علّاقات العينات أو في كتب وكتالوجات العينات."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      5,
+      "title"
+     ],
+     "en": "Quality check",
+     "ar": "فحص الجودة"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      5,
+      "text"
+     ],
+     "en": "Every hanger and book is checked for the right order, alignment and clean edges before packing.",
+     "ar": "تُفحص كل علّاقة وكل كتاب للتأكد من صحة الترتيب والمحاذاة ونظافة الحواف قبل التغليف."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      6,
+      "title"
+     ],
+     "en": "Pack & deliver",
+     "ar": "التغليف والتسليم"
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "steps",
+      6,
+      "text"
+     ],
+     "en": "Finished samples are packed with care and prepared for delivery or collection.",
+     "ar": "تُغلّف العينات الجاهزة بعناية وتُجهّز للتوصيل أو الاستلام."
+    },
+    {
+     "path": [
+      "layout",
+      1,
+      "link",
+      "label"
+     ],
+     "en": "Request a quote",
+     "ar": "اطلب عرض سعر"
+    },
+    {
+     "path": [
+      "layout",
+      2,
+      "eyebrow"
+     ],
+     "en": "Who we serve",
+     "ar": "من نخدم"
+    },
+    {
+     "path": [
+      "layout",
+      2,
+      "heading"
+     ],
+     "en": "Made for businesses that *sell* upholstery fabric",
+     "ar": "مصممة للشركات التي *تبيع* أقمشة التنجيد"
+    },
+    {
+     "path": [
+      "layout",
+      2,
+      "intro"
+     ],
+     "en": "Each customer presents fabric differently. We prepare the samples that fit the way you sell.",
+     "ar": "كل عميل يعرض القماش بطريقة مختلفة. ونحن نجهّز العينات التي تناسب طريقة بيعك."
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "eyebrow"
+     ],
+     "en": "Why choose us",
+     "ar": "لماذا تختارنا"
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "heading"
+     ],
+     "en": "Consistent swatches, *organised* presentation",
+     "ar": "عينات متناسقة وعرض *منظّم*"
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "intro"
+     ],
+     "en": "A focused sampling partner for upholstery fabric businesses in the UAE.",
+     "ar": "شريك متخصص في تجهيز العينات لشركات أقمشة التنجيد في الإمارات."
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "items",
+      0,
+      "title"
+     ],
+     "en": "Cut to your specification",
+     "ar": "مقصوصة حسب مواصفاتك"
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "items",
+      0,
+      "text"
+     ],
+     "en": "Swatch sizes, layouts and quantities planned around your collection.",
+     "ar": "مقاسات العينات والتصميم والكميات مخططة وفق مجموعتك."
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "items",
+      1,
+      "title"
+     ],
+     "en": "Consistent, clean swatches",
+     "ar": "عينات متناسقة ونظيفة"
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "items",
+      1,
+      "text"
+     ],
+     "en": "Every piece cut to the same size and finished neatly.",
+     "ar": "كل قطعة مقصوصة بالمقاس نفسه ومشطّبة بعناية."
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "items",
+      2,
+      "title"
+     ],
+     "en": "Organised colour by colour",
+     "ar": "منظّمة لوناً بلون"
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "items",
+      2,
+      "text"
+     ],
+     "en": "Sorted the way your customers browse, so choosing is easy.",
+     "ar": "مفروزة بالطريقة التي يتصفح بها عملاؤك، ليكون الاختيار سهلاً."
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "items",
+      3,
+      "title"
+     ],
+     "en": "Checked before delivery",
+     "ar": "مفحوصة قبل التسليم"
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "items",
+      3,
+      "text"
+     ],
+     "en": "Each hanger and swatch book is checked before it is packed.",
+     "ar": "تُفحص كل علّاقة وكل كتاب عينات قبل تغليفه."
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "items",
+      4,
+      "title"
+     ],
+     "en": "Direct WhatsApp contact",
+     "ar": "تواصل مباشر عبر واتساب"
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "items",
+      4,
+      "text"
+     ],
+     "en": "Talk to the team, share photos and get answers quickly.",
+     "ar": "تحدث مع الفريق، وشارك الصور، واحصل على إجابات سريعة."
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "items",
+      5,
+      "title"
+     ],
+     "en": "Based in Sharjah, UAE",
+     "ar": "مقرنا في الشارقة، الإمارات"
+    },
+    {
+     "path": [
+      "layout",
+      3,
+      "items",
+      5,
+      "text"
+     ],
+     "en": "Close to the furniture and textile businesses we serve.",
+     "ar": "قريبون من شركات الأثاث والمنسوجات التي نخدمها."
+    },
+    {
+     "path": [
+      "layout",
+      4,
+      "eyebrow"
+     ],
+     "en": "Our work",
+     "ar": "أعمالنا"
+    },
+    {
+     "path": [
+      "layout",
+      4,
+      "heading"
+     ],
+     "en": "Real samples. *Professional* presentation.",
+     "ar": "عينات حقيقية. عرض *احترافي*."
+    },
+    {
+     "path": [
+      "layout",
+      4,
+      "intro"
+     ],
+     "en": "Examples of the swatch cutting, sample hangers and swatch books we prepare.",
+     "ar": "نماذج من قصّ العينات وعلّاقات العينات وكتب العينات التي نجهّزها."
+    },
+    {
+     "path": [
+      "layout",
+      4,
+      "link",
+      "label"
+     ],
+     "en": "View all work",
+     "ar": "شاهد كل الأعمال"
+    },
+    {
+     "path": [
+      "layout",
+      5,
+      "eyebrow"
+     ],
+     "en": "FAQ",
+     "ar": "الأسئلة الشائعة"
+    },
+    {
+     "path": [
+      "layout",
+      5,
+      "heading"
+     ],
+     "en": "Questions customers *ask* us",
+     "ar": "أسئلة *يطرحها* علينا العملاء"
+    },
+    {
+     "path": [
+      "layout",
+      5,
+      "intro"
+     ],
+     "en": "Can’t find your answer? Message us on WhatsApp.",
+     "ar": "لم تجد إجابتك؟ راسلنا عبر واتساب."
+    },
+    {
+     "path": [
+      "layout",
+      5,
+      "link",
+      "label"
+     ],
+     "en": "Ask a question",
+     "ar": "اطرح سؤالاً"
+    },
+    {
+     "path": [
+      "layout",
+      6,
+      "eyebrow"
+     ],
+     "en": "Request a quote",
+     "ar": "اطلب عرض سعر"
+    },
+    {
+     "path": [
+      "layout",
+      6,
+      "heading"
+     ],
+     "en": "Tell us about your *sample* project",
+     "ar": "أخبرنا عن مشروع *العينات* الخاص بك"
+    },
+    {
+     "path": [
+      "layout",
+      6,
+      "intro"
+     ],
+     "en": "Share your company, the product you need, quantity, sample size and deadline. We reply with options and a quotation.",
+     "ar": "شاركنا اسم شركتك والمنتج الذي تحتاجه والكمية ومقاس العينة والموعد النهائي، وسنرد عليك بالخيارات وعرض السعر."
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Fabric Swatch Book Manufacturers UAE | Al Hejlah",
+     "ar": "مصنّعو كتب عينات الأقمشة في الإمارات | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Fabric swatch cutting, sample hangers and swatch books for furniture makers, fabric wholesalers and interior brands. Upholstery sampling in Sharjah, UAE.",
+     "ar": "قصّ عينات الأقمشة وعلّاقات العينات وكتب العينات لمصنّعي الأثاث وتجّار الأقمشة بالجملة وعلامات الديكور الداخلي. تجهيز عينات التنجيد في الشارقة، الإمارات."
+    }
+   ]
+  },
+  {
+   "collection": "products",
+   "by": "slug",
+   "value": "fabric-swatch-cutting",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Fabric Swatch Cutting",
+     "ar": "قصّ عينات الأقمشة"
+    },
+    {
+     "path": [
+      "cardTitle"
+     ],
+     "en": "Fabric Swatch|Cutting",
+     "ar": "قصّ عينات|الأقمشة"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "We cut your upholstery fabric rolls into clean, consistent swatches and sample strips — sized to your requirement and sorted colour by colour.",
+     "ar": "نقصّ لفائف أقمشة التنجيد إلى عينات وشرائح عينات نظيفة ومتناسقة — بالمقاس الذي تطلبه ومفروزة لوناً بلون."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric swatch cutting from your rolls",
+     "ar": "قصّ عينات الأقمشة من لفائفك"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Every good sample starts with a clean cut. We take your fabric rolls and cut them into swatches or sample strips of the same size, so every piece in the collection looks consistent and professional.",
+     "ar": "كل عينة جيدة تبدأ بقصّة نظيفة. نأخذ لفائف أقمشتك ونقصّها إلى عينات أو شرائح بالمقاس نفسه، لتبدو كل قطعة في المجموعة متناسقة واحترافية."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "How we work",
+     "ar": "كيف نعمل"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Swatches and strips cut to the size you specify",
+     "ar": "عينات وشرائح مقصوصة بالمقاس الذي تحدده"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Finished so they look neat and hold up to handling",
+     "ar": "مشطّبة لتبدو أنيقة وتتحمل التداول"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Sorted colour by colour, by article or by collection",
+     "ar": "مفروزة لوناً بلون أو حسب الصنف أو المجموعة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      3,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Supplied loose, or assembled into hangers and swatch books",
+     "ar": "تُسلّم منفصلة، أو مجمّعة على علّاقات وفي كتب عينات"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      4,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "What to send us",
+     "ar": "ما ترسله إلينا"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      5,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Your fabric rolls, or a list of the qualities and colours",
+     "ar": "لفائف أقمشتك، أو قائمة بالنوعيات والألوان"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      5,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "The swatch size you need (or a reference sample)",
+     "ar": "مقاس العينة الذي تحتاجه (أو عينة مرجعية)"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      5,
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "The quantity and your deadline",
+     "ar": "الكمية والموعد النهائي"
+    },
+    {
+     "path": [
+      "specs",
+      0,
+      "label"
+     ],
+     "en": "Fabric",
+     "ar": "القماش"
+    },
+    {
+     "path": [
+      "specs",
+      1,
+      "label"
+     ],
+     "en": "Swatch size",
+     "ar": "مقاس العينة"
+    },
+    {
+     "path": [
+      "specs",
+      2,
+      "label"
+     ],
+     "en": "Finishing",
+     "ar": "التشطيب"
+    },
+    {
+     "path": [
+      "specs",
+      3,
+      "label"
+     ],
+     "en": "Sorting",
+     "ar": "الفرز"
+    },
+    {
+     "path": [
+      "specs",
+      4,
+      "label"
+     ],
+     "en": "Supplied as",
+     "ar": "طريقة التسليم"
+    },
+    {
+     "path": [
+      "specs",
+      5,
+      "label"
+     ],
+     "en": "Minimum order",
+     "ar": "الحد الأدنى للطلب"
+    },
+    {
+     "path": [
+      "useCases",
+      0,
+      "text"
+     ],
+     "en": "Fabric wholesalers sending samples to dealers",
+     "ar": "تجّار الأقمشة بالجملة الذين يرسلون العينات إلى الموزعين"
+    },
+    {
+     "path": [
+      "useCases",
+      1,
+      "text"
+     ],
+     "en": "Textile suppliers launching a new collection",
+     "ar": "موردو المنسوجات عند إطلاق مجموعة جديدة"
+    },
+    {
+     "path": [
+      "useCases",
+      2,
+      "text"
+     ],
+     "en": "Furniture makers preparing samples for customers",
+     "ar": "مصنّعو الأثاث الذين يجهّزون العينات لعملائهم"
+    },
+    {
+     "path": [
+      "useCases",
+      3,
+      "text"
+     ],
+     "en": "Interior designers presenting project options",
+     "ar": "مصممو الديكور الداخلي عند عرض خيارات المشاريع"
+    },
+    {
+     "path": [
+      "whatsappMessage"
+     ],
+     "en": "Hello, I'd like a quotation for fabric swatch cutting.",
+     "ar": "مرحباً، أرغب في الحصول على عرض سعر لقصّ عينات الأقمشة."
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Fabric Swatch Cutting in Sharjah & Dubai, UAE | Al Hejlah",
+     "ar": "قصّ عينات الأقمشة في الشارقة ودبي، الإمارات | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "We cut your upholstery fabric rolls into clean, consistent swatches and sample strips — sized to your requirement and sorted colour by colour.",
+     "ar": "نقصّ لفائف أقمشة التنجيد إلى عينات وشرائح عينات نظيفة ومتناسقة — بالمقاس الذي تطلبه ومفروزة لوناً بلون."
+    }
+   ]
+  },
+  {
+   "collection": "products",
+   "by": "slug",
+   "value": "fabric-sample-hangers",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Fabric Sample Hangers",
+     "ar": "علّاقات عينات الأقمشة"
+    },
+    {
+     "path": [
+      "cardTitle"
+     ],
+     "en": "Fabric Sample|Hangers",
+     "ar": "علّاقات عينات|الأقمشة"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "Fabric swatches cut and assembled on hangers, so your customers can flip through colours and feel textures on a rail, stand or showroom wall.",
+     "ar": "عينات أقمشة مقصوصة ومجمّعة على علّاقات، ليتمكن عملاؤك من تقليب الألوان وتحسس الملامس على قضيب عرض أو حامل أو جدار صالة العرض."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric sample hangers for upholstery collections",
+     "ar": "علّاقات عينات الأقمشة لمجموعات التنجيد"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "A sample hanger shows every colour of a fabric quality in one place. Customers can flip through the range, lift a swatch to feel it and choose without unrolling a single bolt.",
+     "ar": "تعرض علّاقة العينات كل ألوان نوعية القماش في مكان واحد. يستطيع العملاء تقليب التشكيلة ورفع العينة لتحسسها والاختيار دون فك لفّة واحدة."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "When to choose hangers",
+     "ar": "متى تختار العلّاقات"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Qualities with many colours",
+     "ar": "النوعيات ذات الألوان الكثيرة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Showrooms with rails, stands or wall space",
+     "ar": "صالات العرض التي تضم قضبان عرض أو حوامل أو مساحات جدارية"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Ranges you send to retailers and dealers",
+     "ar": "التشكيلات التي ترسلها إلى تجّار التجزئة والموزعين"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      3,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Curtain and furnishing fabrics where drape matters",
+     "ar": "أقمشة الستائر والمفروشات التي يهم فيها الانسدال"
+    },
+    {
+     "path": [
+      "specs",
+      0,
+      "label"
+     ],
+     "en": "Fabric",
+     "ar": "القماش"
+    },
+    {
+     "path": [
+      "specs",
+      1,
+      "label"
+     ],
+     "en": "Swatches per hanger",
+     "ar": "عدد العينات في كل علّاقة"
+    },
+    {
+     "path": [
+      "specs",
+      2,
+      "label"
+     ],
+     "en": "Arrangement",
+     "ar": "الترتيب"
+    },
+    {
+     "path": [
+      "specs",
+      3,
+      "label"
+     ],
+     "en": "Display",
+     "ar": "العرض"
+    },
+    {
+     "path": [
+      "specs",
+      4,
+      "label"
+     ],
+     "en": "Minimum order",
+     "ar": "الحد الأدنى للطلب"
+    },
+    {
+     "path": [
+      "useCases",
+      0,
+      "text"
+     ],
+     "en": "Upholstery fabric wholesalers supplying retailers and dealers",
+     "ar": "تجّار أقمشة التنجيد بالجملة الذين يزوّدون تجّار التجزئة والموزعين"
+    },
+    {
+     "path": [
+      "useCases",
+      1,
+      "text"
+     ],
+     "en": "Furniture showrooms",
+     "ar": "صالات عرض الأثاث"
+    },
+    {
+     "path": [
+      "useCases",
+      2,
+      "text"
+     ],
+     "en": "Curtain and furnishing suppliers",
+     "ar": "موردو الستائر والمفروشات"
+    },
+    {
+     "path": [
+      "useCases",
+      3,
+      "text"
+     ],
+     "en": "Qualities with many colours",
+     "ar": "النوعيات ذات الألوان الكثيرة"
+    },
+    {
+     "path": [
+      "whatsappMessage"
+     ],
+     "en": "Hello, I'd like a quotation for fabric sample hangers.",
+     "ar": "مرحباً، أرغب في الحصول على عرض سعر لعلّاقات عينات الأقمشة."
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Fabric Sample Hangers in Sharjah & Dubai, UAE | Al Hejlah",
+     "ar": "علّاقات عينات الأقمشة في الشارقة ودبي، الإمارات | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Fabric swatches cut and assembled on hangers, so your customers can flip through colours and feel textures on a rail, stand or showroom wall.",
+     "ar": "عينات أقمشة مقصوصة ومجمّعة على علّاقات، ليتمكن عملاؤك من تقليب الألوان وتحسس الملامس على قضيب عرض أو حامل أو جدار صالة العرض."
+    }
+   ]
+  },
+  {
+   "collection": "products",
+   "by": "slug",
+   "value": "swatch-books-sample-catalogues",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Swatch Books & Sample Catalogues",
+     "ar": "كتب وكتالوجات العينات"
+    },
+    {
+     "path": [
+      "cardTitle"
+     ],
+     "en": "Swatch Books &|Sample Catalogues",
+     "ar": "كتب العينات|والكتالوجات"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "Swatch books and sample catalogues that present your upholstery collection in one organised book — easy to carry, browse and choose from.",
+     "ar": "كتب وكتالوجات عينات تعرض مجموعة أقمشة التنجيد الخاصة بك في كتاب واحد منظّم — سهل الحمل والتصفح والاختيار منه."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Swatch books and sample catalogues for upholstery fabrics",
+     "ar": "كتب وكتالوجات العينات لأقمشة التنجيد"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "A swatch book keeps a whole collection in one place. Customers can browse every quality and colour, compare textures side by side and note exactly what they want to order.",
+     "ar": "يجمع كتاب العينات المجموعة كاملة في مكان واحد. يستطيع العملاء تصفح كل نوعية ولون، ومقارنة الملامس جنباً إلى جنب، وتدوين ما يريدون طلبه بالضبط."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Organised the way your customers choose",
+     "ar": "منظّمة بالطريقة التي يختار بها عملاؤك"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "We arrange the swatches colour by colour, by quality or by collection — whichever makes your range easiest to browse in a showroom or on a sales visit.",
+     "ar": "نرتّب العينات لوناً بلون أو حسب النوعية أو المجموعة — أيّها يجعل تشكيلتك أسهل تصفحاً في صالة العرض أو خلال الزيارات البيعية."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      4,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "What to send us",
+     "ar": "ما ترسله إلينا"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      5,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Your fabric rolls, or a list of the qualities and colours",
+     "ar": "لفائف أقمشتك، أو قائمة بالنوعيات والألوان"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      5,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "The swatch size and preferred layout (or a reference photo)",
+     "ar": "مقاس العينة والتصميم المفضل (أو صورة مرجعية)"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      5,
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "The number of books and your deadline",
+     "ar": "عدد الكتب والموعد النهائي"
+    },
+    {
+     "path": [
+      "specs",
+      0,
+      "label"
+     ],
+     "en": "Contents",
+     "ar": "المحتويات"
+    },
+    {
+     "path": [
+      "specs",
+      1,
+      "label"
+     ],
+     "en": "Layout",
+     "ar": "التصميم"
+    },
+    {
+     "path": [
+      "specs",
+      2,
+      "label"
+     ],
+     "en": "Size",
+     "ar": "المقاس"
+    },
+    {
+     "path": [
+      "specs",
+      3,
+      "label"
+     ],
+     "en": "Binding & cover",
+     "ar": "التجليد والغلاف"
+    },
+    {
+     "path": [
+      "specs",
+      4,
+      "label"
+     ],
+     "en": "Minimum order",
+     "ar": "الحد الأدنى للطلب"
+    },
+    {
+     "path": [
+      "useCases",
+      0,
+      "text"
+     ],
+     "en": "Sofa and chair collections",
+     "ar": "مجموعات الكنب والكراسي"
+    },
+    {
+     "path": [
+      "useCases",
+      1,
+      "text"
+     ],
+     "en": "New collection launches",
+     "ar": "إطلاق المجموعات الجديدة"
+    },
+    {
+     "path": [
+      "useCases",
+      2,
+      "text"
+     ],
+     "en": "Showrooms and interior design studios",
+     "ar": "صالات العرض واستوديوهات التصميم الداخلي"
+    },
+    {
+     "path": [
+      "useCases",
+      3,
+      "text"
+     ],
+     "en": "Sales visits and client meetings",
+     "ar": "الزيارات البيعية واجتماعات العملاء"
+    },
+    {
+     "path": [
+      "whatsappMessage"
+     ],
+     "en": "Hello, I'd like a quotation for swatch books / sample catalogues.",
+     "ar": "مرحباً، أرغب في الحصول على عرض سعر لكتب / كتالوجات العينات."
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Swatch Books & Sample Catalogues in Sharjah & Dubai, UAE | Al Hejlah",
+     "ar": "كتب وكتالوجات العينات في الشارقة ودبي، الإمارات | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Swatch books and sample catalogues that present your upholstery collection in one organised book — easy to carry, browse and choose from.",
+     "ar": "كتب وكتالوجات عينات تعرض مجموعة أقمشة التنجيد الخاصة بك في كتاب واحد منظّم — سهل الحمل والتصفح والاختيار منه."
+    }
+   ]
+  },
+  {
+   "collection": "industries",
+   "by": "slug",
+   "value": "furniture-manufacturers",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Furniture Manufacturers",
+     "ar": "مصنّعو الأثاث"
+    },
+    {
+     "path": [
+      "tag"
+     ],
+     "en": "Sofas & chairs",
+     "ar": "الكنب والكراسي"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "Swatch books for sofa and chair collections, so your customers can compare every fabric option before they order.",
+     "ar": "كتب عينات لمجموعات الكنب والكراسي، ليتمكن عملاؤك من مقارنة كل خيارات القماش قبل الطلب."
+    },
+    {
+     "path": [
+      "needs",
+      0,
+      "title"
+     ],
+     "en": "Every option in one place",
+     "ar": "كل الخيارات في مكان واحد"
+    },
+    {
+     "path": [
+      "needs",
+      0,
+      "text"
+     ],
+     "en": "All the fabrics offered for a sofa or chair collection, together in one book.",
+     "ar": "كل الأقمشة المتاحة لمجموعة كنب أو كراسي، معاً في كتاب واحد."
+    },
+    {
+     "path": [
+      "needs",
+      1,
+      "title"
+     ],
+     "en": "Texture you can feel",
+     "ar": "ملمس يمكنك تحسسه"
+    },
+    {
+     "path": [
+      "needs",
+      1,
+      "text"
+     ],
+     "en": "Swatches large enough to judge weave, pile and hand-feel — not just colour.",
+     "ar": "عينات كبيرة بما يكفي للحكم على النسيج والوبر والملمس — لا اللون فقط."
+    },
+    {
+     "path": [
+      "needs",
+      2,
+      "title"
+     ],
+     "en": "Easy to choose from",
+     "ar": "سهل الاختيار منه"
+    },
+    {
+     "path": [
+      "needs",
+      2,
+      "text"
+     ],
+     "en": "Sorted colour by colour, so customers find their option quickly.",
+     "ar": "مفروزة لوناً بلون، ليجد العملاء خيارهم بسرعة."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric swatch books for furniture manufacturers",
+     "ar": "كتب عينات الأقمشة لمصنّعي الأثاث"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Customers choose a sofa or chair by its fabric as much as its shape. A swatch book puts every upholstery option for the collection in their hands, organised so they can compare colours and textures and decide with confidence.",
+     "ar": "يختار العملاء الكنبة أو الكرسي بقماشه بقدر ما يختارونه بشكله. يضع كتاب العينات كل خيارات التنجيد للمجموعة بين أيديهم، منظّمة ليقارنوا الألوان والملامس ويقرروا بثقة."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "What we prepare for furniture makers",
+     "ar": "ما نجهّزه لمصنّعي الأثاث"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Swatch books & sample catalogues",
+     "ar": "كتب وكتالوجات العينات"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " for each sofa or chair collection",
+     "ar": " لكل مجموعة كنب أو كراسي"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric swatch cutting",
+     "ar": "قصّ عينات الأقمشة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " from your rolls, sized to your requirement",
+     "ar": " من لفائفك، بالمقاس الذي تطلبه"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Sample hangers",
+     "ar": "علّاقات العينات"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      2,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " for the fabric corner of your showroom",
+     "ar": " لركن الأقمشة في صالة العرض"
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Fabric Samples for Furniture Manufacturers | Al Hejlah",
+     "ar": "عينات أقمشة لمصنّعي الأثاث | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Swatch books for sofa and chair collections, so your customers can compare every fabric option before they order.",
+     "ar": "كتب عينات لمجموعات الكنب والكراسي، ليتمكن عملاؤك من مقارنة كل خيارات القماش قبل الطلب."
+    }
+   ]
+  },
+  {
+   "collection": "industries",
+   "by": "slug",
+   "value": "upholstery-fabric-wholesalers",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Upholstery Fabric Wholesalers",
+     "ar": "تجّار أقمشة التنجيد بالجملة"
+    },
+    {
+     "path": [
+      "tag"
+     ],
+     "en": "Wholesale & dealers",
+     "ar": "الجملة والموزعون"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "Sample hangers that sofa and upholstery fabric wholesalers can hand to retailers and dealers to show the full range.",
+     "ar": "علّاقات عينات يستطيع تجّار أقمشة الكنب والتنجيد بالجملة تسليمها لتجّار التجزئة والموزعين لعرض التشكيلة كاملة."
+    },
+    {
+     "path": [
+      "needs",
+      0,
+      "title"
+     ],
+     "en": "Show the whole range",
+     "ar": "اعرض التشكيلة كاملة"
+    },
+    {
+     "path": [
+      "needs",
+      0,
+      "text"
+     ],
+     "en": "Every colour of a quality on one hanger that dealers can flip through.",
+     "ar": "كل ألوان النوعية على علّاقة واحدة يستطيع الموزعون تقليبها."
+    },
+    {
+     "path": [
+      "needs",
+      1,
+      "title"
+     ],
+     "en": "Many sets, all the same",
+     "ar": "مجموعات كثيرة ومتطابقة"
+    },
+    {
+     "path": [
+      "needs",
+      1,
+      "text"
+     ],
+     "en": "Consistent cutting and order across every hanger you send out.",
+     "ar": "قصّ وترتيب متناسقان في كل علّاقة ترسلها."
+    },
+    {
+     "path": [
+      "needs",
+      2,
+      "title"
+     ],
+     "en": "Built for handling",
+     "ar": "مصمم للاستخدام اليومي"
+    },
+    {
+     "path": [
+      "needs",
+      2,
+      "text"
+     ],
+     "en": "Neat, finished swatches that stay presentable in busy shops.",
+     "ar": "عينات أنيقة ومشطّبة تبقى بحالة جيدة في المتاجر المزدحمة."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Sample hangers for upholstery fabric wholesalers",
+     "ar": "علّاقات عينات لتجّار أقمشة التنجيد بالجملة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Wholesalers and sofa fabric suppliers sell through retailers and dealers who need to show your range to their own customers. Sample hangers cut from your rolls give every dealer the same organised view of each quality and its colours.",
+     "ar": "يبيع تجّار الجملة وموردو أقمشة الكنب عبر تجّار التجزئة والموزعين الذين يحتاجون إلى عرض تشكيلتك على عملائهم. علّاقات العينات المقصوصة من لفائفك تمنح كل موزع العرض المنظّم نفسه لكل نوعية وألوانها."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "What we prepare for wholesalers",
+     "ar": "ما نجهّزه لتجّار الجملة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric sample hangers",
+     "ar": "علّاقات عينات الأقمشة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " sorted colour by colour",
+     "ar": " مفروزة لوناً بلون"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric swatch cutting",
+     "ar": "قصّ عينات الأقمشة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " in the quantities your dealer network needs",
+     "ar": " بالكميات التي تحتاجها شبكة موزعيك"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Swatch books",
+     "ar": "كتب العينات"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      2,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " for collections you present as a set",
+     "ar": " للمجموعات التي تعرضها كمجموعة واحدة"
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Fabric Samples for Upholstery Fabric Wholesalers | Al Hejlah",
+     "ar": "عينات أقمشة لتجّار أقمشة التنجيد بالجملة | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Sample hangers that sofa and upholstery fabric wholesalers can hand to retailers and dealers to show the full range.",
+     "ar": "علّاقات عينات يستطيع تجّار أقمشة الكنب والتنجيد بالجملة تسليمها لتجّار التجزئة والموزعين لعرض التشكيلة كاملة."
+    }
+   ]
+  },
+  {
+   "collection": "industries",
+   "by": "slug",
+   "value": "textile-mills-fabric-suppliers",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Textile Mills & Fabric Suppliers",
+     "ar": "مصانع النسيج وموردو الأقمشة"
+    },
+    {
+     "path": [
+      "tag"
+     ],
+     "en": "Mills & importers",
+     "ar": "المصانع والمستوردون"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "Swatches, hangers and sample catalogues that help textile mills, suppliers and importers present a new collection to buyers.",
+     "ar": "عينات وعلّاقات وكتالوجات عينات تساعد مصانع النسيج والموردين والمستوردين على عرض المجموعة الجديدة على المشترين."
+    },
+    {
+     "path": [
+      "needs",
+      0,
+      "title"
+     ],
+     "en": "Launch-ready samples",
+     "ar": "عينات جاهزة للإطلاق"
+    },
+    {
+     "path": [
+      "needs",
+      0,
+      "text"
+     ],
+     "en": "A new collection cut, sorted and assembled for presenting to buyers.",
+     "ar": "مجموعة جديدة مقصوصة ومفروزة ومجمّعة لعرضها على المشترين."
+    },
+    {
+     "path": [
+      "needs",
+      1,
+      "title"
+     ],
+     "en": "Organised by collection",
+     "ar": "منظّمة حسب المجموعة"
+    },
+    {
+     "path": [
+      "needs",
+      1,
+      "text"
+     ],
+     "en": "Qualities and colours grouped the way your range is sold.",
+     "ar": "النوعيات والألوان مجمّعة بالطريقة التي تُباع بها تشكيلتك."
+    },
+    {
+     "path": [
+      "needs",
+      2,
+      "title"
+     ],
+     "en": "Consistent across sets",
+     "ar": "متناسقة في كل المجموعات"
+    },
+    {
+     "path": [
+      "needs",
+      2,
+      "text"
+     ],
+     "en": "The same order and swatch size in every set you send out.",
+     "ar": "الترتيب نفسه ومقاس العينة نفسه في كل مجموعة ترسلها."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Sample collections for textile mills and fabric suppliers",
+     "ar": "مجموعات عينات لمصانع النسيج وموردي الأقمشة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "When a new collection arrives, buyers need to see and feel it before they order. We cut the fabrics from your rolls and assemble them into hangers or sample catalogues, so the collection is presented clearly from day one.",
+     "ar": "عندما تصل مجموعة جديدة، يحتاج المشترون إلى رؤيتها وتحسسها قبل الطلب. نقصّ الأقمشة من لفائفك ونجمّعها على علّاقات أو في كتالوجات عينات، لتُعرض المجموعة بوضوح منذ اليوم الأول."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "What we prepare for mills, suppliers and importers",
+     "ar": "ما نجهّزه للمصانع والموردين والمستوردين"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Swatch books & sample catalogues",
+     "ar": "كتب وكتالوجات العينات"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " for new collections",
+     "ar": " للمجموعات الجديدة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric sample hangers",
+     "ar": "علّاقات عينات الأقمشة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " for each quality",
+     "ar": " لكل نوعية"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric swatch cutting",
+     "ar": "قصّ عينات الأقمشة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      2,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " for samples you send to buyers yourself",
+     "ar": " للعينات التي ترسلها إلى المشترين بنفسك"
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Fabric Samples for Textile Mills & Fabric Suppliers | Al Hejlah",
+     "ar": "عينات أقمشة لمصانع النسيج وموردي الأقمشة | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Swatches, hangers and sample catalogues that help textile mills, suppliers and importers present a new collection to buyers.",
+     "ar": "عينات وعلّاقات وكتالوجات عينات تساعد مصانع النسيج والموردين والمستوردين على عرض المجموعة الجديدة على المشترين."
+    }
+   ]
+  },
+  {
+   "collection": "industries",
+   "by": "slug",
+   "value": "interior-design-companies",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Interior Design Companies",
+     "ar": "شركات التصميم الداخلي"
+    },
+    {
+     "path": [
+      "tag"
+     ],
+     "en": "Interior design",
+     "ar": "التصميم الداخلي"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "Fabric swatches and compact swatch books that interior design teams use to show fabric options to their clients.",
+     "ar": "عينات أقمشة وكتب عينات صغيرة تستخدمها فرق التصميم الداخلي لعرض خيارات الأقمشة على عملائها."
+    },
+    {
+     "path": [
+      "needs",
+      0,
+      "title"
+     ],
+     "en": "Easy to present",
+     "ar": "سهلة العرض"
+    },
+    {
+     "path": [
+      "needs",
+      0,
+      "text"
+     ],
+     "en": "Options organised so a client can compare them in one meeting.",
+     "ar": "خيارات منظّمة ليقارن العميل بينها في اجتماع واحد."
+    },
+    {
+     "path": [
+      "needs",
+      1,
+      "title"
+     ],
+     "en": "True colour and texture",
+     "ar": "لون وملمس حقيقيان"
+    },
+    {
+     "path": [
+      "needs",
+      1,
+      "text"
+     ],
+     "en": "Real fabric, cut cleanly, so clients see exactly what they will get.",
+     "ar": "قماش حقيقي مقصوص بإتقان، ليرى العملاء بالضبط ما سيحصلون عليه."
+    },
+    {
+     "path": [
+      "needs",
+      2,
+      "title"
+     ],
+     "en": "Compact and portable",
+     "ar": "صغيرة وسهلة الحمل"
+    },
+    {
+     "path": [
+      "needs",
+      2,
+      "text"
+     ],
+     "en": "Swatches and books that travel to site visits and client offices.",
+     "ar": "عينات وكتب ترافقك في زيارات المواقع ومكاتب العملاء."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric samples for interior design companies",
+     "ar": "عينات أقمشة لشركات التصميم الداخلي"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Interior designers present fabric options to clients for every project. Clean, consistently cut swatches and compact swatch books make those choices easier to show, compare and approve.",
+     "ar": "يعرض مصممو الديكور الداخلي خيارات الأقمشة على العملاء في كل مشروع. العينات النظيفة المقصوصة بتناسق وكتب العينات الصغيرة تجعل هذه الخيارات أسهل في العرض والمقارنة والاعتماد."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "What we prepare for interior designers",
+     "ar": "ما نجهّزه لمصممي الديكور الداخلي"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric swatch cutting",
+     "ar": "قصّ عينات الأقمشة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " for project selections",
+     "ar": " لاختيارات المشاريع"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Swatch books",
+     "ar": "كتب العينات"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " of the upholstery options you offer clients",
+     "ar": " لخيارات التنجيد التي تقدمها لعملائك"
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Fabric Samples for Interior Design Companies | Al Hejlah",
+     "ar": "عينات أقمشة لشركات التصميم الداخلي | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Fabric swatches and compact swatch books that interior design teams use to show fabric options to their clients.",
+     "ar": "عينات أقمشة وكتب عينات صغيرة تستخدمها فرق التصميم الداخلي لعرض خيارات الأقمشة على عملائها."
+    }
+   ]
+  },
+  {
+   "collection": "industries",
+   "by": "slug",
+   "value": "curtain-furnishing-suppliers",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Curtain & Furnishing Suppliers",
+     "ar": "موردو الستائر والمفروشات"
+    },
+    {
+     "path": [
+      "tag"
+     ],
+     "en": "Curtains & furnishings",
+     "ar": "الستائر والمفروشات"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "Physical samples of curtain and furnishing fabrics — on hangers that show the drape, or in books that keep a range organised.",
+     "ar": "عينات حقيقية لأقمشة الستائر والمفروشات — على علّاقات تُظهر الانسدال، أو في كتب تحافظ على تنظيم التشكيلة."
+    },
+    {
+     "path": [
+      "needs",
+      0,
+      "title"
+     ],
+     "en": "Show the drape",
+     "ar": "أظهر الانسدال"
+    },
+    {
+     "path": [
+      "needs",
+      0,
+      "text"
+     ],
+     "en": "Hanging samples let fabrics fall naturally, the way they will at the window.",
+     "ar": "تتيح العينات المعلّقة للأقمشة أن تنسدل بشكل طبيعي، تماماً كما ستبدو على النافذة."
+    },
+    {
+     "path": [
+      "needs",
+      1,
+      "title"
+     ],
+     "en": "Real samples to touch",
+     "ar": "عينات حقيقية للمس"
+    },
+    {
+     "path": [
+      "needs",
+      1,
+      "text"
+     ],
+     "en": "Customers feel weight and texture before they choose.",
+     "ar": "يتحسس العملاء الوزن والملمس قبل الاختيار."
+    },
+    {
+     "path": [
+      "needs",
+      2,
+      "title"
+     ],
+     "en": "Organised ranges",
+     "ar": "تشكيلات منظّمة"
+    },
+    {
+     "path": [
+      "needs",
+      2,
+      "text"
+     ],
+     "en": "Plains, textures and patterns grouped so a scheme comes together quickly.",
+     "ar": "الأقمشة السادة والمنقوشة وذات الملمس مجمّعة ليكتمل التصميم بسرعة."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric samples for curtain and furnishing suppliers",
+     "ar": "عينات أقمشة لموردي الستائر والمفروشات"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Curtain and furnishing fabrics are chosen by how they hang and how they feel. Sample hangers show the drape, while swatch books keep a full range organised for customers and designers.",
+     "ar": "تُختار أقمشة الستائر والمفروشات حسب انسدالها وملمسها. تُظهر علّاقات العينات الانسدال، بينما تحافظ كتب العينات على تنظيم التشكيلة كاملة للعملاء والمصممين."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "What we prepare for curtain suppliers",
+     "ar": "ما نجهّزه لموردي الستائر"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric sample hangers",
+     "ar": "علّاقات عينات الأقمشة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " that show drape and weight",
+     "ar": " تُظهر الانسدال والوزن"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Swatch books & sample catalogues",
+     "ar": "كتب وكتالوجات العينات"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " for complete ranges",
+     "ar": " للتشكيلات الكاملة"
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Fabric Samples for Curtain & Furnishing Suppliers | Al Hejlah",
+     "ar": "عينات أقمشة لموردي الستائر والمفروشات | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Physical samples of curtain and furnishing fabrics — on hangers that show the drape, or in books that keep a range organised.",
+     "ar": "عينات حقيقية لأقمشة الستائر والمفروشات — على علّاقات تُظهر الانسدال، أو في كتب تحافظ على تنظيم التشكيلة."
+    }
+   ]
+  },
+  {
+   "collection": "industries",
+   "by": "slug",
+   "value": "furniture-showrooms",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Furniture Showrooms",
+     "ar": "صالات عرض الأثاث"
+    },
+    {
+     "path": [
+      "tag"
+     ],
+     "en": "Showrooms",
+     "ar": "صالات العرض"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "Hangers and swatch books that make fabric selection quick and easy for customers visiting your showroom.",
+     "ar": "علّاقات وكتب عينات تجعل اختيار القماش سريعاً وسهلاً لزوار صالة العرض."
+    },
+    {
+     "path": [
+      "needs",
+      0,
+      "title"
+     ],
+     "en": "Quick to browse",
+     "ar": "سريعة التصفح"
+    },
+    {
+     "path": [
+      "needs",
+      0,
+      "text"
+     ],
+     "en": "Customers find the colour and texture they want without help.",
+     "ar": "يجد العملاء اللون والملمس الذي يريدونه دون مساعدة."
+    },
+    {
+     "path": [
+      "needs",
+      1,
+      "title"
+     ],
+     "en": "Neat on display",
+     "ar": "أنيقة في العرض"
+    },
+    {
+     "path": [
+      "needs",
+      1,
+      "text"
+     ],
+     "en": "Organised hangers and books that keep the showroom looking its best.",
+     "ar": "علّاقات وكتب منظّمة تُبقي صالة العرض في أفضل صورة."
+    },
+    {
+     "path": [
+      "needs",
+      2,
+      "title"
+     ],
+     "en": "Easy to replace",
+     "ar": "سهلة الاستبدال"
+    },
+    {
+     "path": [
+      "needs",
+      2,
+      "text"
+     ],
+     "en": "Re-order the same samples when a range is updated.",
+     "ar": "أعد طلب العينات نفسها عند تحديث التشكيلة."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric samples for furniture showrooms",
+     "ar": "عينات أقمشة لصالات عرض الأثاث"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "In a showroom, fabric selection should be simple. Sample hangers on a rail and swatch books on the table let customers explore colours and textures at their own pace and choose with confidence.",
+     "ar": "في صالة العرض، يجب أن يكون اختيار القماش بسيطاً. تتيح علّاقات العينات على قضيب العرض وكتب العينات على الطاولة للعملاء استكشاف الألوان والملامس على راحتهم والاختيار بثقة."
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "What we prepare for showrooms",
+     "ar": "ما نجهّزه لصالات العرض"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric sample hangers",
+     "ar": "علّاقات عينات الأقمشة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " for rails and stands",
+     "ar": " لقضبان العرض والحوامل"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Swatch books & sample catalogues",
+     "ar": "كتب وكتالوجات العينات"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      3,
+      "children",
+      1,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " for the selection table",
+     "ar": " لطاولة الاختيار"
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Fabric Samples for Furniture Showrooms | Al Hejlah",
+     "ar": "عينات أقمشة لصالات عرض الأثاث | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Hangers and swatch books that make fabric selection quick and easy for customers visiting your showroom.",
+     "ar": "علّاقات وكتب عينات تجعل اختيار القماش سريعاً وسهلاً لزوار صالة العرض."
+    }
+   ]
+  },
+  {
+   "collection": "projects",
+   "by": "slug",
+   "value": "upholstery-wholesaler-sample-hangers",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Colour-wise sample hangers for an upholstery fabric wholesaler",
+     "ar": "علّاقات عينات مرتبة حسب اللون لتاجر أقمشة تنجيد بالجملة"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "Fabric cut from the wholesaler’s rolls, sorted colour by colour and assembled on hangers for dealers and retailers.",
+     "ar": "قماش مقصوص من لفائف التاجر، مفروز لوناً بلون ومجمّع على علّاقات للموزعين وتجّار التجزئة."
+    },
+    {
+     "path": [
+      "specs",
+      0,
+      "label"
+     ],
+     "en": "Service",
+     "ar": "الخدمة"
+    },
+    {
+     "path": [
+      "specs",
+      1,
+      "label"
+     ],
+     "en": "Arrangement",
+     "ar": "الترتيب"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric cut from the wholesaler’s rolls, sorted colour by colour and assembled on hangers for dealers and retailers.",
+     "ar": "قماش مقصوص من لفائف التاجر، مفروز لوناً بلون ومجمّع على علّاقات للموزعين وتجّار التجزئة."
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Fabric cut from the wholesaler’s rolls, sorted colour by colour and assembled on hangers for dealers and retailers.",
+     "ar": "قماش مقصوص من لفائف التاجر، مفروز لوناً بلون ومجمّع على علّاقات للموزعين وتجّار التجزئة."
+    }
+   ]
+  },
+  {
+   "collection": "projects",
+   "by": "slug",
+   "value": "sofa-collection-swatch-book",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Swatch book for a sofa collection",
+     "ar": "كتاب عينات لمجموعة كنب"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "A swatch book presenting the fabric options for a sofa and chair collection, organised by colour family.",
+     "ar": "كتاب عينات يعرض خيارات الأقمشة لمجموعة كنب وكراسي، منظّم حسب عائلة الألوان."
+    },
+    {
+     "path": [
+      "specs",
+      0,
+      "label"
+     ],
+     "en": "Service",
+     "ar": "الخدمة"
+    },
+    {
+     "path": [
+      "specs",
+      1,
+      "label"
+     ],
+     "en": "Layout",
+     "ar": "التصميم"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "A swatch book presenting the fabric options for a sofa and chair collection, organised by colour family.",
+     "ar": "كتاب عينات يعرض خيارات الأقمشة لمجموعة كنب وكراسي، منظّم حسب عائلة الألوان."
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "A swatch book presenting the fabric options for a sofa and chair collection, organised by colour family.",
+     "ar": "كتاب عينات يعرض خيارات الأقمشة لمجموعة كنب وكراسي، منظّم حسب عائلة الألوان."
+    }
+   ]
+  },
+  {
+   "collection": "projects",
+   "by": "slug",
+   "value": "fabric-supplier-collection-swatches",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "New collection swatches for a fabric supplier",
+     "ar": "عينات مجموعة جديدة لمورد أقمشة"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "Swatches cut from a new collection’s rolls, finished and sorted by article so the supplier could send them to buyers.",
+     "ar": "عينات مقصوصة من لفائف مجموعة جديدة، مشطّبة ومفروزة حسب الصنف ليرسلها المورد إلى المشترين."
+    },
+    {
+     "path": [
+      "specs",
+      0,
+      "label"
+     ],
+     "en": "Service",
+     "ar": "الخدمة"
+    },
+    {
+     "path": [
+      "specs",
+      1,
+      "label"
+     ],
+     "en": "Sorting",
+     "ar": "الفرز"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Swatches cut from a new collection’s rolls, finished and sorted by article so the supplier could send them to buyers.",
+     "ar": "عينات مقصوصة من لفائف مجموعة جديدة، مشطّبة ومفروزة حسب الصنف ليرسلها المورد إلى المشترين."
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Swatches cut from a new collection’s rolls, finished and sorted by article so the supplier could send them to buyers.",
+     "ar": "عينات مقصوصة من لفائف مجموعة جديدة، مشطّبة ومفروزة حسب الصنف ليرسلها المورد إلى المشترين."
+    }
+   ]
+  },
+  {
+   "collection": "projects",
+   "by": "slug",
+   "value": "velvet-upholstery-sample-catalogue",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Velvet upholstery sample catalogue",
+     "ar": "كتالوج عينات لأقمشة تنجيد مخملية"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "A sample catalogue for a velvet upholstery range, made for showroom and designer use.",
+     "ar": "كتالوج عينات لتشكيلة أقمشة تنجيد مخملية، مُعدّ للاستخدام في صالات العرض ومن قِبل المصممين."
+    },
+    {
+     "path": [
+      "specs",
+      0,
+      "label"
+     ],
+     "en": "Service",
+     "ar": "الخدمة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "A sample catalogue for a velvet upholstery range, made for showroom and designer use.",
+     "ar": "كتالوج عينات لتشكيلة أقمشة تنجيد مخملية، مُعدّ للاستخدام في صالات العرض ومن قِبل المصممين."
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "A sample catalogue for a velvet upholstery range, made for showroom and designer use.",
+     "ar": "كتالوج عينات لتشكيلة أقمشة تنجيد مخملية، مُعدّ للاستخدام في صالات العرض ومن قِبل المصممين."
+    }
+   ]
+  },
+  {
+   "collection": "projects",
+   "by": "slug",
+   "value": "curtain-fabric-sample-hangers",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Curtain fabric sample hangers for a furnishing supplier",
+     "ar": "علّاقات عينات أقمشة ستائر لمورد مفروشات"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "Hanging samples that let a curtain and furnishing range show its drape on a showroom rail.",
+     "ar": "عينات معلّقة تتيح لتشكيلة الستائر والمفروشات إظهار انسدالها على قضيب صالة العرض."
+    },
+    {
+     "path": [
+      "specs",
+      0,
+      "label"
+     ],
+     "en": "Service",
+     "ar": "الخدمة"
+    },
+    {
+     "path": [
+      "specs",
+      1,
+      "label"
+     ],
+     "en": "Display",
+     "ar": "العرض"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Hanging samples that let a curtain and furnishing range show its drape on a showroom rail.",
+     "ar": "عينات معلّقة تتيح لتشكيلة الستائر والمفروشات إظهار انسدالها على قضيب صالة العرض."
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Hanging samples that let a curtain and furnishing range show its drape on a showroom rail.",
+     "ar": "عينات معلّقة تتيح لتشكيلة الستائر والمفروشات إظهار انسدالها على قضيب صالة العرض."
+    }
+   ]
+  },
+  {
+   "collection": "projects",
+   "by": "slug",
+   "value": "interior-studio-fabric-selection-book",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Fabric selection book for an interior design studio",
+     "ar": "كتاب اختيار أقمشة لاستوديو تصميم داخلي"
+    },
+    {
+     "path": [
+      "summary"
+     ],
+     "en": "A compact swatch book of upholstery options that an interior design team uses in client meetings.",
+     "ar": "كتاب عينات صغير لخيارات التنجيد يستخدمه فريق تصميم داخلي في اجتماعات العملاء."
+    },
+    {
+     "path": [
+      "specs",
+      0,
+      "label"
+     ],
+     "en": "Service",
+     "ar": "الخدمة"
+    },
+    {
+     "path": [
+      "body",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "A compact swatch book of upholstery options that an interior design team uses in client meetings.",
+     "ar": "كتاب عينات صغير لخيارات التنجيد يستخدمه فريق تصميم داخلي في اجتماعات العملاء."
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "A compact swatch book of upholstery options that an interior design team uses in client meetings.",
+     "ar": "كتاب عينات صغير لخيارات التنجيد يستخدمه فريق تصميم داخلي في اجتماعات العملاء."
+    }
+   ]
+  },
+  {
+   "collection": "posts",
+   "by": "slug",
+   "value": "fabric-sampling-cost-factors",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "What Affects the Cost of Fabric Sampling?",
+     "ar": "ما الذي يؤثر في تكلفة تجهيز عينات الأقمشة؟"
+    },
+    {
+     "path": [
+      "excerpt"
+     ],
+     "en": "The number of fabrics, swatch size, format and quantity all shape the price of fabric samples. Here is what to consider.",
+     "ar": "عدد الأقمشة ومقاس العينة والشكل والكمية كلها تحدد سعر عينات الأقمشة. إليك ما يجب مراعاته."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Every set of samples is made to order, so prices depend on the specification. Knowing the main factors helps you plan a budget and get an accurate quotation faster.",
+     "ar": "كل مجموعة عينات تُصنع حسب الطلب، لذا تعتمد الأسعار على المواصفات. معرفة العوامل الرئيسية تساعدك على تخطيط الميزانية والحصول على عرض سعر دقيق بشكل أسرع."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "The main cost factors",
+     "ar": "العوامل الرئيسية للتكلفة"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Number of fabrics and colours",
+     "ar": "عدد الأقمشة والألوان"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " — each one is cut, finished and sorted.",
+     "ar": " — كل قماش يُقصّ ويُشطّب ويُفرز."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Swatch size",
+     "ar": "مقاس العينة"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      1,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " — larger swatches use more fabric and handling time.",
+     "ar": " — العينات الأكبر تستهلك قماشاً ووقت معالجة أكثر."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Format",
+     "ar": "الشكل"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      2,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " — loose swatches, hangers or swatch books.",
+     "ar": " — عينات منفصلة أو علّاقات أو كتب عينات."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      3,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Quantity",
+     "ar": "الكمية"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      3,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " — set-up work is shared across a larger order.",
+     "ar": " — تتوزع أعمال التجهيز على طلب أكبر."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      4,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Deadline",
+     "ar": "الموعد النهائي"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      4,
+      "children",
+      1,
+      "text"
+     ],
+     "en": " — tell us early if the samples are needed by a fixed date.",
+     "ar": " — أخبرنا مبكراً إذا كنت تحتاج العينات بحلول تاريخ محدد."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "How to get an accurate quote",
+     "ar": "كيف تحصل على عرض سعر دقيق"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      4,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Send the service you need, the number of fabrics, the swatch size, the quantity and your deadline. A photo of a reference sample removes most of the guesswork.",
+     "ar": "أرسل الخدمة التي تحتاجها وعدد الأقمشة ومقاس العينة والكمية والموعد النهائي. صورة لعينة مرجعية تزيل معظم التخمين."
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "What Affects the Cost of Fabric Sampling? | Al Hejlah",
+     "ar": "ما الذي يؤثر في تكلفة تجهيز عينات الأقمشة؟ | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "The number of fabrics, swatch size, format and quantity all shape the price of fabric samples. Here is what to consider.",
+     "ar": "عدد الأقمشة ومقاس العينة والشكل والكمية كلها تحدد سعر عينات الأقمشة. إليك ما يجب مراعاته."
+    }
+   ]
+  },
+  {
+   "collection": "posts",
+   "by": "slug",
+   "value": "sample-hangers-vs-swatch-books",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Sample Hangers or Swatch Books: Which Suits Your Fabric Collection?",
+     "ar": "علّاقات العينات أم كتب العينات: أيّهما يناسب مجموعة أقمشتك؟"
+    },
+    {
+     "path": [
+      "excerpt"
+     ],
+     "en": "Hangers and swatch books suit different ways of selling fabric. Here is how to choose — and when cut swatches alone are enough.",
+     "ar": "تناسب العلّاقات وكتب العينات طرقاً مختلفة لبيع الأقمشة. إليك كيف تختار — ومتى تكفي العينات المقصوصة وحدها."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "The right sample format makes your collection easier to sell. The best choice depends on the fabric, the size of the colour range and where customers will see it.",
+     "ar": "شكل العينات المناسب يجعل بيع مجموعتك أسهل. ويعتمد الاختيار الأفضل على القماش وحجم تشكيلة الألوان والمكان الذي سيراها فيه العملاء."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Fabric sample hangers",
+     "ar": "علّاقات عينات الأقمشة"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Best for ",
+     "ar": "الأنسب لـ"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      1,
+      "text"
+     ],
+     "en": "one quality in many colours",
+     "ar": "نوعية واحدة بألوان كثيرة"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      2,
+      "text"
+     ],
+     "en": ", and for fabrics where drape matters. Hangers suit showroom rails and stands, and are easy for dealers to flip through.",
+     "ar": "، وللأقمشة التي يهم فيها الانسدال. تناسب العلّاقات قضبان وحوامل صالات العرض، ويسهل على الموزعين تقليبها."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Swatch books & sample catalogues",
+     "ar": "كتب وكتالوجات العينات"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      4,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Best for ",
+     "ar": "الأنسب لـ"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      4,
+      "children",
+      1,
+      "text"
+     ],
+     "en": "complete collections",
+     "ar": "المجموعات الكاملة"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      4,
+      "children",
+      2,
+      "text"
+     ],
+     "en": " with several qualities — for example all the fabrics offered for a sofa range. Books are portable and keep everything organised.",
+     "ar": " التي تضم عدة نوعيات — مثل كل الأقمشة المتاحة لتشكيلة كنب. الكتب سهلة الحمل وتحافظ على تنظيم كل شيء."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      5,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Cut swatches only",
+     "ar": "عينات مقصوصة فقط"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      6,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Best when you ",
+     "ar": "الأنسب عندما "
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      6,
+      "children",
+      1,
+      "text"
+     ],
+     "en": "send samples to buyers yourself",
+     "ar": "ترسل العينات إلى المشترين بنفسك"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      6,
+      "children",
+      2,
+      "text"
+     ],
+     "en": " or need loose swatches for designers. We cut and sort them, ready to use.",
+     "ar": " أو تحتاج إلى عينات منفصلة للمصممين. نقصّها ونفرزها جاهزة للاستخدام."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      7,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Quick guide",
+     "ar": "دليل سريع"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      8,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "One fabric, many colours, showroom rail → ",
+     "ar": "قماش واحد بألوان كثيرة وقضيب صالة عرض ← "
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      8,
+      "children",
+      0,
+      "children",
+      1,
+      "text"
+     ],
+     "en": "sample hanger",
+     "ar": "علّاقة عينات"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      8,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Several qualities, one collection → ",
+     "ar": "عدة نوعيات في مجموعة واحدة ← "
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      8,
+      "children",
+      1,
+      "children",
+      1,
+      "text"
+     ],
+     "en": "swatch book",
+     "ar": "كتاب عينات"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      8,
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Samples to send or hand out → ",
+     "ar": "عينات للإرسال أو التوزيع ← "
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      8,
+      "children",
+      2,
+      "children",
+      1,
+      "text"
+     ],
+     "en": "cut swatches",
+     "ar": "عينات مقصوصة"
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "Sample Hangers or Swatch Books: Which Suits Your Fabric Collection? | Al Hejlah",
+     "ar": "علّاقات العينات أم كتب العينات: أيّهما يناسب مجموعة أقمشتك؟ | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "Hangers and swatch books suit different ways of selling fabric. Here is how to choose — and when cut swatches alone are enough.",
+     "ar": "تناسب العلّاقات وكتب العينات طرقاً مختلفة لبيع الأقمشة. إليك كيف تختار — ومتى تكفي العينات المقصوصة وحدها."
+    }
+   ]
+  },
+  {
+   "collection": "posts",
+   "by": "slug",
+   "value": "how-fabric-samples-are-made",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "How Fabric Sample Hangers and Swatch Books Are Made",
+     "ar": "كيف تُصنع علّاقات عينات الأقمشة وكتب العينات"
+    },
+    {
+     "path": [
+      "excerpt"
+     ],
+     "en": "From receiving the fabric rolls to cutting, finishing, sorting and assembly — what happens when a fabric collection becomes a set of samples.",
+     "ar": "من استلام لفائف القماش إلى القصّ والتشطيب والفرز والتجميع — ما الذي يحدث عندما تتحول مجموعة أقمشة إلى مجموعة عينات."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "A sample hanger or swatch book looks simple, but it is the result of careful steps that decide whether customers find it easy to use. Here is how a fabric collection becomes a finished set of samples.",
+     "ar": "تبدو علّاقة العينات أو كتاب العينات بسيطاً، لكنه نتيجة خطوات دقيقة تحدد ما إذا كان العملاء سيجدونه سهل الاستخدام. إليك كيف تتحول مجموعة أقمشة إلى مجموعة عينات جاهزة."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "1. Plan the samples",
+     "ar": "1. خطّط للعينات"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Start with the customer. Will the samples hang in a showroom, travel with a sales team or go to dealers? That decides the swatch size, the format — hanger or book — and how many sets are needed.",
+     "ar": "ابدأ بالعميل. هل ستُعلّق العينات في صالة عرض، أم سترافق فريق المبيعات، أم ستُرسل إلى الموزعين؟ هذا ما يحدد مقاس العينة والشكل — علّاقة أو كتاب — وعدد المجموعات المطلوبة."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      3,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "2. Receive the fabric rolls",
+     "ar": "2. استلام لفائف القماش"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      4,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "The fabric for the collection arrives on rolls, together with the list of qualities and colours to include.",
+     "ar": "يصل قماش المجموعة على لفائف، مع قائمة النوعيات والألوان المطلوب إدراجها."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      5,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "3. Cut and finish the swatches",
+     "ar": "3. قصّ العينات وتشطيبها"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      6,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Each fabric is cut to the same swatch size and finished so the edges stay neat with handling. Larger swatches suit textured upholstery fabrics; smaller ones work for plain colour ranges.",
+     "ar": "يُقصّ كل قماش بمقاس العينة نفسه ويُشطّب لتبقى الحواف أنيقة مع التداول. تناسب العينات الأكبر أقمشة التنجيد ذات الملمس، بينما تناسب العينات الأصغر تشكيلات الألوان السادة."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      7,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "4. Sort colour by colour",
+     "ar": "4. الفرز لوناً بلون"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      8,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Swatches are sorted colour-wise, by article or by collection — the order in which customers will browse them.",
+     "ar": "تُفرز العينات حسب اللون أو الصنف أو المجموعة — بالترتيب الذي سيتصفحها به العملاء."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      9,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "5. Assemble, check and pack",
+     "ar": "5. التجميع والفحص والتغليف"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      10,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "The sorted swatches are assembled onto hangers or into swatch books, every piece is checked for order and alignment, and the finished samples are packed for delivery.",
+     "ar": "تُجمّع العينات المفروزة على العلّاقات أو في كتب العينات، وتُفحص كل قطعة للتأكد من الترتيب والمحاذاة، ثم تُغلّف العينات الجاهزة للتسليم."
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      11,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "What to prepare before asking for a quote",
+     "ar": "ما الذي تجهّزه قبل طلب عرض السعر"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      12,
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "The list of qualities and colours to include",
+     "ar": "قائمة النوعيات والألوان المطلوب إدراجها"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      12,
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "The swatch size you need",
+     "ar": "مقاس العينة الذي تحتاجه"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      12,
+      "children",
+      2,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Hangers, swatch books or loose swatches",
+     "ar": "علّاقات أو كتب عينات أو عينات منفصلة"
+    },
+    {
+     "path": [
+      "content",
+      "root",
+      "children",
+      12,
+      "children",
+      3,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "The quantity and your deadline",
+     "ar": "الكمية والموعد النهائي"
+    },
+    {
+     "path": [
+      "meta",
+      "title"
+     ],
+     "en": "How Fabric Sample Hangers and Swatch Books Are Made | Al Hejlah",
+     "ar": "كيف تُصنع علّاقات عينات الأقمشة وكتب العينات | Al Hejlah"
+    },
+    {
+     "path": [
+      "meta",
+      "description"
+     ],
+     "en": "From receiving the fabric rolls to cutting, finishing, sorting and assembly — what happens when a fabric collection becomes a set of samples.",
+     "ar": "من استلام لفائف القماش إلى القصّ والتشطيب والفرز والتجميع — ما الذي يحدث عندما تتحول مجموعة أقمشة إلى مجموعة عينات."
+    }
+   ]
+  },
+  {
+   "collection": "categories",
+   "by": "slug",
+   "value": "fabric-sampling-guides",
+   "strings": [
+    {
+     "path": [
+      "title"
+     ],
+     "en": "Fabric sampling guides",
+     "ar": "أدلة تجهيز عينات الأقمشة"
+    },
+    {
+     "path": [
+      "breadcrumbs",
+      0,
+      "label"
+     ],
+     "en": "Fabric sampling guides",
+     "ar": "أدلة تجهيز عينات الأقمشة"
+    }
+   ]
+  },
+  {
+   "collection": "faqs",
+   "by": "question",
+   "value": "What services do you offer?",
+   "strings": [
+    {
+     "path": [
+      "question"
+     ],
+     "en": "What services do you offer?",
+     "ar": "ما الخدمات التي تقدمونها؟"
+    },
+    {
+     "path": [
+      "answer"
+     ],
+     "en": "We specialise in upholstery fabric sampling: fabric swatch cutting, fabric sample hangers, and swatch books & sample catalogues. We cut your fabric rolls and turn them into organised samples — that is all we do.",
+     "ar": "نتخصص في تجهيز عينات أقمشة التنجيد: قصّ عينات الأقمشة، وعلّاقات عينات الأقمشة، وكتب وكتالوجات العينات. نقصّ لفائف أقمشتك ونحوّلها إلى عينات منظّمة — وهذا كل ما نقوم به."
+    }
+   ]
+  },
+  {
+   "collection": "faqs",
+   "by": "question",
+   "value": "Can you cut swatches only, without hangers or books?",
+   "strings": [
+    {
+     "path": [
+      "question"
+     ],
+     "en": "Can you cut swatches only, without hangers or books?",
+     "ar": "هل يمكنكم قصّ العينات فقط، دون علّاقات أو كتب؟"
+    },
+    {
+     "path": [
+      "answer"
+     ],
+     "en": "Yes. We can cut your fabric into swatches or sample strips at the size you need and supply them sorted and ready to use. Hangers and swatch books are optional.",
+     "ar": "نعم. يمكننا قصّ قماشك إلى عينات أو شرائح عينات بالمقاس الذي تحتاجه وتسليمها مفروزة وجاهزة للاستخدام. العلّاقات وكتب العينات اختيارية."
+    }
+   ]
+  },
+  {
+   "collection": "faqs",
+   "by": "question",
+   "value": "Can the samples be made to our requirements?",
+   "strings": [
+    {
+     "path": [
+      "question"
+     ],
+     "en": "Can the samples be made to our requirements?",
+     "ar": "هل يمكن صنع العينات حسب متطلباتنا؟"
+    },
+    {
+     "path": [
+      "answer"
+     ],
+     "en": "Yes. Share your fabric range, the swatch size you need and how the samples will be used — showroom, sales visits or sending to dealers — and we will plan the layout and quantity with you.",
+     "ar": "نعم. شاركنا تشكيلة أقمشتك ومقاس العينة الذي تحتاجه وطريقة استخدام العينات — صالة عرض أو زيارات بيعية أو إرسالها إلى الموزعين — وسنخطط معك للتصميم والكمية."
+    }
+   ]
+  },
+  {
+   "collection": "faqs",
+   "by": "question",
+   "value": "Which swatch sizes can you cut?",
+   "strings": [
+    {
+     "path": [
+      "question"
+     ],
+     "en": "Which swatch sizes can you cut?",
+     "ar": "ما مقاسات العينات التي يمكنكم قصّها؟"
+    },
+    {
+     "path": [
+      "answer"
+     ],
+     "en": "We cut to the size you need. Tell us the swatch or strip size — or send a reference sample — and we will keep it consistent across the whole collection.",
+     "ar": "نقصّ بالمقاس الذي تحتاجه. أخبرنا بمقاس العينة أو الشريحة — أو أرسل عينة مرجعية — وسنحافظ عليه متناسقاً في المجموعة كاملة."
+    }
+   ]
+  },
+  {
+   "collection": "faqs",
+   "by": "question",
+   "value": "Can the swatches be arranged colour-wise?",
+   "strings": [
+    {
+     "path": [
+      "question"
+     ],
+     "en": "Can the swatches be arranged colour-wise?",
+     "ar": "هل يمكن ترتيب العينات حسب اللون؟"
+    },
+    {
+     "path": [
+      "answer"
+     ],
+     "en": "Yes. Swatches are sorted colour by colour, by article or by collection, so your customers can browse the range easily.",
+     "ar": "نعم. تُفرز العينات لوناً بلون أو حسب الصنف أو المجموعة، ليتصفح عملاؤك التشكيلة بسهولة."
+    }
+   ]
+  },
+  {
+   "collection": "faqs",
+   "by": "question",
+   "value": "How do I get a quotation?",
+   "strings": [
+    {
+     "path": [
+      "question"
+     ],
+     "en": "How do I get a quotation?",
+     "ar": "كيف أحصل على عرض سعر؟"
+    },
+    {
+     "path": [
+      "answer"
+     ],
+     "en": "Use the quote form or message us on WhatsApp. Include the service you need, the number of fabrics, the sample size, the quantity and your deadline. Photos of a reference sample help us quote faster.",
+     "ar": "استخدم نموذج طلب عرض السعر أو راسلنا عبر واتساب. اذكر الخدمة التي تحتاجها وعدد الأقمشة ومقاس العينة والكمية والموعد النهائي. صور العينة المرجعية تساعدنا على تقديم عرض السعر بشكل أسرع."
+    }
+   ]
+  },
+  {
+   "collection": "faqs",
+   "by": "question",
+   "value": "Can I send reference photos?",
+   "strings": [
+    {
+     "path": [
+      "question"
+     ],
+     "en": "Can I send reference photos?",
+     "ar": "هل يمكنني إرسال صور مرجعية؟"
+    },
+    {
+     "path": [
+      "answer"
+     ],
+     "en": "Yes — reference photos are the quickest way to explain what you need. Send them on WhatsApp together with your requirements.",
+     "ar": "نعم — الصور المرجعية أسرع طريقة لشرح ما تحتاجه. أرسلها عبر واتساب مع متطلباتك."
+    }
+   ]
+  },
+  {
+   "collection": "faqs",
+   "by": "question",
+   "value": "Is there a minimum order quantity?",
+   "strings": [
+    {
+     "path": [
+      "question"
+     ],
+     "en": "Is there a minimum order quantity?",
+     "ar": "هل هناك حد أدنى لكمية الطلب؟"
+    },
+    {
+     "path": [
+      "answer"
+     ],
+     "en": "Minimums depend on the service and the number of pieces. We confirm the minimum quantity together with your quotation.",
+     "ar": "يعتمد الحد الأدنى على الخدمة وعدد القطع. ونؤكد الحد الأدنى للكمية مع عرض السعر."
+    }
+   ]
+  },
+  {
+   "collection": "faqs",
+   "by": "question",
+   "value": "Do I need to supply the fabric?",
+   "strings": [
+    {
+     "path": [
+      "question"
+     ],
+     "en": "Do I need to supply the fabric?",
+     "ar": "هل يجب أن أوفّر القماش؟"
+    },
+    {
+     "path": [
+      "answer"
+     ],
+     "en": "Yes — we work with your own fabric rolls, so every sample matches your stock exactly. Tell us about your collection and we will confirm how much fabric is needed.",
+     "ar": "نعم — نعمل على لفائف أقمشتك الخاصة، لتطابق كل عينة مخزونك تماماً. أخبرنا عن مجموعتك وسنؤكد كمية القماش المطلوبة."
+    }
+   ]
+  },
+  {
+   "collection": "faqs",
+   "by": "question",
+   "value": "Where are you located?",
+   "strings": [
+    {
+     "path": [
+      "question"
+     ],
+     "en": "Where are you located?",
+     "ar": "أين يقع مقركم؟"
+    },
+    {
+     "path": [
+      "answer"
+     ],
+     "en": "We are based in Sharjah, United Arab Emirates, and work with furniture, upholstery and textile businesses across the UAE. Contact us to discuss delivery to your location.",
+     "ar": "مقرنا في الشارقة، الإمارات العربية المتحدة، ونعمل مع شركات الأثاث والتنجيد والمنسوجات في جميع أنحاء الإمارات. تواصل معنا لمناقشة التوصيل إلى موقعك."
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "icon-3d-rocket.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "3D rocket icon",
+     "ar": "أيقونة صاروخ ثلاثية الأبعاد"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "icon-3d-tools.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "3D tools icon",
+     "ar": "أيقونة أدوات ثلاثية الأبعاد"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "icon-3d-map-pin.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "3D location pin icon",
+     "ar": "أيقونة دبوس موقع ثلاثية الأبعاد"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "icon-3d-shield.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "3D shield icon",
+     "ar": "أيقونة درع ثلاثية الأبعاد"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "icon-3d-chat-bubble.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "3D chat bubble icon",
+     "ar": "أيقونة فقاعة محادثة ثلاثية الأبعاد"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "icon-3d-tick.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "3D check mark icon",
+     "ar": "أيقونة علامة صح ثلاثية الأبعاد"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "icon-3d-crown.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "3D crown icon",
+     "ar": "أيقونة تاج ثلاثية الأبعاد"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "icon-3d-gift-box.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "3D package icon",
+     "ar": "أيقونة طرد ثلاثية الأبعاد"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "icon-3d-pin.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "3D pin icon",
+     "ar": "أيقونة دبوس ثلاثية الأبعاد"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "icon-3d-notebook.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "3D swatch book icon",
+     "ar": "أيقونة كتاب عينات ثلاثية الأبعاد"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "icon-3d-color-palette.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "3D colour palette icon",
+     "ar": "أيقونة لوحة ألوان ثلاثية الأبعاد"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "icon-3d-scissor.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "3D scissors icon",
+     "ar": "أيقونة مقص ثلاثية الأبعاد"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "colour-fan-deck-swatches.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Colour fan deck spread out to show a full spectrum of swatches",
+     "ar": "مروحة ألوان مفتوحة تعرض طيفاً كاملاً من العينات"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "beige-linen-fabric-swirl.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Beige linen fabric twisted into a soft swirl",
+     "ar": "قماش كتان بيج ملفوف على شكل دوامة ناعمة"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "mixed-texture-material-samples.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Mixed texture upholstery samples including leather and woven fabric",
+     "ar": "عينات تنجيد متنوعة الملمس تشمل الجلد والقماش المنسوج"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "printed-wallpaper-fabric-coordinate.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Printed wallpaper and fabric coordinate with stag and tree motif",
+     "ar": "ورق جدران مطبوع مع قماش متناسق بنقشة غزال وشجرة"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "dark-brown-velvet-texture.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Dark brown velvet fabric texture",
+     "ar": "ملمس قماش مخمل بني داكن"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "gold-floral-velvet-fabric.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Gold floral pattern on dark brown velvet fabric",
+     "ar": "نقشة زهور ذهبية على قماش مخمل بني داكن"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "damask-curtain-fabric.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Brown and cream damask curtain fabric",
+     "ar": "قماش ستائر دمشقي باللونين البني والكريمي"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "floral-striped-wallpaper.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Floral striped wallpaper pattern in green, orange and cream",
+     "ar": "ورق جدران بنقشة زهور مخططة بالأخضر والبرتقالي والكريمي"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "wooden-window-blinds.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Wooden window blinds with sunlight between the slats",
+     "ar": "ستائر نوافذ خشبية يتسلل ضوء الشمس بين شرائحها"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "grey-carpet-texture-closeup.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Close-up of a grey looped carpet texture",
+     "ar": "لقطة مقربة لملمس سجاد رمادي بعُقد حلقية"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "sheer-curtains-living-room.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Sheer and lined curtains in a bright living room",
+     "ar": "ستائر شيفون وستائر مبطنة في غرفة معيشة مشرقة"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "green-upholstered-sofa-fabric.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Green upholstered sofa showing the texture of the fabric",
+     "ar": "أريكة منجّدة خضراء تُظهر ملمس القماش"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "folded-fabric-stack-neutral.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Stack of folded fabrics in neutral, pink and peach tones",
+     "ar": "كومة من الأقمشة المطوية بدرجات محايدة ووردية وخوخية"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "thread-spools-workshop.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Spools of natural thread stacked in a textile workshop",
+     "ar": "بكرات خيوط طبيعية مكدسة في ورشة منسوجات"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "textile-sampling-workshop.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Busy textile workshop with sewing stations and fabric",
+     "ar": "ورشة منسوجات مزدحمة بمحطات الخياطة والأقمشة"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "stitching-fabric-samples-sewing-machine.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Hands guiding fabric through a sewing machine to finish sample edges",
+     "ar": "يدان توجهان القماش عبر ماكينة الخياطة لتشطيب حواف العينات"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "tailor-scissors-cutting-swatches.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Tailor scissors used to cut fabric swatches",
+     "ar": "مقص خياطة يُستخدم لقصّ عينات الأقمشة"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "patterned-fabric-rolls-on-shelves.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Rolls of patterned and plain fabric stored on shelves",
+     "ar": "لفّات أقمشة منقوشة وسادة مرتبة على الرفوف"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "plum-and-rust-fabric-swatches.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Plum and rust coloured fabric swatches folded together",
+     "ar": "عينات أقمشة بلوني البرقوق والصدأ مطوية معاً"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "hanging-fabric-swatches-display.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Fabric swatches hanging on a display wall in a sampling studio",
+     "ar": "عينات أقمشة معلّقة على جدار عرض في استوديو العينات"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "material-samples-presentation-board.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Upholstery and material samples laid out for a client presentation",
+     "ar": "عينات تنجيد ومواد مرتبة لعرضها على عميل"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "fabric-sample-presentation-box.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Fabric swatches and sketches laid out for a client meeting",
+     "ar": "عينات أقمشة ورسومات مرتبة لاجتماع مع عميل"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "designer-choosing-fabric-samples.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Hands flipping through fabric sample hangers with header cards",
+     "ar": "أيدٍ تقلّب علّاقات عينات أقمشة ذات بطاقات تعريف"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "upholstery-fabric-swatches-overlapping.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Overlapping upholstery fabric swatches in sage, beige and blue weaves",
+     "ar": "عينات أقمشة تنجيد متداخلة بنسيج أخضر مريمي وبيج وأزرق"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "fabric-header-card-swatch-strips.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Swatch book page with fabric strips in neutral tones",
+     "ar": "صفحة من كتاب عينات تضم شرائح أقمشة بألوان محايدة"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "stacked-colour-fabric-swatches.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Fabric swatches with pinked edges arranged colour by colour",
+     "ar": "عينات أقمشة بحواف مسننة مرتبة لوناً بلون"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "numbered-shade-card-fan-swatches.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Fanned colour shade card with numbered swatches from blue to green",
+     "ar": "بطاقة ألوان مروحية بعينات مرقّمة من الأزرق إلى الأخضر"
+    }
+   ]
+  },
+  {
+   "collection": "media",
+   "by": "filename",
+   "value": "draped-bronze-fabric-texture.webp",
+   "strings": [
+    {
+     "path": [
+      "alt"
+     ],
+     "en": "Close-up of draped bronze fabric with soft folds and shadows",
+     "ar": "لقطة مقربة لقماش برونزي منسدل بطيّات وظلال ناعمة"
+    }
+   ]
+  },
+  {
+   "collection": "forms",
+   "by": "title",
+   "value": "Quote request",
+   "strings": [
+    {
+     "path": [
+      "fields",
+      0,
+      "label"
+     ],
+     "en": "Company name",
+     "ar": "اسم الشركة"
+    },
+    {
+     "path": [
+      "fields",
+      1,
+      "label"
+     ],
+     "en": "Contact person",
+     "ar": "الشخص المسؤول"
+    },
+    {
+     "path": [
+      "fields",
+      2,
+      "label"
+     ],
+     "en": "Phone / WhatsApp",
+     "ar": "الهاتف / واتساب"
+    },
+    {
+     "path": [
+      "fields",
+      3,
+      "label"
+     ],
+     "en": "Email",
+     "ar": "البريد الإلكتروني"
+    },
+    {
+     "path": [
+      "fields",
+      4,
+      "label"
+     ],
+     "en": "Required product",
+     "ar": "المنتج المطلوب"
+    },
+    {
+     "path": [
+      "fields",
+      4,
+      "options",
+      0,
+      "label"
+     ],
+     "en": "Fabric Swatch Cutting",
+     "ar": "قصّ عينات الأقمشة"
+    },
+    {
+     "path": [
+      "fields",
+      4,
+      "options",
+      1,
+      "label"
+     ],
+     "en": "Fabric Sample Hangers",
+     "ar": "علّاقات عينات الأقمشة"
+    },
+    {
+     "path": [
+      "fields",
+      4,
+      "options",
+      2,
+      "label"
+     ],
+     "en": "Swatch Books & Sample Catalogues",
+     "ar": "كتب وكتالوجات العينات"
+    },
+    {
+     "path": [
+      "fields",
+      4,
+      "options",
+      3,
+      "label"
+     ],
+     "en": "Not sure yet",
+     "ar": "لم أقرر بعد"
+    },
+    {
+     "path": [
+      "fields",
+      5,
+      "label"
+     ],
+     "en": "Quantity",
+     "ar": "الكمية"
+    },
+    {
+     "path": [
+      "fields",
+      6,
+      "label"
+     ],
+     "en": "Sample size",
+     "ar": "مقاس العينة"
+    },
+    {
+     "path": [
+      "fields",
+      7,
+      "label"
+     ],
+     "en": "Deadline",
+     "ar": "الموعد النهائي"
+    },
+    {
+     "path": [
+      "fields",
+      8,
+      "label"
+     ],
+     "en": "Project details (fabrics, number of colours, how the samples will be used)",
+     "ar": "تفاصيل المشروع (الأقمشة، عدد الألوان، طريقة استخدام العينات)"
+    },
+    {
+     "path": [
+      "submitButtonLabel"
+     ],
+     "en": "Send quote request",
+     "ar": "أرسل طلب عرض السعر"
+    },
+    {
+     "path": [
+      "confirmationMessage",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Thank you — we have your request.",
+     "ar": "شكراً لك — وصلنا طلبك."
+    },
+    {
+     "path": [
+      "confirmationMessage",
+      "root",
+      "children",
+      1,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Our team will reply shortly. For the fastest answer, continue the conversation on WhatsApp.",
+     "ar": "سيرد فريقنا قريباً. للحصول على أسرع رد، تابع المحادثة عبر واتساب."
+    },
+    {
+     "path": [
+      "emails",
+      0,
+      "subject"
+     ],
+     "en": "We received your quote request",
+     "ar": "وصلنا طلب عرض السعر الخاص بك"
+    },
+    {
+     "path": [
+      "emails",
+      0,
+      "message",
+      "root",
+      "children",
+      0,
+      "children",
+      0,
+      "text"
+     ],
+     "en": "Thank you for contacting us. We will reply shortly.",
+     "ar": "شكراً لتواصلك معنا. سنرد عليك قريباً."
+    }
+   ]
+  },
+  {
+   "global": "site-settings",
+   "strings": [
+    {
+     "path": [
+      "tagline"
+     ],
+     "en": "Upholstery fabric sampling specialists: fabric swatch cutting, sample hangers and swatch books for furniture and textile businesses.",
+     "ar": "متخصصون في تجهيز عينات أقمشة التنجيد: قصّ عينات الأقمشة وعلّاقات العينات وكتب العينات لشركات الأثاث والمنسوجات."
+    },
+    {
+     "path": [
+      "whatsappDefaultMessage"
+     ],
+     "en": "Hello, I'd like a quotation for fabric samples.",
+     "ar": "مرحباً، أرغب في الحصول على عرض سعر لعينات أقمشة."
+    },
+    {
+     "path": [
+      "address",
+      "locality"
+     ],
+     "en": "Sharjah",
+     "ar": "الشارقة"
+    },
+    {
+     "path": [
+      "address",
+      "region"
+     ],
+     "en": "Sharjah",
+     "ar": "الشارقة"
+    },
+    {
+     "path": [
+      "serviceArea"
+     ],
+     "en": "Sharjah, Dubai, Ajman, Abu Dhabi and the wider UAE",
+     "ar": "الشارقة ودبي وعجمان وأبوظبي وسائر الإمارات"
+    },
+    {
+     "path": [
+      "defaultDescription"
+     ],
+     "en": "Fabric swatch book and sample hanger manufacturer in Sharjah, UAE: fabric swatch cutting, sample hangers and swatch books for upholstery businesses.",
+     "ar": "مصنّع كتب عينات الأقمشة وعلّاقات العينات في الشارقة، الإمارات: قصّ عينات الأقمشة وعلّاقات العينات وكتب العينات لشركات التنجيد."
+    },
+    {
+     "path": [
+      "mobileBarLabel"
+     ],
+     "en": "Get a quote",
+     "ar": "اطلب عرض سعر"
+    }
+   ]
+  },
+  {
+   "global": "header",
+   "strings": [
+    {
+     "path": [
+      "navItems",
+      0,
+      "link",
+      "label"
+     ],
+     "en": "Services",
+     "ar": "الخدمات"
+    },
+    {
+     "path": [
+      "navItems",
+      1,
+      "link",
+      "label"
+     ],
+     "en": "Who we serve",
+     "ar": "من نخدم"
+    },
+    {
+     "path": [
+      "navItems",
+      2,
+      "link",
+      "label"
+     ],
+     "en": "Process",
+     "ar": "طريقة العمل"
+    },
+    {
+     "path": [
+      "navItems",
+      3,
+      "link",
+      "label"
+     ],
+     "en": "Our work",
+     "ar": "أعمالنا"
+    },
+    {
+     "path": [
+      "navItems",
+      4,
+      "link",
+      "label"
+     ],
+     "en": "About",
+     "ar": "من نحن"
+    },
+    {
+     "path": [
+      "actions",
+      0,
+      "link",
+      "label"
+     ],
+     "en": "WhatsApp",
+     "ar": "واتساب"
+    },
+    {
+     "path": [
+      "actions",
+      1,
+      "link",
+      "label"
+     ],
+     "en": "Request a quote",
+     "ar": "اطلب عرض سعر"
+    }
+   ]
+  },
+  {
+   "global": "footer",
+   "strings": [
+    {
+     "path": [
+      "columns",
+      0,
+      "title"
+     ],
+     "en": "Services",
+     "ar": "الخدمات"
+    },
+    {
+     "path": [
+      "columns",
+      0,
+      "links",
+      0,
+      "link",
+      "label"
+     ],
+     "en": "Fabric Swatch Cutting",
+     "ar": "قصّ عينات الأقمشة"
+    },
+    {
+     "path": [
+      "columns",
+      0,
+      "links",
+      1,
+      "link",
+      "label"
+     ],
+     "en": "Fabric Sample Hangers",
+     "ar": "علّاقات عينات الأقمشة"
+    },
+    {
+     "path": [
+      "columns",
+      0,
+      "links",
+      2,
+      "link",
+      "label"
+     ],
+     "en": "Swatch Books & Sample Catalogues",
+     "ar": "كتب وكتالوجات العينات"
+    },
+    {
+     "path": [
+      "columns",
+      1,
+      "title"
+     ],
+     "en": "Who we serve",
+     "ar": "من نخدم"
+    },
+    {
+     "path": [
+      "columns",
+      1,
+      "links",
+      0,
+      "link",
+      "label"
+     ],
+     "en": "Furniture Manufacturers",
+     "ar": "مصنّعو الأثاث"
+    },
+    {
+     "path": [
+      "columns",
+      1,
+      "links",
+      1,
+      "link",
+      "label"
+     ],
+     "en": "Upholstery Fabric Wholesalers",
+     "ar": "تجّار أقمشة التنجيد بالجملة"
+    },
+    {
+     "path": [
+      "columns",
+      1,
+      "links",
+      2,
+      "link",
+      "label"
+     ],
+     "en": "Textile Mills & Fabric Suppliers",
+     "ar": "مصانع النسيج وموردو الأقمشة"
+    },
+    {
+     "path": [
+      "columns",
+      1,
+      "links",
+      3,
+      "link",
+      "label"
+     ],
+     "en": "Interior Design Companies",
+     "ar": "شركات التصميم الداخلي"
+    },
+    {
+     "path": [
+      "columns",
+      1,
+      "links",
+      4,
+      "link",
+      "label"
+     ],
+     "en": "Curtain & Furnishing Suppliers",
+     "ar": "موردو الستائر والمفروشات"
+    },
+    {
+     "path": [
+      "columns",
+      1,
+      "links",
+      5,
+      "link",
+      "label"
+     ],
+     "en": "Furniture Showrooms",
+     "ar": "صالات عرض الأثاث"
+    },
+    {
+     "path": [
+      "columns",
+      2,
+      "title"
+     ],
+     "en": "Company",
+     "ar": "الشركة"
+    },
+    {
+     "path": [
+      "columns",
+      2,
+      "links",
+      0,
+      "link",
+      "label"
+     ],
+     "en": "About",
+     "ar": "من نحن"
+    },
+    {
+     "path": [
+      "columns",
+      2,
+      "links",
+      1,
+      "link",
+      "label"
+     ],
+     "en": "Our process",
+     "ar": "طريقة عملنا"
+    },
+    {
+     "path": [
+      "columns",
+      2,
+      "links",
+      2,
+      "link",
+      "label"
+     ],
+     "en": "Our work",
+     "ar": "أعمالنا"
+    },
+    {
+     "path": [
+      "columns",
+      2,
+      "links",
+      3,
+      "link",
+      "label"
+     ],
+     "en": "Guides",
+     "ar": "الأدلة"
+    },
+    {
+     "path": [
+      "columns",
+      2,
+      "links",
+      4,
+      "link",
+      "label"
+     ],
+     "en": "Contact",
+     "ar": "تواصل معنا"
+    },
+    {
+     "path": [
+      "legalLinks",
+      0,
+      "link",
+      "label"
+     ],
+     "en": "Privacy policy",
+     "ar": "سياسة الخصوصية"
+    }
+   ]
+  }
+ ]
+}

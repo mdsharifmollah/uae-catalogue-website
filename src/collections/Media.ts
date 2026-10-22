@@ -20,7 +20,7 @@ export const Media: CollectionConfig = {
   admin: {
     group: 'Content',
     description:
-      'All images. Always write alt text — describe what is in the photo (e.g. "Numbered fabric shade card with 39 linen swatches"). It helps Google Images and accessibility.',
+      'All images. Always write alt text — describe what is in the photo (e.g. "Sample hanger with 24 linen swatches sorted by colour"). It helps Google Images and accessibility.',
   },
   access: {
     create: authenticated,
