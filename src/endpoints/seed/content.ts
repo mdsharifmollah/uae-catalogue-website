@@ -617,3 +617,64 @@ export const guides = [
     ),
   },
 ]
+
+/* Copy added after launch prep (also applied to existing sites by migration 20261022_120000_content_updates). */
+
+export const homeHero = {
+  eyebrow: 'Catalogue Manufacturer · Sharjah, UAE',
+  subheading:
+    'Fabric sample books, waterfall hangers, shade cards, presentation boxes and catalogues of every kind — made for textile, upholstery, curtain and interior brands.',
+}
+
+export const otherCataloguesFaq = {
+  key: 'other',
+  category: 'general' as const,
+  question: 'Do you make other kinds of catalogues, not only fabric?',
+  answer:
+    'Yes. Besides fabric, we make sample books and catalogues for wallpaper, carpets and rugs, blinds and other materials. Send us your samples and how you plan to present them, and we will suggest a suitable format.',
+}
+
+export const privacyPolicy = doc(
+  p('**Last updated: 22 October 2026.**'),
+  p(
+    'This policy explains how Al Hejlah Catalogue Manufacture (“we”, “us”), based in Sharjah, United Arab Emirates, handles personal information collected through this website. We follow the UAE Personal Data Protection Law (Federal Decree-Law No. 45 of 2021).',
+  ),
+  h2('Information we collect'),
+  ul([
+    '**Quote requests:** your name, company, email, phone number, the product you are interested in, quantity and any message you write in the form.',
+    '**Messages:** what you send us by WhatsApp, phone or email.',
+    '**Technical data:** our hosting provider records basic request data such as IP address, browser type and the pages requested, to keep the website secure and working.',
+  ]),
+  p('You do not need an account to use this website, and we do not ask for payment details online.'),
+  h2('How we use it'),
+  ul([
+    'To reply to your enquiry, prepare quotations and discuss samples.',
+    'To produce and deliver orders you place with us, and keep the related business records.',
+    'To keep the website secure and fix problems.',
+  ]),
+  p('We do not sell your personal information, and we do not send marketing messages unless you ask for them.'),
+  h2('Who we share it with'),
+  p(
+    'Only with service providers that help us run the website and reply to you — website hosting (Vercel), our database (Neon) and email delivery (Resend) — and with WhatsApp (Meta) when you choose to contact us there. These providers may process data outside the UAE under their own security and privacy commitments. We may also disclose information when the law requires it.',
+  ),
+  h2('Cookies and analytics'),
+  p(
+    'This website does not use advertising cookies. It does not currently use analytics cookies either; if we add analytics in future (for example Google Analytics), we will update this policy first.',
+  ),
+  h2('How long we keep it'),
+  p(
+    'Enquiries are kept for up to three years so we can follow up and refer back to previous quotations. Order records are kept for as long as UAE accounting and tax rules require.',
+  ),
+  h2('Your rights'),
+  p(
+    'You can ask to see the personal information we hold about you, correct it, delete it or stop us using it, and you can withdraw consent at any time. Contact us using the details below and we will respond within 30 days.',
+  ),
+  h2('Security'),
+  p(
+    'Data is sent to us over an encrypted (HTTPS) connection and access to the dashboard is limited to our team. No system is completely secure, but we take reasonable steps to protect your information.',
+  ),
+  h2('Contact'),
+  p(
+    'For any privacy question or request, email **saifuliths92@gmail.com** or message us on WhatsApp at **+971 55 849 3932**.',
+  ),
+)

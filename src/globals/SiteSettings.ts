@@ -34,14 +34,14 @@ export const SiteSettings: GlobalConfig = {
                   name: 'companyName',
                   type: 'text',
                   required: true,
-                  defaultValue: 'UAE Catalogue Manufacture',
+                  defaultValue: 'Al Hejlah Catalogue Manufacture',
                   admin: { width: '60%' },
                 },
                 {
                   name: 'shortName',
                   type: 'text',
                   required: true,
-                  defaultValue: 'UAE Catalogue',
+                  defaultValue: 'Al Hejlah',
                   admin: {
                     width: '40%',
                     description: 'Used for the logo wordmark and the large footer word.',
@@ -250,8 +250,8 @@ export const SiteSettings: GlobalConfig = {
             {
               name: 'titleSuffix',
               type: 'text',
-              defaultValue: 'UAE Catalogue',
-              admin: { description: 'Appended to page titles, e.g. "Fabric Sample Books | UAE Catalogue".' },
+              defaultValue: 'Al Hejlah',
+              admin: { description: 'Appended to page titles, e.g. "Fabric Sample Books | Al Hejlah".' },
             },
             {
               name: 'defaultDescription',

@@ -67,7 +67,7 @@ export default async function GuidePage({ params }: Args) {
           <div className="shell">
             <SectionIntro eyebrow="Formats mentioned" heading="Explore the *formats*" />
             <div className="mt-12 grid gap-5 md:grid-cols-2">
-              {relatedProducts.map((p, i) => (
+              {relatedProducts.map((p) => (
                 <FormatCard key={p.id} product={p} />
               ))}
             </div>

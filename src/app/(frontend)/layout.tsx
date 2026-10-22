@@ -56,7 +56,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: motionBootstrap }} />
-        <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
         <JsonLd data={[organizationSchema(settings), websiteSchema(settings)]} />
       </head>
       <body>
@@ -111,5 +110,12 @@ export async function generateMetadata(): Promise<Metadata> {
       ? { google: settings.googleSiteVerification }
       : undefined,
     formatDetection: { telephone: false },
+    icons: {
+      icon: [
+        { url: '/favicon.ico', sizes: '48x48' },
+        { url: '/favicon.svg', type: 'image/svg+xml' },
+      ],
+      apple: '/apple-touch-icon.png',
+    },
   }
 }

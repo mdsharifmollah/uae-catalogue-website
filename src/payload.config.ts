@@ -101,7 +101,7 @@ export default buildConfig({
   ...(process.env.RESEND_API_KEY
     ? {
         email: resendAdapter({
-          defaultFromAddress: process.env.EMAIL_FROM_ADDRESS || 'website@example.com',
+          defaultFromAddress: process.env.EMAIL_FROM_ADDRESS || 'onboarding@resend.dev',
           defaultFromName: process.env.EMAIL_FROM_NAME || 'Website',
           apiKey: process.env.RESEND_API_KEY,
         }),

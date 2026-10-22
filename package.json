@@ -1,7 +1,7 @@
 {
-  "name": "uae-catalogue-website",
+  "name": "al-hejlah-website",
   "version": "1.0.0",
-  "description": "UAE Catalogue Manufacture \u2014 Next.js + Payload CMS website",
+  "description": "Al Hejlah Catalogue Manufacture \u2014 Next.js + Payload CMS website",
   "license": "MIT",
   "type": "module",
   "scripts": {

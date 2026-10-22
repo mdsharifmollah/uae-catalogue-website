@@ -93,7 +93,7 @@ export default async function IndustryPage({ params }: Args) {
           <div className="shell">
             <SectionIntro eyebrow="Recommended formats" heading={`Popular with *${industry.title.toLowerCase()}* brands`} />
             <div className="mt-12 grid gap-5 md:grid-cols-2">
-              {products.docs.map((p, i) => (
+              {products.docs.map((p) => (
                 <FormatCard key={p.id} product={p} />
               ))}
             </div>

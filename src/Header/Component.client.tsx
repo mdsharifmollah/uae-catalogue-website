@@ -36,7 +36,9 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
   const [docked, setDocked] = useState(false)
   // Only animate real top <-> bottom moves, not the initial render.
   const [moved, setMoved] = useState(false)
-  const [open, setOpen] = useState(false)
+  // The menu belongs to the route it was opened on, so navigating closes it.
+  const [openOn, setOpenOn] = useState<string | null>(null)
+  const open = openOn === pathname
   const dockedRef = useRef(false)
   const menuId = useId()
   const toggleRef = useRef<HTMLButtonElement>(null)
@@ -72,13 +74,9 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
   }, [])
 
   const close = useCallback(() => {
-    setOpen(false)
+    setOpenOn(null)
     toggleRef.current?.focus()
   }, [])
-
-  useEffect(() => {
-    setOpen(false)
-  }, [pathname])
 
   useEffect(() => {
     if (!open) {
@@ -193,7 +191,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
                 aria-expanded={open}
                 aria-controls={menuId}
                 aria-label={open ? 'Close menu' : 'Open menu'}
-                onClick={() => setOpen((o) => !o)}
+                onClick={() => setOpenOn(open ? null : pathname)}
               >
                 {open ? <CloseIcon /> : <MenuIcon />}
               </button>

@@ -2,7 +2,7 @@ import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
 
 // Data only: real company name and contact details in place of the starter
 // placeholders, and the new brand in SEO titles. Safe to run more than once.
-export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
+export async function up({ db }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`
    UPDATE "site_settings" SET
      "company_name" = 'UAE Catalogue Manufacture',
@@ -28,6 +28,6 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
    UPDATE "_posts_v_locales" SET "version_meta_title" = replace("version_meta_title", '| UA Fabric', '| UAE Catalogue') WHERE "version_meta_title" LIKE '%| UA Fabric';`)
 }
 
-export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
+export async function down(_args: MigrateDownArgs): Promise<void> {
   // Content change only; the previous values were placeholders, nothing to restore.
 }

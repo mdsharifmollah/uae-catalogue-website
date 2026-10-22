@@ -1,6 +1,6 @@
-# UAE Catalogue Manufacture — website
+# Al Hejlah Catalogue Manufacture — website
 
-Next.js 16 + Payload CMS 3 site for UAE Catalogue Manufacture, a Sharjah, UAE maker of all kinds of catalogues
+Next.js 16 + Payload CMS 3 site for Al Hejlah Catalogue Manufacture, a Sharjah, UAE maker of all kinds of catalogues
 (fabric sample books, waterfall hangers, shade cards, presentation boxes).
 Everything (text, photos, products, FAQs, WhatsApp number, SEO) is edited from the dashboard at **/admin**.
 
@@ -46,7 +46,7 @@ Headings: wrap one word in `*asterisks*` to show it in the italic accent font.
 ## Before launch — must be replaced (starter content is placeholder)
 
 - Logo and exact address (Site Settings). Company name, WhatsApp/phone and email are set
-  (UAE Catalogue Manufacture · +971 55 849 3932 · saifuliths92@gmail.com).
+  (Al Hejlah Catalogue Manufacture · +971 55 849 3932 · saifuliths92@gmail.com).
 - **All portfolio projects and photos** — the starter ones are stock images (Unsplash License) for layout only
 - Confirm every product format, spec and process step matches what the business actually offers
 - Privacy policy page

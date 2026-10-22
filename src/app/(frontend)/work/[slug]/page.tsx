@@ -90,7 +90,7 @@ export default async function ProjectPage({ params }: Args) {
           <div className="shell">
             <SectionIntro eyebrow="Formats used" heading="Made with these *formats*" />
             <div className="mt-12 grid gap-5 md:grid-cols-2">
-              {products.map((p, i) => (
+              {products.map((p) => (
                 <FormatCard key={p.id} product={p} />
               ))}
             </div>

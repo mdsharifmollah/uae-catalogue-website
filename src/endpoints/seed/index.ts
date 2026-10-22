@@ -4,7 +4,19 @@ import fs from 'fs/promises'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-import { faqs, guides, iconFiles, industries, mediaFiles, processSteps, products, projects } from './content'
+import {
+  faqs,
+  guides,
+  homeHero,
+  iconFiles,
+  industries,
+  mediaFiles,
+  otherCataloguesFaq,
+  privacyPolicy,
+  processSteps,
+  products,
+  projects,
+} from './content'
 import { doc, h2, p } from './lexical'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -64,7 +76,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
   /* ---------------------------------------------------------------- FAQs */
   payload.logger.info('— FAQs...')
   const faqIds: Record<string, number> = {}
-  for (const [i, f] of faqs.entries()) {
+  for (const [i, f] of [faqs[0], otherCataloguesFaq, ...faqs.slice(1)].entries()) {
     const d = await payload.create({
       collection: 'faqs',
       data: { question: f.question, answer: f.answer, category: f.category, order: (i + 1) * 10 },
@@ -93,7 +105,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
         cardTone: ind.cardTone,
         _status: 'published',
         meta: {
-          title: `${ind.title} Sample Books & Catalogues | UAE Catalogue`,
+          title: `${ind.title} Sample Books & Catalogues | Al Hejlah`,
           description: ind.summary,
           image: media[ind.image],
         },
@@ -127,7 +139,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
         cardTone: prod.cardTone,
         _status: 'published',
         meta: {
-          title: `${prod.title} Manufacturer in UAE | UAE Catalogue`,
+          title: `${prod.title} Manufacturer in UAE | Al Hejlah`,
           description: prod.summary,
           image: media[prod.hero],
         },
@@ -197,7 +209,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
         relatedProducts: g.relatedProducts.map((k) => productIds[k]),
         publishedAt: new Date(now - (i + 1) * 3 * 86400000).toISOString(),
         _status: 'published',
-        meta: { title: `${g.title} | UAE Catalogue`, description: g.excerpt, image: media[g.image] },
+        meta: { title: `${g.title} | Al Hejlah`, description: g.excerpt, image: media[g.image] },
       },
       req,
       context: ctx,
@@ -257,6 +269,13 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
           subject: 'We received your quote request',
           message: doc(p('Thank you for contacting us. We will reply shortly.')),
         },
+        {
+          // Notifies the business; replying goes straight to the customer.
+          emailTo: 'saifuliths92@gmail.com',
+          replyTo: '{{email}}',
+          subject: 'New quote request: {{name}} ({{company}})',
+          message: doc(p('New quote request from the website:'), p('{{*:table}}')),
+        },
       ],
     },
     req,
@@ -286,7 +305,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
       title: 'Home',
       slug: 'home',
       meta: {
-        title: 'Fabric Sample Book Manufacturer in UAE | UAE Catalogue',
+        title: 'Fabric Sample Book Manufacturer in UAE | Al Hejlah',
         description:
           'Custom fabric sample books, waterfall hangers, numbered shade cards and sample boxes for textile and interior businesses. Made in Sharjah, UAE — request a quote on WhatsApp.',
         image: media['draped-bronze-fabric-texture.webp'],
@@ -294,10 +313,9 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
       hero: {
         type: 'catalog',
         tone: 'ink',
-        eyebrow: 'Sample Book Manufacturer · Sharjah, UAE',
+        eyebrow: homeHero.eyebrow,
         heading: 'Fabric Sample Books & Catalogues, *Crafted* in the UAE',
-        subheading:
-          'Custom sample books, waterfall hangers, numbered shade cards and presentation boxes — made for textile, upholstery, curtain and interior brands.',
+        subheading: homeHero.subheading,
         links: [wa('Request a quote on WhatsApp'), url('Explore our work', '/work')],
         trustItems: [{ text: 'Custom formats' }, { text: 'Organised, numbered swatches' }, { text: 'Professional presentation' }],
         media: media['draped-bronze-fabric-texture.webp'],
@@ -402,7 +420,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
       title: 'How We Make Fabric Sample Books',
       slug: 'process',
       meta: {
-        title: 'How Fabric Sample Books Are Made | Our Process | UAE Catalogue',
+        title: 'How Fabric Sample Books Are Made | Our Process | Al Hejlah',
         description:
           'See how we turn your fabric range into sample books, hangers and shade cards: cutting, arranging, numbering, mounting, binding and branding.',
         image: media['tailor-scissors-cutting-swatches.webp'],
@@ -453,9 +471,9 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
       title: 'About',
       slug: 'about',
       meta: {
-        title: 'About Us | Fabric Sample Catalogue Manufacturer, Sharjah | UAE Catalogue',
+        title: 'About Us | Fabric Sample Catalogue Manufacturer, Sharjah | Al Hejlah',
         description:
-          'UAE Catalogue Manufacture prepares fabric sample books, hangers, shade cards and sample boxes for textile and interior businesses from Sharjah, UAE.',
+          'Al Hejlah Catalogue Manufacture prepares fabric sample books, hangers, shade cards and sample boxes for textile and interior businesses from Sharjah, UAE.',
         image: media['textile-sampling-workshop.webp'],
       },
       hero: {
@@ -512,7 +530,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
       title: 'Contact',
       slug: 'contact',
       meta: {
-        title: 'Contact & Request a Quote | Fabric Sample Books UAE | UAE Catalogue',
+        title: 'Contact & Request a Quote | Fabric Sample Books UAE | Al Hejlah',
         description:
           'Request a quotation for fabric sample books, hangers, shade cards or sample boxes. WhatsApp, phone or email our Sharjah team.',
         image: media['designer-choosing-fabric-samples.webp'],
@@ -549,7 +567,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
       title: 'Products',
       slug: 'products',
       meta: {
-        title: 'Fabric Sample Books, Hangers & Shade Cards | Products | UAE Catalogue',
+        title: 'Fabric Sample Books, Hangers & Shade Cards | Products | Al Hejlah',
         description:
           'Fabric sample books, waterfall hangers, numbered shade cards, swatch cards and sample boxes manufactured in Sharjah, UAE.',
       },
@@ -567,7 +585,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
       title: 'Industries',
       slug: 'industries',
       meta: {
-        title: 'Industries We Serve | Upholstery, Curtain, Carpet & Blind Sample Books | UAE Catalogue',
+        title: 'Industries We Serve | Upholstery, Curtain, Carpet & Blind Sample Books | Al Hejlah',
         description:
           'Fabric sample books and catalogues for upholstery, curtain, carpet, blind and wallpaper businesses in the UAE.',
       },
@@ -585,7 +603,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
       title: 'Our Work',
       slug: 'work',
       meta: {
-        title: 'Our Work | Fabric Sample Books & Swatch Displays | UAE Catalogue',
+        title: 'Our Work | Fabric Sample Books & Swatch Displays | Al Hejlah',
         description: 'Fabric sample books, waterfall hangers and numbered shade cards we have produced.',
       },
       hero: {
@@ -601,7 +619,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
       title: 'Guides',
       slug: 'guides',
       meta: {
-        title: 'Fabric Sample Book Guides | Formats, Sizes & Costs | UAE Catalogue',
+        title: 'Fabric Sample Book Guides | Formats, Sizes & Costs | Al Hejlah',
         description: 'Practical guides to fabric sample book formats, sizes, numbering and costs.',
       },
       hero: {
@@ -616,7 +634,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
     {
       title: 'Privacy Policy',
       slug: 'privacy-policy',
-      meta: { title: 'Privacy Policy | UAE Catalogue', description: 'How we handle information sent through this website.' },
+      meta: { title: 'Privacy Policy | Al Hejlah', description: 'How we handle information sent through this website.' },
       hero: { type: 'minimal', tone: 'ink', heading: 'Privacy policy' },
       layout: [
         {
@@ -625,19 +643,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
           columns: [
             {
               size: 'full',
-              richText: doc(
-                p(
-                  'This starter policy must be reviewed and replaced by the business before launch.',
-                ),
-                h2('Information you send us'),
-                p(
-                  'When you use the quote form, WhatsApp, phone or email, we receive the details you choose to share — such as your name, company, phone number, email and project requirements. We use them only to reply to your enquiry and prepare quotations.',
-                ),
-                h2('Analytics'),
-                p('We may use analytics to understand how visitors use the website, for example which pages are visited.'),
-                h2('Contact'),
-                p('For any privacy question, contact us using the details on the contact page.'),
-              ),
+              richText: privacyPolicy,
             },
           ],
         },
@@ -666,8 +672,8 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
   await payload.updateGlobal({
     slug: 'site-settings',
     data: {
-      companyName: 'UAE Catalogue Manufacture',
-      shortName: 'UAE Catalogue',
+      companyName: 'Al Hejlah Catalogue Manufacture',
+      shortName: 'Al Hejlah',
       tagline:
         'Specialists in all kinds of catalogues: fabric sample books, waterfall hangers, shade cards and presentation boxes for textile and interior businesses.',
       whatsappNumber: '971558493932',
@@ -680,7 +686,7 @@ export const seed = async ({ payload, req }: { payload: Payload; req: PayloadReq
       openingHours: [
         { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '08:00', closes: '18:00' },
       ],
-      titleSuffix: 'UAE Catalogue',
+      titleSuffix: 'Al Hejlah',
       defaultDescription:
         'All kinds of catalogues, made in Sharjah, UAE: fabric sample books, waterfall hangers, numbered shade cards and sample boxes for textile and interior brands.',
       defaultOgImage: media['draped-bronze-fabric-texture.webp'],

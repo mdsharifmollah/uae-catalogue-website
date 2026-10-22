@@ -364,7 +364,6 @@ export interface Media {
     };
     [k: string]: unknown;
   } | null;
-  _objectKey?: string | null;
   folder?: (number | null) | FolderInterface;
   updatedAt: string;
   createdAt: string;
@@ -2525,7 +2524,6 @@ export interface TestimonialsSelect<T extends boolean = true> {
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   caption?: T;
-  _objectKey?: T;
   folder?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -2955,7 +2953,7 @@ export interface SiteSetting {
       }[]
     | null;
   /**
-   * Appended to page titles, e.g. "Fabric Sample Books | UA Fabric".
+   * Appended to page titles, e.g. "Fabric Sample Books | Al Hejlah".
    */
   titleSuffix?: string | null;
   defaultDescription?: string | null;

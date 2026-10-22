@@ -183,7 +183,7 @@ export default async function ProductPage({ params }: Args) {
           <div className="shell">
             <SectionIntro eyebrow="Related formats" heading="You may *also* need" />
             <div className="mt-12 grid gap-5 md:grid-cols-2">
-              {related.slice(0, 4).map((p, i) => (
+              {related.slice(0, 4).map((p) => (
                 <FormatCard key={p.id} product={p} />
               ))}
             </div>
