@@ -3,16 +3,19 @@ import { draftMode } from 'next/headers'
 import { getPayload } from 'payload'
 import { cache } from 'react'
 
+import { getLocale } from '@/i18n/server'
+
 type SluggedCollection = 'pages' | 'posts' | 'products' | 'industries' | 'projects'
 
-/** Fetch one published (or draft, in preview) document by slug. Deduped per request. */
+/** Fetch one published (or draft, in preview) document by slug, in the current locale. Deduped per request. */
 export const queryBySlug = cache(async <T extends SluggedCollection>(collection: T, slug: string, depth = 2) => {
-  const { isEnabled: draft } = await draftMode()
+  const [{ isEnabled: draft }, locale] = await Promise.all([draftMode(), getLocale()])
   const payload = await getPayload({ config: configPromise })
   const result = await payload.find({
     collection,
     draft,
     depth,
+    locale,
     limit: 1,
     pagination: false,
     overrideAccess: draft,

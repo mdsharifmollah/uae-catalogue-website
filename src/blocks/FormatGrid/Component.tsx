@@ -1,5 +1,5 @@
 import configPromise from '@payload-config'
-import Link from 'next/link'
+import { Link } from '@/i18n/client'
 import { getPayload } from 'payload'
 import React from 'react'
 
@@ -14,12 +14,15 @@ import { SectionIntro } from '@/components/site/SectionIntro'
 import { WhatsAppAnchor } from '@/components/site/WhatsAppAnchor'
 import { docPath } from '@/utilities/routes'
 import { cn } from '@/utilities/ui'
+import { getLocale } from '@/i18n/server'
+import { getDictionary } from '@/i18n/server'
 
 export const getProducts = async (selected?: (Product | number)[] | null): Promise<Product[]> => {
   const picked = (selected || []).filter((p): p is Product => typeof p === 'object')
   if (picked.length) return picked
   const payload = await getPayload({ config: configPromise })
   const res = await payload.find({
+    locale: await getLocale(),
     collection: 'products',
     sort: 'order',
     limit: 24,
@@ -30,11 +33,16 @@ export const getProducts = async (selected?: (Product | number)[] | null): Promi
 }
 
 /** Product card in the style of a premium service tile: two-tone title, object photo, arrow chip. */
-export const FormatCard: React.FC<{ product: Product; showWhatsapp?: boolean; className?: string }> = ({
+export const FormatCard = async ({
   product,
   showWhatsapp = true,
   className,
+}: {
+  product: Product
+  showWhatsapp?: boolean
+  className?: string
 }) => {
+  const t = await getDictionary()
   const [line1, line2] = (product.cardTitle || product.title).split('|')
   const href = docPath('products', product.slug)
   const image = product.cardImage || product.heroImage
@@ -54,35 +62,39 @@ export const FormatCard: React.FC<{ product: Product; showWhatsapp?: boolean; cl
             {line2 && <span className="block text-muted">{line2}</span>}
           </Link>
         </h3>
-        <p className="mt-4 line-clamp-3 text-[1.0625rem] leading-relaxed text-muted">{product.summary}</p>
+        <p className="mt-4 line-clamp-3 text-[1.0625rem] leading-relaxed text-muted">
+          {product.summary}
+        </p>
         <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-7">
           <span className="inline-flex items-center gap-3 text-[1rem] font-semibold uppercase tracking-[0.08em]">
             <span className="arrow-chip bg-[color:var(--fg)] text-[color:var(--chip-fg)]">
               <ArrowUpRight size={16} />
             </span>
-            Learn more
+            {t.common.learnMore}
           </span>
           {showWhatsapp && (
             <WhatsAppAnchor
-              message={product.whatsappMessage || `Hello, I'd like a quote for ${product.title}.`}
+              message={product.whatsappMessage || t.common.quoteMessageFor(product.title)}
               className="relative z-10 inline-flex min-h-11 items-center gap-2 rounded-full px-1 text-[1rem] font-semibold text-accent underline-offset-4 hover:underline"
-              aria-label={`Ask for a ${product.title} quote on WhatsApp`}
+              aria-label={t.common.askQuoteFor(product.title)}
             >
               <WhatsAppIcon size={18} />
-              Quote
+              {t.common.quote}
             </WhatsAppAnchor>
           )}
         </div>
       </div>
       {image && typeof image === 'object' && (
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-[52%]">
+        <div className="pointer-events-none absolute inset-y-0 end-0 w-[52%]">
           <Media
             resource={image}
             fill
             size="(max-width: 768px) 50vw, 26vw"
             imgClassName={cn(
               'transition-transform duration-[900ms] ease-[var(--ease-out-expo)] group-hover:scale-[1.06] group-hover:-rotate-2',
-              product.cardImage ? 'object-contain object-right-bottom p-4' : 'object-cover [mask-image:linear-gradient(to_left,black_55%,transparent)]',
+              product.cardImage
+                ? 'object-contain object-right-bottom p-4 rtl:object-left-bottom'
+                : 'object-cover [mask-image:linear-gradient(to_left,black_55%,transparent)] rtl:[mask-image:linear-gradient(to_right,black_55%,transparent)]',
             )}
             pictureClassName="absolute inset-0"
             htmlElement={null}
@@ -121,7 +133,9 @@ export const FormatGridBlock: React.FC<Props & { id?: string | null }> = async (
               product={product}
               showWhatsapp={showWhatsapp !== false}
               // An odd last card spans the full row
-              className={products.length % 2 === 1 && i === products.length - 1 ? 'md:col-span-2' : undefined}
+              className={
+                products.length % 2 === 1 && i === products.length - 1 ? 'md:col-span-2' : undefined
+              }
             />
           ))}
         </div>

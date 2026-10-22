@@ -843,3 +843,35 @@ html.motion-ok [data-reveal][data-revealed] {
 
 
 }
+
+/* ------------------------------------------------------------------
+   Arabic (right-to-left). Arabic faces are only downloaded on these pages.
+   ------------------------------------------------------------------ */
+html[lang='ar'] {
+  --font-sans: var(--font-arabic), var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-arabic-accent), var(--font-instrument), ui-serif, serif;
+}
+/* Letter-spacing pulls joined Arabic letters apart, so drop all tracking. */
+:where([lang='ar'], [lang='ar'] *) {
+  letter-spacing: 0 !important;
+}
+/* Arabic has no italics; the accent word keeps its colour and serif voice. */
+html[lang='ar'] .accent-word {
+  font-style: normal;
+  padding-inline-end: 0;
+}
+/* Arabic letters rise and fall further than Latin ones; give headings room. */
+html[lang='ar'] .text-display {
+  line-height: 1.22;
+}
+html[lang='ar'] .text-h2 {
+  line-height: 1.25;
+}
+html[lang='ar'] .text-h3 {
+  line-height: 1.35;
+}
+/* The language link shows the other script; keep it in the system font so
+   English pages never fetch an Arabic web font just for this label. */
+.lang-switch:lang(ar) {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}

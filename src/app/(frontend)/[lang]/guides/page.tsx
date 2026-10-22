@@ -7,21 +7,26 @@ import React from 'react'
 import { GuideCard } from '@/components/site/GuideCard'
 import { HubPage } from '@/components/site/HubPage'
 import { Section } from '@/components/site/Section'
+import { getDictionary, getLocale } from '@/i18n/server'
 import { generateMeta } from '@/utilities/generateMeta'
 import { queryBySlug } from '@/utilities/queries'
 
 export default async function GuidesPage() {
-  const payload = await getPayload({ config: configPromise })
-  const posts = await payload.find({ collection: 'posts', sort: '-publishedAt', limit: 60, depth: 1, overrideAccess: false })
+  const [payload, t, locale] = await Promise.all([getPayload({ config: configPromise }), getDictionary(), getLocale()])
+  const posts = await payload.find({
+    collection: 'posts',
+    locale,
+    sort: '-publishedAt',
+    limit: 60,
+    depth: 1,
+    overrideAccess: false,
+  })
+  const hub = t.hubs.guides
   return (
     <HubPage
       slug="guides"
-      name="Guides"
-      fallbackHero={{
-        eyebrow: 'Guides',
-        heading: 'Fabric sample books, *explained*',
-        subheading: 'Practical guidance on formats, sizes, numbering and costs — for brands planning their next sample catalogue.',
-      }}
+      name={t.common.guides}
+      fallbackHero={{ eyebrow: hub.eyebrow, heading: hub.heading, subheading: hub.subheading }}
     >
       <Section tone="ivory">
         <ul className="shell grid gap-x-6 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
@@ -37,10 +42,10 @@ export default async function GuidesPage() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = await queryBySlug('pages', 'guides')
+  const [page, t] = await Promise.all([queryBySlug('pages', 'guides'), getDictionary()])
   return generateMeta({
-    doc: page || { title: 'Guides — Fabric Sample Books, Hangers & Shade Cards' },
+    doc: page || { title: t.hubs.guides.metaTitle },
     path: '/guides',
-    fallbackDescription: 'Guides to fabric sample book formats, sizes, numbering and costs for textile and interior brands.',
+    fallbackDescription: t.hubs.guides.metaDescription,
   })
 }

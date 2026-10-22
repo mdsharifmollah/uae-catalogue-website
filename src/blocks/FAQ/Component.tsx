@@ -10,6 +10,7 @@ import { PlusIcon } from '@/components/site/icons'
 import { Section, type Tone } from '@/components/site/Section'
 import { SectionIntro } from '@/components/site/SectionIntro'
 import { faqSchema } from '@/utilities/schema'
+import { getLocale } from '@/i18n/server'
 
 export const FAQList: React.FC<{ faqs: FAQ[] }> = ({ faqs }) => (
   <div className="flex flex-col gap-3">
@@ -47,6 +48,7 @@ export const FAQBlockComponent: React.FC<Props & { id?: string | null }> = async
   if (!faqs.length) {
     const payload = await getPayload({ config: configPromise })
     const res = await payload.find({
+      locale: await getLocale(),
       collection: 'faqs',
       sort: 'order',
       limit: 30,

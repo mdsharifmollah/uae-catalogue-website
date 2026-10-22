@@ -1,5 +1,5 @@
 import configPromise from '@payload-config'
-import Link from 'next/link'
+import { Link } from '@/i18n/client'
 import { getPayload } from 'payload'
 import React from 'react'
 
@@ -13,34 +13,60 @@ import { SectionIntro } from '@/components/site/SectionIntro'
 import { docPath } from '@/utilities/routes'
 import { cn } from '@/utilities/ui'
 import { CarouselControls } from './CarouselControls'
+import { getLocale } from '@/i18n/server'
 
 export const getIndustries = async (selected?: (Industry | number)[] | null) => {
   const picked = (selected || []).filter((p): p is Industry => typeof p === 'object')
   if (picked.length) return picked
   const payload = await getPayload({ config: configPromise })
-  const res = await payload.find({ collection: 'industries', sort: 'order', limit: 20, depth: 1, overrideAccess: false })
+  const res = await payload.find({
+    locale: await getLocale(),
+    collection: 'industries',
+    sort: 'order',
+    limit: 20,
+    depth: 1,
+    overrideAccess: false,
+  })
   return res.docs
 }
 
-export const IndustryCard: React.FC<{ industry: Industry; className?: string }> = ({ industry, className }) => (
-  <article className={cn('group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-panel)] bg-[color:var(--surface)] ring-1 ring-[color:var(--line)]', className)}>
+export const IndustryCard: React.FC<{ industry: Industry; className?: string }> = ({
+  industry,
+  className,
+}) => (
+  <article
+    className={cn(
+      'group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-panel)] bg-[color:var(--surface)] ring-1 ring-[color:var(--line)]',
+      className,
+    )}
+  >
     <div className="flex flex-1 flex-col gap-4 p-6 md:p-7">
       <div className="flex items-center justify-between gap-4">
         {industry.tag && (
-          <span className="rounded-full bg-[color:var(--line)] px-3.5 py-1.5 text-[1rem] font-medium">{industry.tag}</span>
+          <span className="rounded-full bg-[color:var(--line)] px-3.5 py-1.5 text-[1rem] font-medium">
+            {industry.tag}
+          </span>
         )}
-        <span className="arrow-chip ml-auto border border-[color:var(--line)]">
+        <span className="arrow-chip ms-auto border border-[color:var(--line)]">
           <ArrowUpRight size={16} />
         </span>
       </div>
       <h3 className="text-[1.75rem] font-semibold leading-[1.1] tracking-tight md:text-[2rem]">
-        <Link href={docPath('industries', industry.slug)} className="after:absolute after:inset-0 after:content-['']">
+        <Link
+          href={docPath('industries', industry.slug)}
+          className="after:absolute after:inset-0 after:content-['']"
+        >
           {industry.title}
         </Link>
       </h3>
       <p className="line-clamp-3 text-[1.0625rem] text-muted">{industry.summary}</p>
     </div>
-    <div className={cn('relative m-2 mt-0 aspect-[5/4] overflow-hidden rounded-[calc(var(--radius-panel)-0.5rem)]', cardToneClass(industry.cardTone))}>
+    <div
+      className={cn(
+        'relative m-2 mt-0 aspect-[5/4] overflow-hidden rounded-[calc(var(--radius-panel)-0.5rem)]',
+        cardToneClass(industry.cardTone),
+      )}
+    >
       {(industry.cardImage || industry.heroImage) && (
         <Media
           resource={(industry.cardImage || industry.heroImage) as Industry['heroImage']}
@@ -82,7 +108,11 @@ export const IndustriesCarouselBlock: React.FC<Props & { id?: string | null }> =
         data-lenis-prevent-touch
       >
         {industries.map((industry) => (
-          <li key={industry.id} data-reveal className="w-[82vw] shrink-0 snap-start sm:w-[22rem] lg:w-[26rem]">
+          <li
+            key={industry.id}
+            data-reveal
+            className="w-[82vw] shrink-0 snap-start sm:w-[22rem] lg:w-[26rem]"
+          >
             <IndustryCard industry={industry} />
           </li>
         ))}

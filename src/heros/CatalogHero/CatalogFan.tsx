@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/client'
 import React from 'react'
 
 import type { Product } from '@/payload-types'
@@ -9,6 +9,7 @@ import { cardToneClass } from '@/components/site/cardTones'
 import { cn } from '@/utilities/ui'
 import { docPath } from '@/utilities/routes'
 import { FanMotion } from './FanMotion'
+import { getDictionary } from '@/i18n/server'
 
 // Fan layout for up to 5 cards, centre card in front.
 const LAYOUT = [
@@ -27,7 +28,8 @@ const orderForFan = (items: Product[]) => {
   return [third, second, first, ...rest].filter(Boolean) as Product[]
 }
 
-export const CatalogFan: React.FC<{ products: Product[] }> = ({ products }) => {
+export const CatalogFan = async ({ products }: { products: Product[] }) => {
+  const t = await getDictionary()
   const cards = orderForFan(products)
   const offset = Math.floor((5 - cards.length) / 2)
 
@@ -35,7 +37,7 @@ export const CatalogFan: React.FC<{ products: Product[] }> = ({ products }) => {
     <FanMotion>
       <ul
         className="relative mx-auto mt-12 h-[18rem] w-full max-w-[64rem] sm:h-[22rem] md:mt-16 md:h-[27rem]"
-        aria-label="Sample formats we manufacture"
+        aria-label={t.a11y.fan}
       >
         {cards.map((product, i) => {
           const pos = LAYOUT[i + offset]
@@ -65,7 +67,7 @@ export const CatalogFan: React.FC<{ products: Product[] }> = ({ products }) => {
               <Link
                 href={docPath('products', product.slug)}
                 className={cn(
-                  'fan-card group relative flex h-[16rem] flex-col overflow-hidden rounded-[var(--radius-card)] p-4 text-left sm:h-[19rem] sm:p-5 md:h-[24rem] md:p-6',
+                  'fan-card group relative flex h-[16rem] flex-col overflow-hidden rounded-[var(--radius-card)] p-4 text-start sm:h-[19rem] sm:p-5 md:h-[24rem] md:p-6',
                   cardToneClass(product.cardTone),
                 )}
               >
@@ -75,7 +77,7 @@ export const CatalogFan: React.FC<{ products: Product[] }> = ({ products }) => {
                 </span>
                 {isCenter && (
                   <span className="relative z-10 mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-white px-3 py-1.5 text-[1rem] font-semibold text-[#121311] shadow-lg sm:px-4 sm:py-2">
-                    View format
+                    {t.common.viewFormat}
                     <span className="grid size-6 place-items-center rounded-full bg-[#c9a66b]">
                       <ArrowUpRight size={14} />
                     </span>

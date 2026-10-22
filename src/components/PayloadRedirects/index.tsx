@@ -6,6 +6,8 @@ import { getPayload } from 'payload'
 
 import { getCachedRedirects } from '@/utilities/getRedirects'
 import { docPath, type RoutableCollection } from '@/utilities/routes'
+import { localizePath } from '@/i18n/config'
+import { getLocale } from '@/i18n/server'
 
 interface Props {
   disableNotFound?: boolean
@@ -18,7 +20,8 @@ export const PayloadRedirects: React.FC<Props> = async ({ disableNotFound, url }
   const redirectItem = redirects.find((r) => r.from === url || r.from === `${url}/`)
 
   if (redirectItem) {
-    if (redirectItem.to?.url) redirect(redirectItem.to.url)
+    const locale = await getLocale()
+    if (redirectItem.to?.url) redirect(localizePath(locale, redirectItem.to.url))
 
     const ref = redirectItem.to?.reference
     if (ref) {
@@ -31,7 +34,7 @@ export const PayloadRedirects: React.FC<Props> = async ({ disableNotFound, url }
         const doc = await payload.findByID({ collection, id: ref.value, depth: 0, disableErrors: true })
         slug = (doc as { slug?: string | null } | null)?.slug
       }
-      if (slug) redirect(docPath(collection, slug))
+      if (slug) redirect(localizePath(locale, docPath(collection, slug)))
     }
   }
 

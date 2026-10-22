@@ -88,9 +88,12 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URL || '',
     },
   }),
-  // Arabic-ready: add { label: 'العربية', code: 'ar', rtl: true } once Arabic copy is approved.
+  // English at /, Arabic at /ar (right-to-left). Untranslated Arabic fields fall back to English.
   localization: {
-    locales: [{ label: 'English', code: 'en' }],
+    locales: [
+      { label: 'English', code: 'en' },
+      { label: 'العربية', code: 'ar', rtl: true },
+    ],
     defaultLocale: 'en',
     fallback: true,
   },

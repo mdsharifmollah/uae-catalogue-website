@@ -6,6 +6,7 @@ import type { Testimonial, TestimonialsBlock as Props } from '@/payload-types'
 
 import { Section, type Tone } from '@/components/site/Section'
 import { SectionIntro } from '@/components/site/SectionIntro'
+import { getLocale } from '@/i18n/server'
 
 /** Only verified testimonials are ever rendered. */
 export const TestimonialsBlockComponent: React.FC<Props & { id?: string | null }> = async ({
@@ -19,7 +20,12 @@ export const TestimonialsBlockComponent: React.FC<Props & { id?: string | null }
   let items = (selected || []).filter((t): t is Testimonial => typeof t === 'object')
   if (!items.length) {
     const payload = await getPayload({ config: configPromise })
-    const res = await payload.find({ collection: 'testimonials', where: { verified: { equals: true } }, limit: 12 })
+    const res = await payload.find({
+      locale: await getLocale(),
+      collection: 'testimonials',
+      where: { verified: { equals: true } },
+      limit: 12,
+    })
     items = res.docs
   }
   items = items.filter((t) => t.verified)
@@ -31,7 +37,11 @@ export const TestimonialsBlockComponent: React.FC<Props & { id?: string | null }
         <SectionIntro eyebrow={eyebrow} heading={heading} intro={intro} />
         <ul className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {items.map((t) => (
-            <li key={t.id} data-reveal className="glass flex flex-col gap-6 rounded-[var(--radius-card)] p-7">
+            <li
+              key={t.id}
+              data-reveal
+              className="glass flex flex-col gap-6 rounded-[var(--radius-card)] p-7"
+            >
               <blockquote className="text-[1.1875rem] leading-relaxed">“{t.quote}”</blockquote>
               <p className="mt-auto text-[1rem]">
                 <span className="block font-semibold">{t.name}</span>

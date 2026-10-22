@@ -8,13 +8,16 @@ import React from 'react'
 import { Error } from '../Error'
 import { RequiredMark } from '../RequiredMark'
 import { Width } from '../Width'
+import { useDictionary } from '@/i18n/client'
 
 export const Email: React.FC<
   EmailField & {
     errors: Partial<FieldErrorsImpl>
     register: UseFormRegister<FieldValues>
   }
-> = ({ name, defaultValue, errors, label, register, required, width }) => (
+> = ({ name, defaultValue, errors, label, register, required, width }) => {
+  const t = useDictionary()
+  return (
   <Width width={width}>
     <Label htmlFor={name}>
       {label}
@@ -26,13 +29,15 @@ export const Email: React.FC<
       type="email"
       autoComplete="email"
       inputMode="email"
+      dir="ltr"
       aria-invalid={Boolean(errors[name])}
       aria-describedby={errors[name] ? `${name}-error` : undefined}
       {...register(name, {
-        pattern: { value: /^\S[^\s@]*@\S+\.\S+$/, message: 'Please enter a valid email address.' },
+        pattern: { value: /^\S[^\s@]*@\S+\.\S+$/, message: t.form.invalidEmail },
         required,
       })}
     />
     {errors[name] && <Error name={name} />}
   </Width>
-)
+  )
+}

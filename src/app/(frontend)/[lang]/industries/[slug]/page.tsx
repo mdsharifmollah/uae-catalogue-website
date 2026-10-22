@@ -23,6 +23,8 @@ import { generateMeta } from '@/utilities/generateMeta'
 import { allSlugs, queryBySlug } from '@/utilities/queries'
 import { docPath } from '@/utilities/routes'
 import { faqSchema, serviceSchema } from '@/utilities/schema'
+import { localizePath } from '@/i18n/config'
+import { getDictionary, getLocale } from '@/i18n/server'
 
 export async function generateStaticParams() {
   return (await allSlugs('industries')).map((slug) => ({ slug }))
@@ -39,11 +41,27 @@ export default async function IndustryPage({ params }: Args) {
 
   const payload = await getPayload({ config: configPromise })
   const [products, projects] = await Promise.all([
-    payload.find({ collection: 'products', where: { industries: { contains: industry.id } }, sort: 'order', depth: 1, limit: 6, overrideAccess: false }),
-    payload.find({ collection: 'projects', where: { industries: { contains: industry.id } }, depth: 1, limit: 3, overrideAccess: false }),
+    payload.find({
+      locale: await getLocale(),
+      collection: 'products',
+      where: { industries: { contains: industry.id } },
+      sort: 'order',
+      depth: 1,
+      limit: 6,
+      overrideAccess: false,
+    }),
+    payload.find({
+      locale: await getLocale(),
+      collection: 'projects',
+      where: { industries: { contains: industry.id } },
+      depth: 1,
+      limit: 3,
+      overrideAccess: false,
+    }),
   ])
   const faqs = (industry.faqs || []).filter((f): f is FAQ => typeof f === 'object')
-  const message = `Hello, I'm in the ${industry.title.toLowerCase()} business and need fabric sample catalogues.`
+  const [t, locale] = await Promise.all([getDictionary(), getLocale()])
+  const message = t.industry.message(industry.title)
 
   return (
     <article>
@@ -52,25 +70,48 @@ export default async function IndustryPage({ params }: Args) {
       <PageHero
         type="page"
         tone="ink"
-        eyebrow={industry.tag || 'Industry'}
+        eyebrow={industry.tag || t.industry.eyebrow}
         heading={industry.title}
         subheading={industry.summary}
         media={industry.heroImage}
         links={[
-          { link: { type: 'whatsapp', label: 'Discuss your collection', appearance: 'primary', whatsappMessage: message } },
-          { link: { type: 'custom', url: '/products', label: 'All formats', appearance: 'glass' } },
+          {
+            link: {
+              type: 'whatsapp',
+              label: t.industry.discuss,
+              appearance: 'primary',
+              whatsappMessage: message,
+            },
+          },
+          { link: { type: 'custom', url: '/products', label: t.industry.allFormats, appearance: 'glass' } },
         ]}
-        breadcrumb={<Breadcrumbs items={[{ name: 'Industries', path: '/industries' }, { name: industry.title, path }]} />}
+        breadcrumb={
+          <Breadcrumbs
+            items={[
+              { name: t.common.industries, path: '/industries' },
+              { name: industry.title, path },
+            ]}
+          />
+        }
       />
 
       {industry.needs && industry.needs.length > 0 && (
         <Section tone="ivory">
           <div className="shell">
-            <SectionIntro eyebrow="What matters" heading="What your sample catalogue *needs* to do" />
+            <SectionIntro
+              eyebrow={t.industry.needsEyebrow}
+              heading={t.industry.needsHeading}
+            />
             <ul className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {industry.needs.map((n, i) => (
-                <li key={i} data-reveal className="glass flex flex-col gap-3 rounded-[var(--radius-card)] p-7">
-                  <span className="text-[1rem] font-semibold text-accent">{String(i + 1).padStart(2, '0')}</span>
+                <li
+                  key={i}
+                  data-reveal
+                  className="glass flex flex-col gap-3 rounded-[var(--radius-card)] p-7"
+                >
+                  <span className="text-[1rem] font-semibold text-accent">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
                   <h3 className="text-[1.375rem] font-semibold">{n.title}</h3>
                   {n.text && <p className="text-muted">{n.text}</p>}
                 </li>
@@ -91,7 +132,10 @@ export default async function IndustryPage({ params }: Args) {
       {products.docs.length > 0 && (
         <Section tone="sand">
           <div className="shell">
-            <SectionIntro eyebrow="Recommended formats" heading={`Popular with *${industry.title.toLowerCase()}* brands`} />
+            <SectionIntro
+              eyebrow={t.industry.formatsEyebrow}
+              heading={t.industry.formatsHeading(industry.title)}
+            />
             <div className="mt-12 grid gap-5 md:grid-cols-2">
               {products.docs.map((p) => (
                 <FormatCard key={p.id} product={p} />
@@ -104,7 +148,7 @@ export default async function IndustryPage({ params }: Args) {
       {projects.docs.length > 0 && (
         <Section tone="linen">
           <div className="shell">
-            <SectionIntro eyebrow="Our work" heading="Recent *projects*" />
+            <SectionIntro eyebrow={t.industry.workEyebrow} heading={t.industry.workHeading} />
             <ul className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {projects.docs.map((p) => (
                 <li key={p.id} data-reveal>
@@ -119,21 +163,24 @@ export default async function IndustryPage({ params }: Args) {
       {faqs.length > 0 && (
         <Section tone="ivory">
           <div className="shell grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-            <SectionIntro eyebrow="FAQ" heading="Questions we *often* hear" />
+            <SectionIntro eyebrow={t.industry.faqEyebrow} heading={t.industry.faqHeading} />
             <FAQList faqs={faqs} />
           </div>
         </Section>
       )}
 
-      <QuoteBand heading={`Sample catalogues for *${industry.title.toLowerCase()}*`} message={message} />
+      <QuoteBand
+        heading={t.industry.bandHeading(industry.title)}
+        message={message}
+      />
       <JsonLd
         data={[
           serviceSchema({
-            name: `Fabric sample catalogues for ${industry.title}`,
+            name: t.industry.serviceName(industry.title),
             description: industry.summary,
-            path,
+            path: localizePath(locale, path),
             image: industry.heroImage,
-            serviceType: 'Fabric sample book manufacturing',
+            serviceType: t.industry.serviceType,
           }),
           faqSchema(faqs),
         ]}
@@ -145,5 +192,9 @@ export default async function IndustryPage({ params }: Args) {
 export async function generateMetadata({ params }: Args): Promise<Metadata> {
   const { slug } = await params
   const industry = (await queryBySlug('industries', decodeURIComponent(slug))) as Industry | null
-  return generateMeta({ doc: industry, path: docPath('industries', slug), fallbackDescription: industry?.summary })
+  return generateMeta({
+    doc: industry,
+    path: docPath('industries', slug),
+    fallbackDescription: industry?.summary,
+  })
 }

@@ -10,6 +10,8 @@ import { AccentText } from '@/components/site/AccentText'
 import { Section, type Tone } from '@/components/site/Section'
 import { CatalogFan } from './CatalogFan'
 import { FabricCanvasLoader } from './FabricCanvasLoader'
+import { getLocale } from '@/i18n/server'
+import { getDictionary } from '@/i18n/server'
 
 const pickTextureUrl = (media?: MediaType | number | null) => {
   if (!media || typeof media !== 'object') return null
@@ -27,11 +29,13 @@ export const CatalogHero: React.FC<Page['hero']> = async ({
   media,
   fanProducts,
 }) => {
+  const t = await getDictionary()
   let products = (fanProducts || []).filter((p): p is Product => typeof p === 'object')
 
   if (!products.length) {
     const payload = await getPayload({ config: configPromise })
     const res = await payload.find({
+      locale: await getLocale(),
       collection: 'products',
       limit: 5,
       sort: 'order',
@@ -70,11 +74,17 @@ export const CatalogHero: React.FC<Page['hero']> = async ({
 
       {/* Floating swatch tags (decorative, echoes numbered shade cards) */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden lg:block">
-        <span className="hero-tag absolute left-[9%] top-[30%] -rotate-6" style={{ ['--tag' as string]: '#5e8f86' }}>
-          Swatch 07 · Linen
+        <span
+          className="hero-tag absolute left-[9%] top-[30%] -rotate-6"
+          style={{ ['--tag' as string]: '#5e8f86' }}
+        >
+          {t.common.heroTags[0]}
         </span>
-        <span className="hero-tag absolute right-[10%] top-[44%] rotate-3" style={{ ['--tag' as string]: '#c46b5f' }}>
-          Shade 23 · Velvet
+        <span
+          className="hero-tag absolute right-[10%] top-[44%] rotate-3"
+          style={{ ['--tag' as string]: '#c46b5f' }}
+        >
+          {t.common.heroTags[1]}
         </span>
       </div>
 
@@ -93,19 +103,28 @@ export const CatalogHero: React.FC<Page['hero']> = async ({
           <AccentText text={heading} />
         </h1>
         {subheading && (
-          <p className="hero-rise text-lead mt-6 max-w-2xl text-muted" style={{ animationDelay: '120ms' }}>
+          <p
+            className="hero-rise text-lead mt-6 max-w-2xl text-muted"
+            style={{ animationDelay: '120ms' }}
+          >
             {subheading}
           </p>
         )}
         {links && links.length > 0 && (
-          <div className="hero-rise mt-9 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:items-center" style={{ animationDelay: '180ms' }}>
+          <div
+            className="hero-rise mt-9 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:items-center"
+            style={{ animationDelay: '180ms' }}
+          >
             {links.map(({ link }, i) => (
               <CMSLink key={i} {...link} size="lg" />
             ))}
           </div>
         )}
         {trustItems && trustItems.length > 0 && (
-          <ul className="hero-rise mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[1rem] text-muted" style={{ animationDelay: '240ms' }}>
+          <ul
+            className="hero-rise mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[1rem] text-muted"
+            style={{ animationDelay: '240ms' }}
+          >
             {trustItems.map((t, i) => (
               <li key={i} className="flex items-center gap-2">
                 <span aria-hidden="true" className="size-1.5 rounded-full bg-[#c9a66b]" />

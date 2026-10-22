@@ -1,17 +1,20 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/client'
 import React from 'react'
 
 import { JsonLd } from '@/components/seo/JsonLd'
 import { breadcrumbSchema } from '@/utilities/schema'
+import { localizePath } from '@/i18n/config'
+import { getDictionary, getLocale } from '@/i18n/server'
 
 export type Crumb = { name: string; path: string }
 
 /** Visible breadcrumb trail + BreadcrumbList structured data. */
-export const Breadcrumbs: React.FC<{ items: Crumb[] }> = ({ items }) => {
-  const all = [{ name: 'Home', path: '/' }, ...items]
+export const Breadcrumbs = async ({ items }: { items: Crumb[] }) => {
+  const [t, locale] = await Promise.all([getDictionary(), getLocale()])
+  const all = [{ name: t.common.home, path: '/' }, ...items]
   return (
     <>
-      <nav aria-label="Breadcrumb" className="hero-rise">
+      <nav aria-label={t.a11y.breadcrumb} className="hero-rise">
         <ol className="flex flex-wrap items-center gap-2 text-[1rem] text-muted">
           {all.map((c, i) => {
             const last = i === all.length - 1
@@ -32,7 +35,7 @@ export const Breadcrumbs: React.FC<{ items: Crumb[] }> = ({ items }) => {
           })}
         </ol>
       </nav>
-      <JsonLd data={breadcrumbSchema(all)} />
+      <JsonLd data={breadcrumbSchema(all.map((c) => ({ ...c, path: localizePath(locale, c.path) })))} />
     </>
   )
 }

@@ -47,12 +47,30 @@ const nextConfig: NextConfig = {
     return webpackConfig
   },
   reactStrictMode: true,
+  // The root layout sits under [lang], so 404s use app/global-not-found.tsx.
+  experimental: {
+    globalNotFound: true,
+  },
   // Until the client's real content and domain go live, keep every page out of search results.
   async headers() {
     if (process.env.SITE_INDEXABLE === 'true') return []
     return [{ source: '/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] }]
   },
   redirects,
+  // Pages live under app/(frontend)/[lang]. English URLs carry no prefix, so map
+  // them onto the "en" segment; /ar/... matches [lang] directly. afterFiles runs
+  // after static routes (og, llms.txt, next/*) and public files, but before
+  // dynamic ones, so the CMS catch-alls (/admin, /api) are excluded explicitly.
+  async rewrites() {
+    return {
+      beforeFiles: [],
+      afterFiles: [
+        { source: '/', destination: '/en' },
+        { source: '/:path((?!(?:ar|en|admin|api)(?:/|$)).+)', destination: '/en/:path' },
+      ],
+      fallback: [],
+    }
+  },
   turbopack: {
     root: path.resolve(dirname),
   },

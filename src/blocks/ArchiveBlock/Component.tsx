@@ -7,17 +7,31 @@ import React from 'react'
 import { GuideCard } from '@/components/site/GuideCard'
 import { Section, type Tone } from '@/components/site/Section'
 import { SectionIntro } from '@/components/site/SectionIntro'
+import { getLocale } from '@/i18n/server'
 
 export const ArchiveBlock: React.FC<ArchiveBlockProps & { id?: string | null }> = async (props) => {
-  const { id, tone, eyebrow, heading, intro, categories, limit: limitFromProps, populateBy, selectedDocs } = props
+  const {
+    id,
+    tone,
+    eyebrow,
+    heading,
+    intro,
+    categories,
+    limit: limitFromProps,
+    populateBy,
+    selectedDocs,
+  } = props
 
   const limit = limitFromProps || 3
   let posts: Post[] = []
 
   if (populateBy === 'collection') {
     const payload = await getPayload({ config: configPromise })
-    const flattenedCategories = categories?.map((category) => (typeof category === 'object' ? category.id : category))
+    const flattenedCategories = categories?.map((category) =>
+      typeof category === 'object' ? category.id : category,
+    )
     const fetched = await payload.find({
+      locale: await getLocale(),
       collection: 'posts',
       depth: 1,
       limit,
@@ -29,7 +43,9 @@ export const ArchiveBlock: React.FC<ArchiveBlockProps & { id?: string | null }> 
     })
     posts = fetched.docs
   } else if (selectedDocs?.length) {
-    posts = selectedDocs.map((post) => (typeof post.value === 'object' ? post.value : null)).filter(Boolean) as Post[]
+    posts = selectedDocs
+      .map((post) => (typeof post.value === 'object' ? post.value : null))
+      .filter(Boolean) as Post[]
   }
 
   if (!posts.length) return null

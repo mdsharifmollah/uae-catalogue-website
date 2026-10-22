@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/client'
 import React from 'react'
 
 import type { Post } from '@/payload-types'
@@ -6,8 +6,10 @@ import type { Post } from '@/payload-types'
 import { Media } from '@/components/Media'
 import { formatDateTime } from '@/utilities/formatDateTime'
 import { docPath } from '@/utilities/routes'
+import { getLocale } from '@/i18n/server'
 
-export const GuideCard: React.FC<{ post: Post; headingLevel?: 'h2' | 'h3' }> = ({ post, headingLevel: H = 'h3' }) => {
+export const GuideCard = async ({ post, headingLevel: H = 'h3' }: { post: Post; headingLevel?: 'h2' | 'h3' }) => {
+  const locale = await getLocale()
   const image = post.heroImage || post.meta?.image
   return (
     <article className="group relative flex h-full flex-col gap-5">
@@ -19,7 +21,7 @@ export const GuideCard: React.FC<{ post: Post; headingLevel?: 'h2' | 'h3' }> = (
       <div className="flex flex-col gap-3">
         {post.publishedAt && (
           <time dateTime={post.publishedAt} className="text-[1rem] text-muted">
-            {formatDateTime(post.publishedAt)}
+            {formatDateTime(post.publishedAt, locale)}
           </time>
         )}
         <H className="text-[1.375rem] font-semibold leading-snug">

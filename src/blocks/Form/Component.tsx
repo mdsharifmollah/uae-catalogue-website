@@ -10,6 +10,7 @@ import { WhatsAppAnchor } from '@/components/site/WhatsAppAnchor'
 import { getSiteSettings } from '@/utilities/getSiteSettings'
 import { telHref } from '@/utilities/whatsapp'
 import { QuoteForm } from './LazyQuoteForm'
+import { getDictionary } from '@/i18n/server'
 
 export const FormBlock: React.FC<FormBlockProps & { id?: string | null }> = async ({
   id,
@@ -21,7 +22,7 @@ export const FormBlock: React.FC<FormBlockProps & { id?: string | null }> = asyn
   showContactPanel,
 }) => {
   if (!form || typeof form !== 'object') return null
-  const settings = showContactPanel !== false ? await getSiteSettings() : null
+  const [settings, t] = await Promise.all([showContactPanel !== false ? getSiteSettings() : null, getDictionary()])
   const a = settings?.address
 
   return (
@@ -36,16 +37,18 @@ export const FormBlock: React.FC<FormBlockProps & { id?: string | null }> = asyn
                   <WhatsAppIcon />
                 </span>
                 <span>
-                  <span className="block text-[1rem] text-muted">Fastest reply</span>
-                  <span className="block font-semibold">Chat on WhatsApp</span>
+                  <span className="block text-[1rem] text-muted">{t.contact.fastestReply}</span>
+                  <span className="block font-semibold">{t.contact.chatWhatsApp}</span>
                 </span>
               </WhatsAppAnchor>
               {settings.phoneNumber && (
                 <a href={telHref(settings.phoneNumber)} data-track="phone_click" className="flex min-h-16 items-center gap-4 rounded-2xl p-3 transition-colors hover:bg-white/10">
                   <span className="grid size-12 place-items-center rounded-full border"><PhoneIcon /></span>
                   <span>
-                    <span className="block text-[1rem] text-muted">Call</span>
-                    <span className="block font-semibold">{settings.phoneDisplay || `+${settings.phoneNumber}`}</span>
+                    <span className="block text-[1rem] text-muted">{t.contact.call}</span>
+                    <span className="block font-semibold" dir="ltr">
+                      {settings.phoneDisplay || `+${settings.phoneNumber}`}
+                    </span>
                   </span>
                 </a>
               )}
@@ -53,8 +56,10 @@ export const FormBlock: React.FC<FormBlockProps & { id?: string | null }> = asyn
                 <a href={`mailto:${settings.email}`} data-track="email_click" className="flex min-h-16 items-center gap-4 rounded-2xl p-3 transition-colors hover:bg-white/10">
                   <span className="grid size-12 place-items-center rounded-full border"><MailIcon /></span>
                   <span>
-                    <span className="block text-[1rem] text-muted">Email</span>
-                    <span className="block font-semibold break-all">{settings.email}</span>
+                    <span className="block text-[1rem] text-muted">{t.contact.email}</span>
+                    <span className="block font-semibold break-all" dir="ltr">
+                      {settings.email}
+                    </span>
                   </span>
                 </a>
               )}
@@ -62,8 +67,8 @@ export const FormBlock: React.FC<FormBlockProps & { id?: string | null }> = asyn
                 <div className="flex min-h-16 items-center gap-4 rounded-2xl p-3">
                   <span className="grid size-12 shrink-0 place-items-center rounded-full border"><PinIcon /></span>
                   <span>
-                    <span className="block text-[1rem] text-muted">Location</span>
-                    <span className="block font-semibold">{[a?.street, a?.locality, 'UAE'].filter(Boolean).join(', ')}</span>
+                    <span className="block text-[1rem] text-muted">{t.contact.location}</span>
+                    <span className="block font-semibold">{[a?.street, a?.locality, t.common.uae].filter(Boolean).join(t.common.listSep)}</span>
                   </span>
                 </div>
               )}
@@ -71,9 +76,11 @@ export const FormBlock: React.FC<FormBlockProps & { id?: string | null }> = asyn
                 <div className="flex min-h-16 items-center gap-4 rounded-2xl p-3">
                   <span className="grid size-12 shrink-0 place-items-center rounded-full border"><ClockIcon /></span>
                   <span>
-                    <span className="block text-[1rem] text-muted">Hours</span>
+                    <span className="block text-[1rem] text-muted">{t.contact.hours}</span>
                     <span className="block font-semibold">
-                      {settings.openingHours.map((h) => `${(h.days || []).map((d) => d.slice(0, 3)).join(', ')} ${h.opens}–${h.closes}`).join(' · ')}
+                      {settings.openingHours
+                        .map((h) => `${(h.days || []).map((d) => t.days[d] || d).join(t.common.listSep)} ${h.opens}–${h.closes}`)
+                        .join(' · ')}
                     </span>
                   </span>
                 </div>

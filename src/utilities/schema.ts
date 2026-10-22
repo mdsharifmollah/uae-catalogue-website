@@ -1,5 +1,7 @@
 import type { FAQ, Media, Post, Product, SiteSetting } from '@/payload-types'
 
+import { type Locale, localizePath } from '@/i18n/config'
+
 import { getServerSideURL } from './getURL'
 import { telHref } from './whatsapp'
 
@@ -74,14 +76,14 @@ export const organizationSchema = (s: SiteSetting) => {
   }
 }
 
-export const websiteSchema = (s: SiteSetting) => ({
+export const websiteSchema = (s: SiteSetting, locale: Locale = 'en') => ({
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   '@id': `${getServerSideURL()}/#website`,
-  url: getServerSideURL(),
+  url: abs(localizePath(locale, '/')),
   name: s.companyName,
   publisher: { '@id': orgId() },
-  inLanguage: 'en',
+  inLanguage: locale,
 })
 
 export const breadcrumbSchema = (items: { name: string; path: string }[]) => ({
@@ -130,14 +132,14 @@ export const serviceSchema = (args: {
   ],
 })
 
-export const productCatalogSchema = (products: Product[]) => ({
+export const productCatalogSchema = (products: Product[], locale: Locale = 'en') => ({
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   itemListElement: products.map((p, i) => ({
     '@type': 'ListItem',
     position: i + 1,
     name: p.title,
-    url: abs(`/products/${p.slug}`),
+    url: abs(localizePath(locale, `/products/${p.slug}`)),
   })),
 })
 

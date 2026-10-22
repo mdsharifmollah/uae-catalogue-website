@@ -1,17 +1,16 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/client'
 import React from 'react'
 
 import { AccentText } from './AccentText'
 import { ArrowUpRight, WhatsAppIcon } from './icons'
 import { Section } from './Section'
 import { WhatsAppAnchor } from './WhatsAppAnchor'
+import { getDictionary } from '@/i18n/server'
 
 /** Closing call-to-action used on detail pages. */
-export const QuoteBand: React.FC<{ heading: string; text?: string; message?: string | null }> = ({
-  heading,
-  text,
-  message,
-}) => (
+export const QuoteBand = async ({ heading, text, message }: { heading: string; text?: string; message?: string | null }) => {
+  const t = await getDictionary()
+  return (
   <Section tone="bronze" className="overflow-hidden">
     <div aria-hidden="true" className="pointer-events-none absolute inset-0">
       <div className="absolute -left-40 top-1/2 size-[40rem] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(227,199,146,0.35),transparent_65%)] blur-2xl" />
@@ -28,13 +27,14 @@ export const QuoteBand: React.FC<{ heading: string; text?: string; message?: str
       <div className="flex flex-wrap justify-center gap-3" data-reveal>
         <WhatsAppAnchor className="btn btn-primary btn-lg" message={message}>
           <WhatsAppIcon />
-          Request a quote on WhatsApp
+          {t.common.requestQuoteWhatsApp}
         </WhatsAppAnchor>
         <Link href="/contact#quote" className="btn btn-glass btn-lg">
-          Send project details
+          {t.common.sendProjectDetails}
           <ArrowUpRight />
         </Link>
       </div>
     </div>
   </Section>
-)
+  )
+}

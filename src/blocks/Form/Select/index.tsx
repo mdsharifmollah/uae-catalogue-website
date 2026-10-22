@@ -9,6 +9,7 @@ import React from 'react'
 import { Error } from '../Error'
 import { RequiredMark } from '../RequiredMark'
 import { Width } from '../Width'
+import { useDictionary } from '@/i18n/client'
 
 /** Native select: accessible, keyboard friendly, and uses the phone's own picker. */
 export const Select: React.FC<
@@ -16,7 +17,9 @@ export const Select: React.FC<
     errors: Partial<FieldErrorsImpl>
     register: UseFormRegister<FieldValues>
   }
-> = ({ name, errors, label, options, required, width, defaultValue, register }) => (
+> = ({ name, errors, label, options, required, width, defaultValue, register }) => {
+  const t = useDictionary()
+  return (
   <Width width={width}>
     <Label htmlFor={name}>
       {label}
@@ -26,13 +29,13 @@ export const Select: React.FC<
       <select
         id={name}
         defaultValue={defaultValue || ''}
-        className={cn(fieldClass, 'h-14 appearance-none pr-12')}
+        className={cn(fieldClass, 'h-14 appearance-none pe-12')}
         aria-invalid={Boolean(errors[name])}
         aria-describedby={errors[name] ? `${name}-error` : undefined}
         {...register(name, { required })}
       >
         <option value="" disabled>
-          Choose…
+          {t.form.choose}
         </option>
         {options.map(({ label: optionLabel, value }) => (
           <option key={value} value={value}>
@@ -40,10 +43,11 @@ export const Select: React.FC<
           </option>
         ))}
       </select>
-      <svg aria-hidden="true" className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg aria-hidden="true" className="pointer-events-none absolute end-5 top-1/2 -translate-y-1/2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="m6 9 6 6 6-6" />
       </svg>
     </div>
     {errors[name] && <Error name={name} />}
   </Width>
-)
+  )
+}

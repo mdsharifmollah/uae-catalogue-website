@@ -8,6 +8,7 @@ import { MailIcon, PhoneIcon, PinIcon } from '@/components/site/icons'
 import { Section, type Tone } from '@/components/site/Section'
 import { getSiteSettings } from '@/utilities/getSiteSettings'
 import { telHref } from '@/utilities/whatsapp'
+import { getDictionary } from '@/i18n/server'
 
 export const CallToActionBlock: React.FC<CTABlockProps & { id?: string | null }> = async ({
   id,
@@ -18,7 +19,7 @@ export const CallToActionBlock: React.FC<CTABlockProps & { id?: string | null }>
   links,
   showContactDetails,
 }) => {
-  const settings = showContactDetails !== false ? await getSiteSettings() : null
+  const [settings, t] = await Promise.all([showContactDetails !== false ? getSiteSettings() : null, getDictionary()])
 
   return (
     <Section tone={(tone as Tone) || 'bronze'} id={id ? `block-${id}` : undefined} className="overflow-hidden">
@@ -52,7 +53,7 @@ export const CallToActionBlock: React.FC<CTABlockProps & { id?: string | null }>
             {settings.phoneNumber && (
               <li>
                 <a href={telHref(settings.phoneNumber)} className="inline-flex min-h-11 items-center gap-2 hover:underline" data-track="phone_click">
-                  <PhoneIcon /> {settings.phoneDisplay || `+${settings.phoneNumber}`}
+                  <PhoneIcon /> <span dir="ltr">{settings.phoneDisplay || `+${settings.phoneNumber}`}</span>
                 </a>
               </li>
             )}
@@ -65,7 +66,9 @@ export const CallToActionBlock: React.FC<CTABlockProps & { id?: string | null }>
             )}
             {settings.address?.locality && (
               <li className="inline-flex min-h-11 items-center gap-2">
-                <PinIcon /> {settings.address.locality}, UAE
+                <PinIcon /> {settings.address.locality}
+                {t.common.listSep}
+                {t.common.uae}
               </li>
             )}
           </ul>

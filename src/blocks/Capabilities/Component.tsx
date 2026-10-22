@@ -82,7 +82,7 @@ export const CapabilitiesBlock: React.FC<Props & { id?: string | null }> = ({
               )}
               <h3 className="text-[1.375rem] font-semibold leading-snug">{item.title}</h3>
               {item.text && <p className="text-muted">{item.text}</p>}
-              <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-[color:var(--accent)] opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-30" />
+              <span aria-hidden="true" className="pointer-events-none absolute -end-16 -top-16 size-40 rounded-full bg-[color:var(--accent)] opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-30" />
             </li>
           ))}
         </ul>

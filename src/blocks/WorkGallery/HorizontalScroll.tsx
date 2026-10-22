@@ -25,7 +25,8 @@ export const HorizontalScroll: React.FC<{ header: React.ReactNode; children: Rea
         const distance = () => Math.max(el.scrollWidth - window.innerWidth + 48, 0)
         if (distance() < 40) return
         gsap.to(el, {
-          x: () => -distance(),
+          // Right-to-left pages overflow to the left, so travel the other way.
+          x: () => (getComputedStyle(el).direction === 'rtl' ? 1 : -1) * distance(),
           ease: 'none',
           scrollTrigger: {
             trigger: pinEl,

@@ -8,14 +8,16 @@ export const WhatsAppIcon: React.FC<IconProps> = ({ size = 22, ...props }) => (
   </svg>
 )
 
-export const ArrowUpRight: React.FC<IconProps> = ({ size = 18, ...props }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+// Mirrored on right-to-left pages so it points along the reading direction.
+export const ArrowUpRight: React.FC<IconProps> = ({ size = 18, className, ...props }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={`rtl:-scale-x-100 ${className || ''}`} {...props}>
     <path d="M7 17 17 7M8 7h9v9" />
   </svg>
 )
 
-export const ArrowRight: React.FC<IconProps> = ({ size = 18, ...props }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+// Mirrored on right-to-left pages so it points along the reading direction.
+export const ArrowRight: React.FC<IconProps> = ({ size = 18, className, ...props }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={`rtl:-scale-x-100 ${className || ''}`} {...props}>
     <path d="M5 12h14M13 6l6 6-6 6" />
   </svg>
 )

@@ -46,7 +46,8 @@ export const Wordmark: React.FC<Props> = ({ name, logo, className }) => {
   const words = name.trim().split(/\s+/)
   const accent = words.length > 1 ? words.pop() : undefined
   return (
-    <span className={cn('inline-flex items-center gap-2.5 whitespace-nowrap font-semibold tracking-tight', className)}>
+    // The lockup reads left-to-right in every language, exactly like the logo file.
+    <span dir="ltr" className={cn('inline-flex items-center gap-2.5 whitespace-nowrap font-semibold tracking-tight', className)}>
       <ScissorsMark className="h-[1.6rem] w-auto text-[color:var(--accent)] max-[359px]:h-[1.35rem]" />
       {/* Slightly smaller on the narrowest phones so the header still fits. */}
       <span className="text-[1.25rem] leading-none max-[359px]:text-[1.0625rem]">

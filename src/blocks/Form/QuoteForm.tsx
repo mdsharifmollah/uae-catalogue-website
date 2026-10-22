@@ -7,6 +7,7 @@ import { useForm, FormProvider } from 'react-hook-form'
 import RichText from '@/components/RichText'
 import { WhatsAppIcon } from '@/components/site/icons'
 import { WhatsAppAnchor } from '@/components/site/WhatsAppAnchor'
+import { useDictionary } from '@/i18n/client'
 
 import { fields } from './fields'
 import { getClientSideURL } from '@/utilities/getURL'
@@ -32,6 +33,7 @@ export const QuoteForm: React.FC<{ form: FormType }> = ({ form: formFromProps })
   const [hasSubmitted, setHasSubmitted] = useState(false)
   const [error, setError] = useState<string | undefined>()
   const router = useRouter()
+  const t = useDictionary()
 
   const onSubmit = useCallback(
     async (data: Record<string, unknown>) => {
@@ -57,7 +59,7 @@ export const QuoteForm: React.FC<{ form: FormType }> = ({ form: formFromProps })
         setIsLoading(false)
 
         if (req.status >= 400) {
-          setError(res.errors?.[0]?.message || 'Something went wrong. Please try WhatsApp instead.')
+          setError(res.errors?.[0]?.message || t.form.failed)
           return
         }
 
@@ -68,19 +70,19 @@ export const QuoteForm: React.FC<{ form: FormType }> = ({ form: formFromProps })
         if (confirmationType === 'redirect' && redirect?.url) router.push(redirect.url)
       } catch {
         setIsLoading(false)
-        setError('Could not send right now. Please message us on WhatsApp instead.')
+        setError(t.form.offline)
       }
     },
-    [router, formID, redirect, confirmationType],
+    [router, formID, redirect, confirmationType, t],
   )
 
   if (hasSubmitted && confirmationType === 'message') {
     return (
       <div role="status" className="flex flex-col items-start gap-6">
         {confirmationMessage && <RichText data={confirmationMessage} enableGutter={false} />}
-        <WhatsAppAnchor className="btn btn-primary" message="Hello, I just sent a quote request on your website.">
+        <WhatsAppAnchor className="btn btn-primary" message={t.form.afterSubmitMessage}>
           <WhatsAppIcon />
-          Continue on WhatsApp
+          {t.form.continueWhatsApp}
         </WhatsAppAnchor>
       </div>
     )
@@ -96,8 +98,8 @@ export const QuoteForm: React.FC<{ form: FormType }> = ({ form: formFromProps })
             if (!Field) return null
             return <Field key={index} form={formFromProps} {...field} {...formMethods} errors={errors} register={register} />
           })}
-          <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
-            <label htmlFor="_company_website">Leave empty</label>
+          <div aria-hidden="true" className="absolute -start-[9999px] h-px w-px overflow-hidden">
+            <label htmlFor="_company_website">{t.form.honeypot}</label>
             <input id="_company_website" tabIndex={-1} autoComplete="off" {...register('_company_website')} />
           </div>
         </div>
@@ -108,9 +110,9 @@ export const QuoteForm: React.FC<{ form: FormType }> = ({ form: formFromProps })
         )}
         <div className="flex flex-wrap items-center gap-4">
           <button form={String(formID)} type="submit" className="btn btn-primary btn-lg" disabled={isLoading}>
-            {isLoading ? 'Sending…' : submitButtonLabel || 'Send request'}
+            {isLoading ? t.form.sending : submitButtonLabel || t.form.send}
           </button>
-          <p className="text-[1rem] text-muted">Prefer chat? Use the WhatsApp button — we reply fastest there.</p>
+          <p className="text-[1rem] text-muted">{t.form.preferChat}</p>
         </div>
       </form>
     </FormProvider>

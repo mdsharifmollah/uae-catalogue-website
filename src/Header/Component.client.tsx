@@ -1,13 +1,13 @@
 'use client'
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { Link, useDictionary, useLocalePath } from '@/i18n/client'
 import React, { useCallback, useEffect, useId, useRef, useState } from 'react'
 
 import type { Header, Media as MediaType } from '@/payload-types'
 
 import { CMSLink, resolveHref } from '@/components/Link'
 import { CloseIcon, MenuIcon, PhoneIcon, WhatsAppIcon } from '@/components/site/icons'
+import { LanguageSwitch } from '@/components/site/LanguageSwitch'
 import { Wordmark } from '@/components/site/Wordmark'
 import { WhatsAppAnchor } from '@/components/site/WhatsAppAnchor'
 import { useSiteSettings } from '@/providers/SiteSettings'
@@ -30,7 +30,9 @@ interface HeaderClientProps {
  * quote and call buttons.
  */
 export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, quoteLabel }) => {
-  const pathname = usePathname()
+  // Locale-free path, so it matches CMS hrefs and is stable across hydration.
+  const pathname = useLocalePath()
+  const t = useDictionary()
   const { phoneNumber } = useSiteSettings()
   const [scrolled, setScrolled] = useState(false)
   const [docked, setDocked] = useState(false)
@@ -97,9 +99,9 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
     <>
       <a
         href="#main-content"
-        className="btn btn-primary btn-sm fixed left-4 top-4 z-[70] -translate-y-24 focus:translate-y-0"
+        className="btn btn-primary btn-sm fixed start-4 top-4 z-[70] -translate-y-24 focus:translate-y-0"
       >
-        Skip to content
+        {t.a11y.skip}
       </a>
       <header
         className={cn(
@@ -123,7 +125,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
                 'flex min-h-12 items-center rounded-full px-3 max-[359px]:px-1.5',
                 docked && quoteLabel && 'max-md:hidden',
               )}
-              aria-label={`${name} — home`}
+              aria-label={t.a11y.home(name)}
             >
               <Wordmark name={name} logo={logo} />
             </Link>
@@ -135,7 +137,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
               </WhatsAppAnchor>
             )}
 
-            <nav aria-label="Main" className="hidden xl:block">
+            <nav aria-label={t.a11y.mainNav} className="hidden xl:block">
               <ul className="glass flex items-center gap-1 rounded-full p-1.5">
                 {navItems.map(({ link }, i) => {
                   const href = resolveHref(link)
@@ -161,6 +163,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
 
             <div className="flex items-center gap-2">
               <div className="hidden items-center gap-2 md:flex">
+                <LanguageSwitch className="btn btn-glass btn-sm" />
                 {actions.map(({ link }, i) => (
                   <CMSLink key={i} {...link} size="sm" icon={false} />
                 ))}
@@ -170,7 +173,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
                   <a
                     href={telHref(phoneNumber)}
                     className="btn btn-glass btn-sm !px-0 w-[3.25rem] md:hidden"
-                    aria-label="Call us"
+                    aria-label={t.a11y.callUs}
                     data-track="phone_click"
                   >
                     <PhoneIcon />
@@ -179,7 +182,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
               ) : (
                 <WhatsAppAnchor
                   className="btn btn-primary btn-sm !px-0 w-[3.25rem] md:hidden"
-                  aria-label="Chat with us on WhatsApp"
+                  aria-label={t.a11y.chatWhatsApp}
                 >
                   <WhatsAppIcon />
                 </WhatsAppAnchor>
@@ -190,7 +193,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
                 className="btn btn-glass btn-sm !px-0 w-[3.25rem] xl:hidden"
                 aria-expanded={open}
                 aria-controls={menuId}
-                aria-label={open ? 'Close menu' : 'Open menu'}
+                aria-label={open ? t.a11y.closeMenu : t.a11y.openMenu}
                 onClick={() => setOpenOn(open ? null : pathname)}
               >
                 {open ? <CloseIcon /> : <MenuIcon />}
@@ -204,7 +207,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
           ref={panelRef}
           role="dialog"
           aria-modal="true"
-          aria-label="Menu"
+          aria-label={t.a11y.menu}
           hidden={!open}
           className="xl:hidden"
         >
@@ -228,6 +231,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, name, logo, qu
                 {actions.map(({ link }, i) => (
                   <CMSLink key={i} {...link} className="w-full" />
                 ))}
+                <LanguageSwitch className="btn btn-glass w-full md:hidden" />
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ import type { MetadataRoute } from 'next'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 
+import { localizePath, locales } from '@/i18n/config'
 import { getServerSideURL } from '@/utilities/getURL'
 import { docPath, type RoutableCollection } from '@/utilities/routes'
 
@@ -49,6 +50,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     fetchAll('posts'),
   ])
 
+  // English URL plus hreflang alternates; the Arabic copies are added below.
+  const localized = (path: string) => ({
+    url: `${base}${localizePath('en', path)}`,
+    alternates: { languages: Object.fromEntries(locales.map((l) => [l, `${base}${localizePath(l, path)}`])) },
+  })
+
   const entry = (
     collection: RoutableCollection,
     doc: Doc,
@@ -59,7 +66,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       Boolean,
     ) as string[]
     return {
-      url: `${base}${docPath(collection, doc.slug)}`,
+      ...localized(docPath(collection, doc.slug)),
       lastModified: doc.updatedAt ? new Date(doc.updatedAt) : undefined,
       changeFrequency,
       priority,
@@ -69,12 +76,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const hubSlugs = new Set(['products', 'industries', 'work', 'guides'])
   const hubs: MetadataRoute.Sitemap = ['/products', '/industries', '/work', '/guides'].map((p) => ({
-    url: `${base}${p}`,
+    ...localized(p),
     changeFrequency: 'weekly',
     priority: 0.8,
   }))
 
-  return [
+  const english: MetadataRoute.Sitemap = [
     ...pages
       .filter((p) => p.slug && !hubSlugs.has(p.slug))
       .map((p) => entry('pages', p, p.slug === 'home' ? 1 : 0.7, 'monthly')),
@@ -84,4 +91,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...projects.map((p) => entry('projects', p, 0.6, 'monthly')),
     ...posts.map((p) => entry('posts', p, 0.6, 'monthly')),
   ]
+
+  // Same pages in Arabic (/ar/...), sharing the English entry's alternates.
+  const arabic = english.map((e) => ({ ...e, url: e.alternates?.languages?.ar || e.url }))
+  return [...english, ...arabic]
 }

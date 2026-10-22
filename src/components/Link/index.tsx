@@ -3,7 +3,7 @@ import { WhatsAppAnchor } from '@/components/site/WhatsAppAnchor'
 import { ArrowUpRight, WhatsAppIcon } from '@/components/site/icons'
 import { cn } from '@/utilities/ui'
 import { docPath, type RoutableCollection } from '@/utilities/routes'
-import Link from 'next/link'
+import { Link } from '@/i18n/client'
 import React from 'react'
 
 type ReferenceValue = { slug?: string | null } | string | number

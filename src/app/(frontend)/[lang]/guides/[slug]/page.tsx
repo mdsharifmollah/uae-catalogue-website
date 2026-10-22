@@ -22,6 +22,8 @@ import { generateMeta } from '@/utilities/generateMeta'
 import { allSlugs, queryBySlug } from '@/utilities/queries'
 import { docPath } from '@/utilities/routes'
 import { articleSchema } from '@/utilities/schema'
+import { localizePath } from '@/i18n/config'
+import { getDictionary, getLocale } from '@/i18n/server'
 
 export async function generateStaticParams() {
   return (await allSlugs('posts')).map((slug) => ({ slug }))
@@ -36,6 +38,7 @@ export default async function GuidePage({ params }: Args) {
   const post = (await queryBySlug('posts', decodeURIComponent(slug))) as Post | null
   if (!post) return <PayloadRedirects url={path} />
 
+  const [t, locale] = await Promise.all([getDictionary(), getLocale()])
   const relatedPosts = (post.relatedPosts || []).filter((p): p is Post => typeof p === 'object')
   const relatedProducts = (post.relatedProducts || []).filter((p): p is Product => typeof p === 'object')
 
@@ -46,10 +49,10 @@ export default async function GuidePage({ params }: Args) {
       <MinimalHero
         type="minimal"
         tone="ink"
-        eyebrow={post.publishedAt ? `Guide · ${formatDateTime(post.publishedAt)}` : 'Guide'}
+        eyebrow={post.publishedAt ? t.guide.eyebrowDated(formatDateTime(post.publishedAt, locale)) : t.guide.eyebrow}
         heading={post.title}
         subheading={post.excerpt}
-        breadcrumb={<Breadcrumbs items={[{ name: 'Guides', path: '/guides' }, { name: post.title, path }]} />}
+        breadcrumb={<Breadcrumbs items={[{ name: t.common.guides, path: '/guides' }, { name: post.title, path }]} />}
       />
       <Section tone="ivory" className="!pt-12">
         <div className="shell flex max-w-4xl flex-col gap-12">
@@ -65,7 +68,7 @@ export default async function GuidePage({ params }: Args) {
       {relatedProducts.length > 0 && (
         <Section tone="sand">
           <div className="shell">
-            <SectionIntro eyebrow="Formats mentioned" heading="Explore the *formats*" />
+            <SectionIntro eyebrow={t.guide.formatsEyebrow} heading={t.guide.formatsHeading} />
             <div className="mt-12 grid gap-5 md:grid-cols-2">
               {relatedProducts.map((p) => (
                 <FormatCard key={p.id} product={p} />
@@ -78,7 +81,7 @@ export default async function GuidePage({ params }: Args) {
       {relatedPosts.length > 0 && (
         <Section tone="ivory">
           <div className="shell">
-            <SectionIntro eyebrow="Keep reading" heading="Related *guides*" />
+            <SectionIntro eyebrow={t.guide.moreEyebrow} heading={t.guide.moreHeading} />
             <ul className="mt-12 grid gap-x-6 gap-y-12 md:grid-cols-3">
               {relatedPosts.map((p) => (
                 <li key={p.id}>
@@ -90,8 +93,8 @@ export default async function GuidePage({ params }: Args) {
         </Section>
       )}
 
-      <QuoteBand heading="Ready to plan your *sample* catalogue?" />
-      <JsonLd data={articleSchema(post, path)} />
+      <QuoteBand heading={t.guide.bandHeading} />
+      <JsonLd data={articleSchema(post, localizePath(locale, path))} />
     </article>
   )
 }

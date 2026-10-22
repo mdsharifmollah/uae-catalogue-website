@@ -3,26 +3,28 @@ import React from 'react'
 import { CMSLink } from '@/components/Link'
 import { AccentText } from '@/components/site/AccentText'
 import { BackToTop } from '@/components/site/BackToTop'
+import { LanguageSwitch } from '@/components/site/LanguageSwitch'
 import { ClockIcon, MailIcon, PhoneIcon, PinIcon, WhatsAppIcon } from '@/components/site/icons'
 import { Section } from '@/components/site/Section'
 import { WhatsAppAnchor } from '@/components/site/WhatsAppAnchor'
 import { Wordmark } from '@/components/site/Wordmark'
+import { type Dictionary } from '@/i18n/dictionary'
+import { getDictionary } from '@/i18n/server'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import { getSiteSettings } from '@/utilities/getSiteSettings'
 import { telHref } from '@/utilities/whatsapp'
 import { cn } from '@/utilities/ui'
 
-const formatDays = (days: string[]) => {
-  if (days.length > 2) return `${days[0].slice(0, 3)} – ${days[days.length - 1].slice(0, 3)}`
-  return days.map((d) => d.slice(0, 3)).join(', ')
+const formatDays = (days: string[], t: Dictionary) => {
+  const name = (d: string) => t.days[d] || d
+  if (days.length > 2) return `${name(days[0])} – ${name(days[days.length - 1])}`
+  return days.map(name).join(t.common.listSep)
 }
 
 export async function Footer() {
-  const [footer, settings] = await Promise.all([getCachedGlobal('footer', 1)(), getSiteSettings()])
+  const [footer, settings, t] = await Promise.all([getCachedGlobal('footer', 1)(), getSiteSettings(), getDictionary()])
   const { address } = settings
-  const addressLine = [address?.street, address?.locality, 'United Arab Emirates']
-    .filter(Boolean)
-    .join(', ')
+  const addressLine = [address?.street, address?.locality, t.common.country].filter(Boolean).join(t.common.listSep)
   const year = new Date().getFullYear()
 
   return (
@@ -36,12 +38,12 @@ export async function Footer() {
           <div className="flex flex-wrap gap-3 lg:justify-end">
             <WhatsAppAnchor className="btn btn-primary btn-lg">
               <WhatsAppIcon />
-              Chat on WhatsApp
+              {t.contact.chatWhatsApp}
             </WhatsAppAnchor>
             {settings.phoneNumber && (
               <a className="btn btn-glass btn-lg" href={telHref(settings.phoneNumber)} data-track="phone_click">
                 <PhoneIcon />
-                Call us
+                {t.a11y.callUs}
               </a>
             )}
           </div>
@@ -68,7 +70,7 @@ export async function Footer() {
               {settings.phoneNumber && (
                 <li className="flex gap-3">
                   <PhoneIcon className="mt-1 text-accent" />
-                  <a href={telHref(settings.phoneNumber)} className="hover:text-accent" data-track="phone_click">
+                  <a href={telHref(settings.phoneNumber)} className="hover:text-accent" data-track="phone_click" dir="ltr">
                     {settings.phoneDisplay || `+${settings.phoneNumber}`}
                   </a>
                 </li>
@@ -76,7 +78,7 @@ export async function Footer() {
               {settings.email && (
                 <li className="flex gap-3">
                   <MailIcon className="mt-1 text-accent" />
-                  <a href={`mailto:${settings.email}`} className="hover:text-accent" data-track="email_click">
+                  <a href={`mailto:${settings.email}`} className="hover:text-accent" data-track="email_click" dir="ltr">
                     {settings.email}
                   </a>
                 </li>
@@ -85,7 +87,7 @@ export async function Footer() {
                 <li key={i} className="flex gap-3 text-muted">
                   <ClockIcon className="mt-1 text-accent" />
                   <span>
-                    {formatDays(h.days || [])} · {h.opens}–{h.closes}
+                    {formatDays(h.days || [], t)} · <span dir="ltr">{h.opens}–{h.closes}</span>
                   </span>
                 </li>
               ))}
@@ -117,9 +119,7 @@ export async function Footer() {
             footer.showWordmark !== false ? 'max-md:mb-16' : 'mb-24',
           )}
         >
-          <p>
-            © {year} {settings.companyName}. All rights reserved.
-          </p>
+          <p>{t.common.rights(settings.companyName, year)}</p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             {settings.socials?.map((s, i) => (
               <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" className="capitalize hover:text-accent">
@@ -129,6 +129,7 @@ export async function Footer() {
             {footer.legalLinks?.map(({ link }, i) => (
               <CMSLink key={i} {...link} appearance="inline" className="hover:text-accent" />
             ))}
+            <LanguageSwitch className="hover:text-accent" />
             <BackToTop className="text-[color:var(--fg)]" />
           </div>
         </div>

@@ -18,6 +18,7 @@ import { PageHero } from '@/heros/PageHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import { allSlugs, queryBySlug } from '@/utilities/queries'
 import { docPath } from '@/utilities/routes'
+import { getDictionary } from '@/i18n/server'
 
 export async function generateStaticParams() {
   return (await allSlugs('projects')).map((slug) => ({ slug }))
@@ -32,6 +33,7 @@ export default async function ProjectPage({ params }: Args) {
   const project = (await queryBySlug('projects', decodeURIComponent(slug))) as Project | null
   if (!project) return <PayloadRedirects url={path} />
 
+  const t = await getDictionary()
   const products = (project.products || []).filter((p): p is Product => typeof p === 'object')
 
   return (
@@ -41,11 +43,11 @@ export default async function ProjectPage({ params }: Args) {
       <PageHero
         type="page"
         tone="ink"
-        eyebrow={project.showClientName && project.clientName ? project.clientName : 'Project'}
+        eyebrow={project.showClientName && project.clientName ? project.clientName : t.project.eyebrow}
         heading={project.title}
         subheading={project.summary}
         media={project.coverImage}
-        breadcrumb={<Breadcrumbs items={[{ name: 'Our Work', path: '/work' }, { name: project.title, path }]} />}
+        breadcrumb={<Breadcrumbs items={[{ name: t.common.work, path: '/work' }, { name: project.title, path }]} />}
       >
         {project.specs && project.specs.length > 0 && (
           <dl className="mt-2 grid grid-cols-2 gap-3">
@@ -88,7 +90,7 @@ export default async function ProjectPage({ params }: Args) {
       {products.length > 0 && (
         <Section tone="sand">
           <div className="shell">
-            <SectionIntro eyebrow="Formats used" heading="Made with these *formats*" />
+            <SectionIntro eyebrow={t.project.formatsEyebrow} heading={t.project.formatsHeading} />
             <div className="mt-12 grid gap-5 md:grid-cols-2">
               {products.map((p) => (
                 <FormatCard key={p.id} product={p} />
@@ -98,7 +100,7 @@ export default async function ProjectPage({ params }: Args) {
         </Section>
       )}
 
-      <QuoteBand heading="Planning a *similar* catalogue?" />
+      <QuoteBand heading={t.project.bandHeading} />
     </article>
   )
 }

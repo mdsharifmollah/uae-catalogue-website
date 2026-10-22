@@ -6,23 +6,20 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import { HubPage } from '@/components/site/HubPage'
 import { QuoteBand } from '@/components/site/QuoteBand'
 import { Section } from '@/components/site/Section'
+import { getDictionary, getLocale } from '@/i18n/server'
 import { generateMeta } from '@/utilities/generateMeta'
 import { queryBySlug } from '@/utilities/queries'
 import { productCatalogSchema } from '@/utilities/schema'
 
 export default async function ProductsPage() {
-  const products = await getProducts()
+  const [products, t, locale] = await Promise.all([getProducts(), getDictionary(), getLocale()])
+  const hub = t.hubs.products
   return (
     <HubPage
       slug="products"
-      name="Products"
-      fallbackHero={{
-        eyebrow: 'What we manufacture',
-        heading: 'Fabric sample *formats* for every collection',
-        subheading:
-          'Sample books, waterfall hangers, numbered shade cards, swatch cards and presentation boxes — made in Sharjah for textile and interior brands.',
-      }}
-      after={<QuoteBand heading="Not sure which *format* fits your range?" text="Tell us about your fabrics and how you sell them — we'll recommend a format." />}
+      name={t.common.products}
+      fallbackHero={{ eyebrow: hub.eyebrow, heading: hub.heading, subheading: hub.subheading }}
+      after={<QuoteBand heading={hub.bandHeading} text={hub.bandText} />}
     >
       <Section tone="ivory">
         <div className="shell grid gap-5 md:grid-cols-2 md:gap-6">
@@ -31,17 +28,16 @@ export default async function ProductsPage() {
           ))}
         </div>
       </Section>
-      <JsonLd data={productCatalogSchema(products)} />
+      <JsonLd data={productCatalogSchema(products, locale)} />
     </HubPage>
   )
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = await queryBySlug('pages', 'products')
+  const [page, t] = await Promise.all([queryBySlug('pages', 'products'), getDictionary()])
   return generateMeta({
-    doc: page || { title: 'Fabric Sample Books, Hangers & Shade Cards' },
+    doc: page || { title: t.hubs.products.metaTitle },
     path: '/products',
-    fallbackDescription:
-      'Fabric sample books, waterfall hangers, numbered shade cards, swatch cards and sample boxes manufactured in Sharjah, UAE.',
+    fallbackDescription: t.hubs.products.metaDescription,
   })
 }

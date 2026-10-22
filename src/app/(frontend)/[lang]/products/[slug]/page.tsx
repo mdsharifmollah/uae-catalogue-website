@@ -27,6 +27,8 @@ import { generateMeta } from '@/utilities/generateMeta'
 import { allSlugs, queryBySlug } from '@/utilities/queries'
 import { docPath } from '@/utilities/routes'
 import { faqSchema, serviceSchema } from '@/utilities/schema'
+import { localizePath } from '@/i18n/config'
+import { getDictionary, getLocale } from '@/i18n/server'
 
 export async function generateStaticParams() {
   return (await allSlugs('products')).map((slug) => ({ slug }))
@@ -44,6 +46,7 @@ export default async function ProductPage({ params }: Args) {
 
   const payload = await getPayload({ config: configPromise })
   const projects = await payload.find({
+    locale: await getLocale(),
     collection: 'projects',
     where: { products: { contains: product.id } },
     limit: 3,
@@ -54,7 +57,8 @@ export default async function ProductPage({ params }: Args) {
   const faqs = (product.faqs || []).filter((f): f is FAQ => typeof f === 'object')
   const industries = (product.industries || []).filter((i): i is Industry => typeof i === 'object')
   const related = (product.relatedProducts || []).filter((p): p is Product => typeof p === 'object')
-  const waMessage = product.whatsappMessage || `Hello, I'd like a quote for ${product.title}.`
+  const [t, locale] = await Promise.all([getDictionary(), getLocale()])
+  const waMessage = product.whatsappMessage || t.common.quoteMessageFor(product.title)
 
   return (
     <article>
@@ -64,15 +68,29 @@ export default async function ProductPage({ params }: Args) {
       <PageHero
         type="page"
         tone="ink"
-        eyebrow="Sample format"
+        eyebrow={t.product.eyebrow}
         heading={product.title}
         subheading={product.summary}
         media={product.heroImage}
         links={[
-          { link: { type: 'whatsapp', label: 'Get a quote on WhatsApp', appearance: 'primary', whatsappMessage: waMessage } },
-          { link: { type: 'custom', url: '/work', label: 'See our work', appearance: 'glass' } },
+          {
+            link: {
+              type: 'whatsapp',
+              label: t.common.getQuoteWhatsApp,
+              appearance: 'primary',
+              whatsappMessage: waMessage,
+            },
+          },
+          { link: { type: 'custom', url: '/work', label: t.product.seeWork, appearance: 'glass' } },
         ]}
-        breadcrumb={<Breadcrumbs items={[{ name: 'Products', path: '/products' }, { name: product.title, path }]} />}
+        breadcrumb={
+          <Breadcrumbs
+            items={[
+              { name: t.common.products, path: '/products' },
+              { name: product.title, path },
+            ]}
+          />
+        }
       />
 
       <Section tone="ivory">
@@ -81,7 +99,7 @@ export default async function ProductPage({ params }: Args) {
             {product.body && <RichText data={product.body} enableGutter={false} />}
             {product.useCases && product.useCases.length > 0 && (
               <div className="flex flex-col gap-6">
-                <h2 className="text-h3">Ideal for</h2>
+                <h2 className="text-h3">{t.product.idealFor}</h2>
                 <ul className="grid gap-3 sm:grid-cols-2">
                   {product.useCases.map((u, i) => (
                     <li key={i} className="glass flex items-start gap-3 rounded-2xl p-4">
@@ -96,26 +114,27 @@ export default async function ProductPage({ params }: Args) {
 
           <aside className="lg:sticky lg:top-[calc(var(--header-h)+2rem)] lg:self-start">
             <div className="glass flex flex-col gap-6 rounded-[var(--radius-panel)] p-7">
-              <h2 className="text-[1.375rem] font-semibold">Options &amp; specifications</h2>
+              <h2 className="text-[1.375rem] font-semibold">{t.product.specs}</h2>
               {product.specs && product.specs.length > 0 ? (
                 <dl className="flex flex-col">
                   {product.specs.map((s, i) => (
-                    <div key={i} className="grid grid-cols-[0.9fr_1.1fr] gap-4 border-t py-3.5 first:border-t-0 first:pt-0">
+                    <div
+                      key={i}
+                      className="grid grid-cols-[0.9fr_1.1fr] gap-4 border-t py-3.5 first:border-t-0 first:pt-0"
+                    >
                       <dt className="text-muted">{s.label}</dt>
                       <dd className="font-medium">{s.value}</dd>
                     </div>
                   ))}
                 </dl>
               ) : (
-                <p className="text-muted">Formats are made to your requirements — tell us about your collection.</p>
+                <p className="text-muted">{t.product.madeToOrder}</p>
               )}
               <WhatsAppAnchor className="btn btn-primary w-full" message={waMessage}>
                 <WhatsAppIcon />
-                Ask about this format
+                {t.product.askAbout}
               </WhatsAppAnchor>
-              <p className="text-[1rem] text-muted">
-                Share photos of your fabrics and your preferred format — we reply with options and a quotation.
-              </p>
+              <p className="text-[1rem] text-muted">{t.product.sharePhotos}</p>
             </div>
           </aside>
         </div>
@@ -124,12 +143,19 @@ export default async function ProductPage({ params }: Args) {
       {product.gallery && product.gallery.length > 0 && (
         <Section tone="sand">
           <div className="shell">
-            <SectionIntro eyebrow="Gallery" heading={`${product.title} — *real* examples`} />
+            <SectionIntro eyebrow={t.product.gallery} heading={t.product.galleryHeading(product.title)} />
             <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {product.gallery.map((g, i) => (
                 <li key={i} data-reveal className="flex flex-col gap-3">
                   <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)]">
-                    <Media resource={g.image} fill size="(max-width: 640px) 100vw, 33vw" imgClassName="object-cover" pictureClassName="absolute inset-0" htmlElement={null} />
+                    <Media
+                      resource={g.image}
+                      fill
+                      size="(max-width: 640px) 100vw, 33vw"
+                      imgClassName="object-cover"
+                      pictureClassName="absolute inset-0"
+                      htmlElement={null}
+                    />
                   </div>
                   {g.caption && <p className="text-[1rem] text-muted">{g.caption}</p>}
                 </li>
@@ -142,7 +168,7 @@ export default async function ProductPage({ params }: Args) {
       {projects.docs.length > 0 && (
         <Section tone="sand">
           <div className="shell">
-            <SectionIntro eyebrow="Our work" heading="Projects using this *format*" />
+            <SectionIntro eyebrow={t.product.workEyebrow} heading={t.product.workHeading} />
             <ul className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {projects.docs.map((p) => (
                 <li key={p.id} data-reveal>
@@ -157,7 +183,7 @@ export default async function ProductPage({ params }: Args) {
       {industries.length > 0 && (
         <Section tone="linen">
           <div className="shell">
-            <SectionIntro eyebrow="Industries" heading="Who uses *this* format" />
+            <SectionIntro eyebrow={t.product.industriesEyebrow} heading={t.product.industriesHeading} />
             <ul className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {industries.map((ind) => (
                 <li key={ind.id} data-reveal>
@@ -172,7 +198,7 @@ export default async function ProductPage({ params }: Args) {
       {faqs.length > 0 && (
         <Section tone="ivory">
           <div className="shell grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-            <SectionIntro eyebrow="FAQ" heading={`${product.title}: *common* questions`} />
+            <SectionIntro eyebrow={t.product.faqEyebrow} heading={t.product.faqHeading(product.title)} />
             <FAQList faqs={faqs} />
           </div>
         </Section>
@@ -181,7 +207,7 @@ export default async function ProductPage({ params }: Args) {
       {related.length > 0 && (
         <Section tone="ivory">
           <div className="shell">
-            <SectionIntro eyebrow="Related formats" heading="You may *also* need" />
+            <SectionIntro eyebrow={t.product.relatedEyebrow} heading={t.product.relatedHeading} />
             <div className="mt-12 grid gap-5 md:grid-cols-2">
               {related.slice(0, 4).map((p) => (
                 <FormatCard key={p.id} product={p} />
@@ -192,14 +218,19 @@ export default async function ProductPage({ params }: Args) {
       )}
 
       <QuoteBand
-        heading={`Need *${product.title.toLowerCase()}* for your collection?`}
-        text="Send your fabric range, preferred size and quantity. We'll suggest the right format and share a quotation."
+        heading={t.product.bandHeading(product.title)}
+        text={t.product.bandText}
         message={waMessage}
       />
 
       <JsonLd
         data={[
-          serviceSchema({ name: product.title, description: product.summary, path, image: product.heroImage }),
+          serviceSchema({
+            name: product.title,
+            description: product.summary,
+            path: localizePath(locale, path),
+            image: product.heroImage,
+          }),
           faqSchema(faqs),
         ]}
       />
@@ -210,5 +241,9 @@ export default async function ProductPage({ params }: Args) {
 export async function generateMetadata({ params }: Args): Promise<Metadata> {
   const { slug } = await params
   const product = (await queryBySlug('products', decodeURIComponent(slug))) as Product | null
-  return generateMeta({ doc: product, path: docPath('products', slug), fallbackDescription: product?.summary })
+  return generateMeta({
+    doc: product,
+    path: docPath('products', slug),
+    fallbackDescription: product?.summary,
+  })
 }
